@@ -5,6 +5,23 @@ payload:
   # > Tencent Video
   - DOMAIN-SUFFIX,v.smtcdns.com
   - DOMAIN-SUFFIX,vv.video.qq.com
+  # > NIMO TV
+  - DOMAIN-SUFFIX,ylog.nimo.tv
+  - DOMAIN-SUFFIX,api.nimo.tv
+  - DOMAIN-SUFFIX,metric.nimo.tv
+  - DOMAIN-SUFFIX,wsapi.master.live
+  - DOMAIN-SUFFIX,img.nimo.tv
+  - DOMAIN-SUFFIX,article.nimo.tv
+  - DOMAIN-SUFFIX,txpic.vod.nimo.tv
+  - DOMAIN-SUFFIX,sail-rank.nimo.tv
+  - DOMAIN-SUFFIX,home-cf.nimo.tv
+  - DOMAIN-SUFFIX,m.nimo.tv
+  - DOMAIN-SUFFIX,udbdf-v2.nimo.tv
+  - DOMAIN-SUFFIX,api-cf.nimo.tv
+  - DOMAIN-SUFFIX,wspic.vod.nimo.tv
+  - DOMAIN-SUFFIX,follow.nimo.tv
+  - DOMAIN-SUFFIX,follow-cf-dynamic.nimo.tv
+  - DOMAIN-SUFFIX,statwup.nimo.tv
   # > Discovery Plus
   - PROCESS-NAME,com.discovery.discoveryplus.mobile
   - DOMAIN-SUFFIX,content-ause1-ur-discovery1.uplynk.com
