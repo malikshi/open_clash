@@ -10,5 +10,7 @@ opkg install https-dns-proxy luci-app-https-dns-proxy
 - Setting dns https proxy, saran memakai DoH dari ControlD (Block Malware + Ads) atau dari AdGuard (Standard). Lihat screenshot cara settingnya
 <img src="https://raw.githubusercontent.com/malikshi/open_clash/main/assets/dns-https-proxy.jpg" border="0">
 <img src="https://raw.githubusercontent.com/malikshi/open_clash/main/assets/dns-https-proxy-2.jpg" border="0">
-- Save & Apply. 
+
+- Save & Apply
+
 ## 
