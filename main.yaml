@@ -403,6 +403,7 @@ rules:
 - RULE-SET,rule_BlockAds,REJECT
 - RULE-SET,rule_reject,REJECT
 - RULE-SET,rule_lancidr,DIRECT,no-resolve
+- RULE-SET,rule_Direct,DIRECT
 - RULE-SET,rule_Speedtest,Umum
 - RULE-SET,rule_Streaming,Streaming
 - RULE-SET,rule_disneyplus,Streaming
@@ -412,7 +413,6 @@ rules:
 - RULE-SET,rule_primevideo,Streaming
 - RULE-SET,rule_twitch,Streaming
 - RULE-SET,rule_Youtube,Streaming
-- RULE-SET,rule_Direct,DIRECT
 - RULE-SET,rule_Sosmed,Sosmed
 - RULE-SET,rule_line,Sosmed
 - RULE-SET,rule_metaverse,Sosmed
