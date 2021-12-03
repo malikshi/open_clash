@@ -15,8 +15,7 @@ opkg install https-dns-proxy luci-app-https-dns-proxy
 
 ## Langkah Kedua
 Setelah langkah pertama sudah selesai maka lanjut dengan setting openclash. Tutorial ini menggunakan gambar supaya pengguna awam juga paham.
-- Download zip master dan ekstrak file zip
-Link Download [**open_clash-main.zip**](https://codeload.github.com/malikshi/open_clash/zip/refs/heads/main)
+- Download zip master dan ekstrak file zip [**open_clash-main.zip**](https://codeload.github.com/malikshi/open_clash/zip/refs/heads/main)
 - Edit Setiap Proxy Provider
     - Umum.yaml : Proxy Group ini akan digunakan di **GLOBAL** saat setting **Yacd**
     - gaming.yaml : Proxy Group ini digunakan untuk traffic gaming yang sudah diatur *rule_games.yaml*, *rule_gaming.yaml*, *rule_portgames*.
