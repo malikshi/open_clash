@@ -26,3 +26,18 @@ Setelah langkah pertama sudah selesai maka lanjut dengan setting openclash. Tuto
 - Import setiap file dari folder **proxy_provider** ke Upload File Type **Proxy Provider File** dan Klik Upload.
 - Import setiap file dari folder **rule_provider** ke Upload File Type **Rule Provider File** dan Klik Upload.
 - Selanjutnya Setting **GLOBAL SETTINGS** Harap untuk perhatikan ScreenShot dibawah ini.
+    - Operation Mode **SWITCH PAGE TO FAKE IP MODE** terlebih dahulu.
+        <img src="https://raw.githubusercontent.com/malikshi/open_clash/main/assets/operation-mode.jpg" border="0">
+        <img src="https://raw.githubusercontent.com/malikshi/open_clash/main/assets/operation-mode-2.jpg" border="0">
+    - DNS Setting
+        <img src="https://raw.githubusercontent.com/malikshi/open_clash/main/assets/dns-setting.jpg" border="0">
+        <img src="https://raw.githubusercontent.com/malikshi/open_clash/main/assets/dns-setting-2.jpg" border="0">
+    - GEOIP Update
+        <img src="https://raw.githubusercontent.com/malikshi/open_clash/main/assets/geoip-update.jpg" border="0">
+- **JANGAN LUPA UNTUK APPLY SETTING**
+- Selanjutnya Setting Panel Yacd
+    - Yacd Config
+        <img src="https://raw.githubusercontent.com/malikshi/open_clash/main/assets/yacd-config.jpg" border="0">
+    - Yacd Proxies
+        <img src="https://raw.githubusercontent.com/malikshi/open_clash/main/assets/yacd-config-2.jpg" border="0">
+## Happy Browsing
