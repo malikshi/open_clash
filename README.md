@@ -17,12 +17,12 @@ opkg install https-dns-proxy luci-app-https-dns-proxy
 Setelah langkah pertama sudah selesai maka lanjut dengan setting openclash. Tutorial ini menggunakan gambar supaya pengguna awam juga paham.
 - Download zip master dan ekstrak file zip [**open_clash-main.zip**](https://codeload.github.com/malikshi/open_clash/zip/refs/heads/main)
 - Edit Setiap Proxy Provider
-    - Umum.yaml : Proxy Group ini akan digunakan di **GLOBAL** saat setting **Yacd**
+    - Umum.yaml : Proxy Group ini akan digunakan di **GLOBAL** saat setting **Yacd**.
     - gaming.yaml : Proxy Group ini digunakan untuk traffic gaming yang sudah diatur *rule_games.yaml*, *rule_gaming.yaml*, *rule_portgames*.
-    - sosmed.yaml : Proxy Group ini digunakan untuk traffic Sosial Media, seperti *LINE, Metaverse(fb,ig,wa), twitter, telegram, tiktok*
+    - sosmed.yaml : Proxy Group ini digunakan untuk traffic Sosial Media, seperti *LINE, Metaverse(fb,ig,wa), twitter, telegram, tiktok*.
     - streaming.yaml : Proxy Group ini digunakan untuk traffic Video Streaming seperti *Youtube, DisneyPlus, hbo, iqiyi, netflix, primevideo, twitch*.
     - trafficIndo.yaml : Proxy Group ini dikhususkan jika server yang digunakan memiliki kualitas traffic lokal yang bagus dan traffic internasionalnya jelek sekali.
-- Import **main.yaml** ke Upload File Type **Config File** dan Klik Upload
-- Import setiap file dari folder **proxy_provider** ke Upload File Type **Proxy Provider File** dan Klik Upload
-- Import setiap file dari folder **rule_provider** ke Upload File Type **Rule Provider File** dan Klik Upload
+- Import **main.yaml** ke Upload File Type **Config File** dan Klik Upload.
+- Import setiap file dari folder **proxy_provider** ke Upload File Type **Proxy Provider File** dan Klik Upload.
+- Import setiap file dari folder **rule_provider** ke Upload File Type **Rule Provider File** dan Klik Upload.
 - Selanjutnya Setting **GLOBAL SETTINGS** Harap untuk perhatikan ScreenShot dibawah ini.
