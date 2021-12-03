@@ -1,0 +1,21 @@
+# Generated from https://github.com/v2fly/domain-list-community/tree/master/data/twitter
+
+# Behavior: domain
+
+payload:
+- "+.ads-twitter.com"
+- "+.periscope.tv"
+- "+.pscp.tv"
+- "+.t.co"
+- "+.tellapart.com"
+- "+.tweetdeck.com"
+- "+.twimg.com"
+- "+.twitpic.com"
+- "+.twitter.com"
+- "+.twitter.jp"
+- "+.twitterinc.com"
+- "+.twitteroauth.com"
+- "+.twitterstat.us"
+- "+.twtrdns.net"
+- "+.twttr.com"
+- "+.vine.co"

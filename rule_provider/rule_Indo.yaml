@@ -1,0 +1,16 @@
+payload:
+  - DOMAIN-SUFFIX,
+  # Mulai baris ini kebawah bisa di edit/hapus
+  - DOMAIN-KEYWORD,.id
+  - DOMAIN-KEYWORD,ac.id
+  - DOMAIN-KEYWORD,or.id
+  - DOMAIN-KEYWORD,go.id
+  - DOMAIN-KEYWORD,my.id
+  - DOMAIN-KEYWORD,web.id
+  - DOMAIN-KEYWORD,biz.id
+  - DOMAIN-KEYWORD,net.id
+  - DOMAIN-KEYWORD,mil.id
+  - DOMAIN-KEYWORD,sch.id
+  - DOMAIN-KEYWORD,desa.id
+  - DOMAIN-KEYWORD,ponpes.id
+  - GEOIP,ID,trafficIndo

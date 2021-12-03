@@ -1,0 +1,16 @@
+# Generated from https://github.com/v2fly/domain-list-community/tree/master/data/hbo
+
+# Behavior: domain
+
+payload:
+- "+.cinemax.com"
+- "+.forthethrone.com"
+- "+.hbo.com"
+- "+.hboasia.com"
+- "+.hbogo.com"
+- "+.hbogoasia.com"
+- "+.hbogoasia.hk"
+- "+.hbomax.com"
+- "+.hbomaxcdn.com"
+- "+.hbonow.com"
+- "+.maxgo.com"

@@ -1,0 +1,24 @@
+proxies:
+- name: "game-server-1"
+  type: trojan
+  server: IPADDRESS/HOSTNAME
+  port: 443
+  password: PASSWORD
+  udp: true
+  sni: BUGHOST.COM
+  alpn:
+    - h2
+    - http/1.1
+  skip-cert-verify: true
+
+- name: "game-server-2"
+  type: trojan
+  server: IPADDRESS/HOSTNAME
+  port: 443
+  password: PASSWORD
+  udp: true
+  sni: BUGHOST.COM
+  alpn:
+    - h2
+    - http/1.1
+  skip-cert-verify: true

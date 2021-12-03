@@ -1,0 +1,23 @@
+payload:
+  - DOMAIN-SUFFIX,
+  - DOMAIN-KEYWORD,pinterest
+  - PROCESS-NAME,com.pinterest
+  - PROCESS-NAME,com.pinterest.twa
+  - PROCESS-NAME,com.ss.android.ugc.trill
+  - PROCESS-NAME,com.zhiliaoapp.musically.go
+  - DOMAIN-KEYWORD,helo
+  - PROCESS-NAME,world.social.group.video.share
+  - DOMAIN-KEYWORD,snackvideo
+  - PROCESS-NAME,com.kwai.bulldog
+  # Reface
+  - IP-CIDR,34.101.5.0/24,no-resolve
+  - IP-CIDR,69.16.175.0/24,no-resolve
+  - IP-CIDR,104.155.173.0/24,no-resolve
+  - IP-CIDR,216.58.221.0/21,no-resolve
+  - IP-CIDR,74.125.24.0/24,no-resolve
+  - IP-CIDR,216.58.196.0/21,no-resolve
+  - IP-CIDR,103.136.220.0/24,no-resolve
+  - IP-CIDR,23.219.172.0/24,no-resolve
+  - IP-CIDR,199.232.45.0/21,no-resolve
+  - IP-CIDR,34.237.31.0/24,no-resolve
+  - IP-CIDR,151.101.2.0/16,no-resolve

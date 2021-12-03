@@ -1,0 +1,27 @@
+payload:
+  - DOMAIN-SUFFIX,
+  # Mulai baris ini kebawah bisa di edit/hapus
+  # - DOMAIN-SUFFIX,telkomsel.com
+  # - DOMAIN-SUFFIX,my.telkomsel.com
+  # - DOMAIN-KEYWORD,telkomsel.com
+  # - PROCESS-NAME,com.telkomsel.telkomselcm
+  # - PROCESS-NAME,com.myorbit
+  # Whatsapp
+  # - DOMAIN-SUFFIX,m.me
+  # - DOMAIN-SUFFIX,oculus.com
+  # - DOMAIN-SUFFIX,oculuscdn.com
+  # - DOMAIN-SUFFIX,rocksdb.org
+  # - DOMAIN-SUFFIX,whatsapp.com
+  # - DOMAIN-SUFFIX,whatsapp.net
+  # > GameMax
+  # - DOMAIN-SUFFIX,freefiremobile-a.akaimaihd.net
+  # - DOMAIN-SUFFIX,www.gamepubgmobile.com
+  # - DOMAIN-SUFFIX,psmc.pubgmobile.com
+  # - DOMAIN-SUFFIX,m.blackdesertonline.com
+  # - DOMAIN-SUFFIX,www.arenaofvalor.com
+  # - DOMAIN-SUFFIX,aov.garena.co.id
+  # - DOMAIN-SUFFIX,filecdn-igamecj.akamaized.net
+  # - DOMAIN-SUFFIX,cdn.riseofnowlin.mobi
+#  - IP-CIDR,103.159.64.94/32
+#  - IP-CIDR,217.79.241.79/32
+  # MATCH is not necessary here

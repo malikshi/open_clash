@@ -1,0 +1,11 @@
+# Generated from https://github.com/v2fly/domain-list-community/tree/master/data/tiktok
+
+# Behavior: domain
+
+payload:
+- "+.muscdn.com"
+- "+.musical.ly"
+- "+.tiktok.com"
+- "+.tiktokcdn.com"
+- "+.tiktokv.com"
+- "p16-tiktokcdn-com.akamaized.net"
