@@ -21,7 +21,7 @@ Setelah langkah pertama sudah selesai maka lanjut dengan setting openclash. Tuto
     - gaming.yaml : Proxy Group ini digunakan untuk traffic gaming yang sudah diatur *rule_games.yaml*, *rule_gaming.yaml*, *rule_portgames*.
     - sosmed.yaml : Proxy Group ini digunakan untuk traffic Sosial Media, seperti *LINE, Metaverse(fb,ig,wa), twitter, telegram, tiktok*.
     - streaming.yaml : Proxy Group ini digunakan untuk traffic Video Streaming seperti *Youtube, DisneyPlus, hbo, iqiyi, netflix, primevideo, twitch*.
-    - trafficIndo.yaml : Proxy Group ini dikhususkan jika server yang digunakan memiliki kualitas traffic lokal yang bagus dan traffic internasionalnya jelek sekali.
+    - trafficIndo.yaml : Proxy Group ini dikhususkan jika server yang digunakan memiliki kualitas traffic lokal yang bagus namun traffic internasionalnya jelek sekali/terlimit speednya.
 - Import **main.yaml** ke Upload File Type **Config File** dan Klik Upload.
 - Import setiap file dari folder **proxy_provider** ke Upload File Type **Proxy Provider File** dan Klik Upload.
 - Import setiap file dari folder **rule_provider** ke Upload File Type **Rule Provider File** dan Klik Upload.
