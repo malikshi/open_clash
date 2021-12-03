@@ -29,7 +29,7 @@ Setelah langkah pertama sudah selesai maka lanjut dengan setting openclash. Tuto
     - Operation Mode **SWITCH PAGE TO FAKE IP MODE** terlebih dahulu.
         <img src="https://raw.githubusercontent.com/malikshi/open_clash/main/assets/operation-mode.jpg" border="0">
         <img src="https://raw.githubusercontent.com/malikshi/open_clash/main/assets/operation-mode-2.jpg" border="0">
-    - DNS Setting, Tambah add custom dns **UDP 127.0.0.1:5054 dan HTTPS freedns.controld.com/p2**
+    - DNS Setting, Tambah add custom dns **UDP 127.0.0.1:5054** dan **HTTPS freedns.controld.com/p2**
         <img src="https://raw.githubusercontent.com/malikshi/open_clash/main/assets/dns-setting.jpg" border="0">
         <img src="https://raw.githubusercontent.com/malikshi/open_clash/main/assets/dns-setting-2.jpg" border="0">
     - GEOIP Update
