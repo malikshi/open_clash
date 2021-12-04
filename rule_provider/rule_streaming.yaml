@@ -22,6 +22,7 @@ payload:
   - DOMAIN-SUFFIX,follow.nimo.tv
   - DOMAIN-SUFFIX,follow-cf-dynamic.nimo.tv
   - DOMAIN-SUFFIX,statwup.nimo.tv
+  - DOMAIN-KEYWORD,nimo.tv
   # > Discovery Plus
   - PROCESS-NAME,com.discovery.discoveryplus.mobile
   - DOMAIN-SUFFIX,content-ause1-ur-discovery1.uplynk.com
