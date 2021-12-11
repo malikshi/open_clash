@@ -269,6 +269,12 @@ rule-providers:
     url: https://rules.kr328.app/speedtest.yaml
     path: "./rule_provider/rule_speedtest.yaml"
     interval: 86400
+  rule_discord:
+    type: http
+    behavior: domain
+    url: https://rules.kr328.app/discord.yaml
+    path: "./rule_provider/discord.yaml"
+    interval: 86400
   rule_Streaming:
     type: file
     behavior: classical
@@ -428,6 +434,7 @@ rules:
 - RULE-SET,rule_telegram,Sosmed
 - RULE-SET,rule_telegramcidr,Sosmed
 - RULE-SET,rule_Gaming,Gaming
+- RULE-SET,rule_discord,Gaming
 - RULE-SET,rule_games,Gaming
 - RULE-SET,rule_portgames,Gaming
 - RULE-SET,rule_videoconferences,Streaming
