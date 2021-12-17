@@ -15,7 +15,7 @@ proxies:
   type: vmess
   server: IPADDRESS/HOSTNAME
   port: 443
-  uuid: UUID-MU
+  uuid: UUID
   alterId: 0
   cipher: auto
   udp: true
