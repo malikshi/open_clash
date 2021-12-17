@@ -210,12 +210,14 @@ fallback-filter:
   - "*.ffxiv.com"
   - "*.mcdn.bilivideo.cn"
   - "+.media.dssott.com"
-  default-nameserver:
-  - 127.0.0.1:5054
   nameserver:
   - 127.0.0.1:5054
+  - 76.76.2.2
+  - 76.76.10.2
+  - https://freedns.controld.com/p2
   fallback:
   - https://freedns.controld.com/p2
+  - tls://p2.freedns.controld.com:853
 ipv6: true
 profile:
   store-selected: true
@@ -229,12 +231,6 @@ rule-providers:
   ###<FREEE TO EDIT\>###
   ######################
   ###<ONLINE RULE: NO NEED TO EDIT>###
-  rule_microsoft:
-    type: http
-    behavior: domain
-    path: "./rule_provider/rule_microsoft.yaml"
-    url: https://rules.kr328.app/microsoft.yaml
-    interval: 86400
   rule_portgames:
     type: file
     behavior: classical
@@ -414,7 +410,6 @@ rules:
 - RULE-SET,rule_porn,REJECT
 - RULE-SET,rule_lancidr,DIRECT,no-resolve
 - RULE-SET,rule_Direct,DIRECT
-- RULE-SET,rule_microsoft,trafficIndo
 - RULE-SET,rule_Speedtest,Umum
 - RULE-SET,rule_Streaming,Streaming
 - RULE-SET,rule_disneyplus,Streaming
