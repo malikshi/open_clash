@@ -1,17 +1,5 @@
 proxies:
 - name: "umum-server-1"
-  type: trojan
-  server: IPADDRESS/HOSTNAME
-  port: 443
-  password: PASSWORD
-  udp: true
-  sni: BUGHOST.COM
-  alpn:
-    - h2
-    - http/1.1
-  skip-cert-verify: true
-
-- name: "umum-server-2"
   type: vmess
   server: IPADDRESS/HOSTNAME
   port: 443
@@ -29,3 +17,15 @@ proxies:
       Host: BUGHOST.COM
     max-early-data: 2048
     early-data-header-name: Sec-WebSocket-Protocol
+
+- name: "umum-server-2"
+  type: trojan
+  server: IPADDRESS/HOSTNAME
+  port: 443
+  password: PASSWORD
+  udp: true
+  sni: BUGHOST.COM
+  alpn:
+    - h2
+    - http/1.1
+  skip-cert-verify: true
