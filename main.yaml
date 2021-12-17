@@ -230,7 +230,7 @@ rule-providers:
   ######################
   ###<ONLINE RULE: NO NEED TO EDIT>###
   rule_microsoft:
-    type: file
+    type: http
     behavior: domain
     path: "./rule_provider/rule_microsoft.yaml"
     url: https://rules.kr328.app/microsoft.yaml
