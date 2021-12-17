@@ -229,6 +229,12 @@ rule-providers:
   ###<FREEE TO EDIT\>###
   ######################
   ###<ONLINE RULE: NO NEED TO EDIT>###
+  rule_microsoft:
+    type: file
+    behavior: domain
+    path: "./rule_provider/rule_microsoft.yaml"
+    url: https://rules.kr328.app/microsoft.yaml
+    interval: 86400
   rule_portgames:
     type: file
     behavior: classical
@@ -408,6 +414,7 @@ rules:
 - RULE-SET,rule_porn,REJECT
 - RULE-SET,rule_lancidr,DIRECT,no-resolve
 - RULE-SET,rule_Direct,DIRECT
+- RULE-SET,rule_microsoft,Umum
 - RULE-SET,rule_Speedtest,Umum
 - RULE-SET,rule_Streaming,Streaming
 - RULE-SET,rule_disneyplus,Streaming
