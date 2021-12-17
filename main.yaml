@@ -414,7 +414,7 @@ rules:
 - RULE-SET,rule_porn,REJECT
 - RULE-SET,rule_lancidr,DIRECT,no-resolve
 - RULE-SET,rule_Direct,DIRECT
-- RULE-SET,rule_microsoft,Umum
+- RULE-SET,rule_microsoft,trafficIndo
 - RULE-SET,rule_Speedtest,Umum
 - RULE-SET,rule_Streaming,Streaming
 - RULE-SET,rule_disneyplus,Streaming
