@@ -90,9 +90,10 @@ dns:
   ipv6: true
   enhanced-mode: fake-ip
   listen: 0.0.0.0:7874
-  fallback-filter:
-    geoip: false
-    ipcidr:
+fallback-filter:
+  geoip: true
+  geoip-code: ID
+  ipcidr:
     - 0.0.0.0/8
     - 10.0.0.0/8
     - 100.64.0.0/10
@@ -109,6 +110,12 @@ dns:
     - 224.0.0.0/4
     - 240.0.0.0/4
     - 255.255.255.255/32
+  domain:
+    - "+.google.com"
+    - "+.facebook.com"
+    - "+.youtube.com"
+    - "+.githubusercontent.com"
+    - "+.googlevideo.com"
   fake-ip-range: 198.18.0.1/16
   fake-ip-filter:
   - "*.lan"
@@ -247,22 +254,50 @@ profile:
   store-selected: true
   store-fakeip: true
 rule-providers:
+  ###<FREEE TO EDIT>###
+  rule_Direct:
+    type: file
+    behavior: classical
+    path: "./rule_provider/rule_direct.yaml"
+  ###<FREEE TO EDIT\>###
+  ######################
+  ###<ONLINE RULE: NO NEED TO EDIT>###
   rule_portgames:
     type: file
     behavior: classical
     path: "./rule_provider/rule_portgames.yaml"
+    url: https://raw.githubusercontent.com/malikshi/open_clash/main/rule_provider/rule_portgames.yaml
+    interval: 86400
   rule_videoconferences:
     type: file
     behavior: classical
     path: "./rule_provider/rule_videoconferences.yaml"
+    url: https://raw.githubusercontent.com/malikshi/open_clash/main/rule_provider/rule_videoconferences.yaml
+    interval: 86400
   rule_Indo:
     type: file
     behavior: classical
     path: "./rule_provider/rule_Indo.yaml"
+    url: https://raw.githubusercontent.com/malikshi/open_clash/main/rule_provider/rule_Indo.yaml
+    interval: 86400
   rule_Sosmed:
     type: file
     behavior: classical
     path: "./rule_provider/rule_sosmed.yaml"
+    url: https://raw.githubusercontent.com/malikshi/open_clash/main/rule_provider/rule_sosmed.yaml
+    interval: 86400
+  rule_Streaming:
+    type: file
+    behavior: classical
+    path: "./rule_provider/rule_streaming.yaml"
+    url: https://raw.githubusercontent.com/malikshi/open_clash/main/rule_provider/rule_streaming.yaml
+    interval: 86400
+  rule_Gaming:
+    type: file
+    behavior: classical
+    path: "./rule_provider/rule_gaming.yaml"
+    url: https://raw.githubusercontent.com/malikshi/open_clash/main/rule_provider/rule_gaming.yaml
+    interval: 86400
   rule_Speedtest:
     type: http
     behavior: domain
@@ -275,18 +310,6 @@ rule-providers:
     url: https://rules.kr328.app/discord.yaml
     path: "./rule_provider/discord.yaml"
     interval: 86400
-  rule_Streaming:
-    type: file
-    behavior: classical
-    path: "./rule_provider/rule_streaming.yaml"
-  rule_Gaming:
-    type: file
-    behavior: classical
-    path: "./rule_provider/rule_gaming.yaml"
-  rule_Direct:
-    type: file
-    behavior: classical
-    path: "./rule_provider/rule_direct.yaml"
   rule_BlockAds:
     type: http
     behavior: classical
@@ -395,6 +418,7 @@ rule-providers:
     url: https://rules.kr328.app/youtube.yaml
     path: "./rule_provider/rule_Youtube.yaml"
     interval: 86400
+  ###<ONLINE RULE: NO NEED TO EDIT\>###
 rules:
 - IP-CIDR,198.18.0.1/16,REJECT,no-resolve
 - PROCESS-NAME,v2ray,DIRECT
