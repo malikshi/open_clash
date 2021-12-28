@@ -1,6 +1,19 @@
 payload:
   - DOMAIN-SUFFIX,
   # Mulai baris ini kebawah bisa di edit/hapus
+  # Hello yo
+  - DOMAIN-SUFFIX,helloyo.sg
+  - DOMAIN-SUFFIX,img.helloyo.sg
+  - DOMAIN-SUFFIX,support0.bigo.sg
+  - DOMAIN-SUFFIX,upload.helloyo.sg
+  - DOMAIN-SUFFIX,act.helloyo.sg
+  - DOMAIN-KEYWORD,helloyo
+  - IP-CIDR,199.91.73.137/24
+  - IP-CIDR,199.91.73.238/32
+  - IP-CIDR,199.91.73.230/24
+  - IP-CIDR,199.91.73.221/32
+  - IP-CIDR,199.91.73.236/24
+  - IP-CIDR,202.168.105.133/32
   #MBLBB
   - PROCESS-NAME,com.mobile.legends
   - DOMAIN-SUFFIX,mobilelegends.com
