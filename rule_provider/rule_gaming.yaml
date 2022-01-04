@@ -30,7 +30,7 @@ payload:
   - DOMAIN-KEYWORD,freefire
   # PUBG
   - PROCESS-NAME,com.tencent.ig
-  - DOMAIN-SUFFIX,pubgmobile.com  
+  - DOMAIN-SUFFIX,pubgmobile.com
   - DOMAIN-SUFFIX,igamecj.com
   - DOMAIN,file-igamecj.akamaized.net
   - IP-CIDR,45.40.220.0/22
