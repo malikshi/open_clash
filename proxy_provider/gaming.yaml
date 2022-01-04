@@ -7,9 +7,13 @@ proxies:
   udp: true
   sni: BUGHOST.COM
   alpn:
-    - h2
-    - http/1.1
+  - h2
   skip-cert-verify: true
+  network: grpc
+  grpc-opts:
+    grpc-service-name: GRPCPATHMU
+  #interface-name: wwan
+  #routing-mark: 1333
 
 - name: "game-server-2"
   type: trojan
@@ -22,3 +26,19 @@ proxies:
     - h2
     - http/1.1
   skip-cert-verify: true
+  #interface-name: wwan
+  #routing-mark: 1333
+
+- name: "game-server-3"
+  type: trojan
+  server: IPADDRESS/HOSTNAME
+  port: 443
+  password: PASSWORD
+  udp: true
+  sni: BUGHOST.COM
+  alpn:
+    - h2
+    - http/1.1
+  skip-cert-verify: true
+  #interface-name: wwan
+  #routing-mark: 1333

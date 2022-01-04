@@ -6,35 +6,35 @@ proxy-providers:
     health-check:
       enable: true
       url: http://www.gstatic.com/generate_204
-      interval: 123
+      interval: 120
   Sosmed:
     type: file
     path: "./proxy_provider/sosmed.yaml"
     health-check:
       enable: true
       url: http://www.gstatic.com/generate_204
-      interval: 123
+      interval: 120
   Streaming:
     type: file
     path: "./proxy_provider/streaming.yaml"
     health-check:
       enable: true
       url: http://www.gstatic.com/generate_204
-      interval: 123
+      interval: 120
   Umum:
     type: file
     path: "./proxy_provider/umum.yaml"
     health-check:
       enable: true
       url: http://www.gstatic.com/generate_204
-      interval: 123
+      interval: 120
   trafficIndo:
     type: file
     path: "./proxy_provider/trafficIndo.yaml"
     health-check:
       enable: true
       url: http://www.gstatic.com/generate_204
-      interval: 123
+      interval: 120
 proxy-groups:
 - name: Gaming
   type: url-test
@@ -44,6 +44,7 @@ proxy-groups:
   - Gaming
   url: http://www.gstatic.com/generate_204
   interval: '600'
+  tolerance: '50'
 - name: Sosmed
   type: load-balance
   strategy: consistent-hashing
@@ -116,6 +117,10 @@ fallback-filter:
     - "+.youtube.com"
     - "+.githubusercontent.com"
     - "+.googlevideo.com"
+  nameserver:
+  - 127.0.0.1:5054
+  fallback:
+  - 127.0.0.1:5053
   fake-ip-range: 198.18.0.1/16
   fake-ip-filter:
   - "*.lan"
@@ -171,8 +176,8 @@ fallback-filter:
   - "*.xiami.com"
   - "*.music.migu.cn"
   - music.migu.cn
-  - "*.msftconnecttest.com"
-  - "*.msftncsi.com"
+  - "+.msftconnecttest.com"
+  - "+.msftncsi.com"
   - msftconnecttest.com
   - msftncsi.com
   - localhost.ptlogin2.qq.com
@@ -210,18 +215,14 @@ fallback-filter:
   - "*.ffxiv.com"
   - "*.mcdn.bilivideo.cn"
   - "+.media.dssott.com"
-  nameserver:
+  default-nameserver:
   - 127.0.0.1:5054
-  - 76.76.2.2
-  - 76.76.10.2
-  - https://freedns.controld.com/p2
-  fallback:
-  - https://freedns.controld.com/p2
-  - tls://p2.freedns.controld.com:853
+  - 127.0.0.1:5053
 ipv6: true
 profile:
   store-selected: true
   store-fakeip: true
+  store-fake-ip: true
 rule-providers:
   ###<FREEE TO EDIT>###
   rule_Direct:
@@ -433,7 +434,7 @@ rules:
 - RULE-SET,rule_videoconferences,Streaming
 - RULE-SET,rule_Indo,trafficIndo
 - DST-PORT,21,GLOBAL
-- DST-PORT,22,GLOBAL
+- DST-PORT,22,DIRECT
 - DST-PORT,23,GLOBAL
 - DST-PORT,25,GLOBAL
 - DST-PORT,80,GLOBAL

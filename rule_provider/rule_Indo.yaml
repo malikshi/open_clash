@@ -2,6 +2,7 @@ payload:
   - DOMAIN-SUFFIX,
   # Mulai baris ini kebawah bisa di edit/hapus
   - DOMAIN-KEYWORD,.id
+  - DOMAIN-KEYWORD,co.id
   - DOMAIN-KEYWORD,ac.id
   - DOMAIN-KEYWORD,or.id
   - DOMAIN-KEYWORD,go.id

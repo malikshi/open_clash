@@ -7,9 +7,27 @@ proxies:
   udp: true
   sni: BUGHOST.COM
   alpn:
+  - h2
+  skip-cert-verify: true
+  network: grpc
+  grpc-opts:
+    grpc-service-name: GRPCPATHMU
+  #interface-name: eth1
+  #routing-mark: 2333
+
+- name: "streaming-server-2"
+  type: trojan
+  server: IPADDRESS/HOSTNAME
+  port: 443
+  password: PASSWORD
+  udp: true
+  sni: BUGHOST.COM
+  alpn:
     - h2
     - http/1.1
   skip-cert-verify: true
+  #interface-name: eth1
+  #routing-mark: 2333
 
 - name: "streaming-server-2"
   type: vmess
@@ -29,3 +47,5 @@ proxies:
       Host: BUGHOST.COM
     max-early-data: 2048
     early-data-header-name: Sec-WebSocket-Protocol
+  #interface-name: eth1
+  #routing-mark: 2333
