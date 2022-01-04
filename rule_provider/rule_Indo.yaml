@@ -14,4 +14,4 @@ payload:
   - DOMAIN-KEYWORD,sch.id
   - DOMAIN-KEYWORD,desa.id
   - DOMAIN-KEYWORD,ponpes.id
-  - GEOIP,ID,trafficIndo
+  - GEOIP,ID

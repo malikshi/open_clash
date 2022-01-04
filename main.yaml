@@ -406,6 +406,7 @@ rules:
 - PROCESS-NAME,trojan-go.exe,DIRECT
 - PROCESS-NAME,ss-local.exe,DIRECT
 - PROCESS-NAME,privoxy.exe,DIRECT
+- DST-PORT,22,DIRECT
 - RULE-SET,rule_BlockAds,REJECT
 - RULE-SET,rule_reject,REJECT
 - RULE-SET,rule_porn,REJECT
@@ -434,7 +435,6 @@ rules:
 - RULE-SET,rule_videoconferences,Streaming
 - RULE-SET,rule_Indo,trafficIndo
 - DST-PORT,21,GLOBAL
-- DST-PORT,22,DIRECT
 - DST-PORT,23,GLOBAL
 - DST-PORT,25,GLOBAL
 - DST-PORT,80,GLOBAL
