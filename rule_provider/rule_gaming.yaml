@@ -40,7 +40,16 @@ payload:
   # Roblox
   - PROCESS-NAME,com.roblox.client
   - DOMAIN-SUFFIX,rbxcdn.com
-  - DOMAIN-SUFFIX,roblox.com  
+  - DOMAIN-SUFFIX,rbxtrk.com
+  - DOMAIN-SUFFIX,roblox.plus
+  - DOMAIN-SUFFIX,robloxinc.s.llnwi.net
+  - IP-CIDR,103.140.28.0/23
+  - IP-CIDR,128.116.0.0/17
+  - IP-CIDR,141.193.3.0/24
+  - IP-CIDR,205.201.62.0/24
+  - IP-CIDR,209.206.40.0/21
+  - IP-CIDR6,2620:2b:e000::/48
+  - IP-CIDR6,2620:135:6000::/40
   - IP-CIDR,128.116.21.114/8
   - IP-CIDR,8.42.96.0/24
   - IP-CIDR,23.57.113.0/24
