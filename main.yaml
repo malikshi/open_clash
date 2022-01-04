@@ -278,7 +278,7 @@ rule-providers:
     type: http
     behavior: domain
     url: https://rules.kr328.app/discord.yaml
-    path: "./rule_provider/discord.yaml"
+    path: "./rule_provider/rule_discord.yaml"
     interval: 86400
   rule_BlockAds:
     type: http
