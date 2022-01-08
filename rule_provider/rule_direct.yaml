@@ -1,27 +1,34 @@
 payload:
   - DOMAIN-SUFFIX,
   # Mulai baris ini kebawah bisa di edit/hapus
-  # - DOMAIN-SUFFIX,telkomsel.com
-  # - DOMAIN-SUFFIX,my.telkomsel.com
-  # - DOMAIN-KEYWORD,telkomsel.com
-  # - PROCESS-NAME,com.telkomsel.telkomselcm
-  # - PROCESS-NAME,com.myorbit
-  # Whatsapp
-  # - DOMAIN-SUFFIX,m.me
-  # - DOMAIN-SUFFIX,oculus.com
-  # - DOMAIN-SUFFIX,oculuscdn.com
-  # - DOMAIN-SUFFIX,rocksdb.org
-  # - DOMAIN-SUFFIX,whatsapp.com
-  # - DOMAIN-SUFFIX,whatsapp.net
-  # > GameMax
-  # - DOMAIN-SUFFIX,freefiremobile-a.akaimaihd.net
-  # - DOMAIN-SUFFIX,www.gamepubgmobile.com
-  # - DOMAIN-SUFFIX,psmc.pubgmobile.com
-  # - DOMAIN-SUFFIX,m.blackdesertonline.com
-  # - DOMAIN-SUFFIX,www.arenaofvalor.com
-  # - DOMAIN-SUFFIX,aov.garena.co.id
-  # - DOMAIN-SUFFIX,filecdn-igamecj.akamaized.net
-  # - DOMAIN-SUFFIX,cdn.riseofnowlin.mobi
-#  - IP-CIDR,103.159.64.94/32
-#  - IP-CIDR,217.79.241.79/32
-  # MATCH is not necessary here
+# > Whatsapp direct
+  - DOMAIN-SUFFIX,fna.whatsapp.net
+  - DOMAIN-SUFFIX,wa.me
+  - DOMAIN-SUFFIX,whatsapp-plus.info
+  - DOMAIN-SUFFIX,whatsapp-plus.me
+  - DOMAIN-SUFFIX,whatsapp-plus.net
+  - DOMAIN-SUFFIX,whatsapp.cc
+  - DOMAIN-SUFFIX,whatsapp.com
+  - DOMAIN-SUFFIX,whatsapp.info
+  - DOMAIN-SUFFIX,whatsapp.net
+  - DOMAIN-SUFFIX,whatsapp.org
+  - DOMAIN-SUFFIX,whatsapp.tv
+  - DOMAIN-SUFFIX,whatsappbrand.com
+  - DST-PORT,4244
+  - DST-PORT,5222
+  - DST-PORT,5223
+  - DST-PORT,5228
+  - DST-PORT,5288
+  - DST-PORT,5242
+  - DST-PORT,5349
+  - DST-PORT,34784
+  - DST-PORT,45395
+  - DST-PORT,50318
+  - DST-PORT,59234
+  - IP-CIDR,31.13.68.0/24,no-resolve
+  - IP-CIDR,36.91.231.0/24,no-resolve
+  - IP-CIDR,157.240.7.0/24,no-resolve
+  - IP-CIDR,157.240.15.0/24,no-resolve
+  - IP-CIDR,157.240.218.0/24,no-resolve
+  - IP-CIDR,157.240.235.0/24,no-resolve
+  - IP-CIDR,180.253.185.0/24,no-resolve
