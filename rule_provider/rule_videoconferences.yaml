@@ -1,6 +1,6 @@
 payload:
 #ZOOM PORT
-- DST-PORT,3478
+#- DST-PORT,3478 bentrok port WA
 - DST-PORT,3479
 - DST-PORT,5090
 - DST-PORT,5091

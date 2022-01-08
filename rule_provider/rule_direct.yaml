@@ -14,6 +14,7 @@ payload:
   - DOMAIN-SUFFIX,whatsapp.org
   - DOMAIN-SUFFIX,whatsapp.tv
   - DOMAIN-SUFFIX,whatsappbrand.com
+  - DST-PORT,3478
   - DST-PORT,4244
   - DST-PORT,5222
   - DST-PORT,5223
