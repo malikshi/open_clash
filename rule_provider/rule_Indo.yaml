@@ -1,6 +1,14 @@
 payload:
   - DOMAIN-SUFFIX,
   # Mulai baris ini kebawah bisa di edit/hapus
+# > MOLA TV
+  - DOMAIN-SUFFIX,mola.tv
+  - DOMAIN-SUFFIX,ws.mola.tv
+  - DOMAIN-SUFFIX,res.mola01.koicdn.com
+  - DOMAIN-SUFFIX,vod.cdn.mola.tv
+  - DOMAIN-SUFFIX,api.sent.tv
+  - DOMAIN-SUFFIX,api.ipify.org
+# > LIST Domain tLD Indo & GEOIP INDO
   - DOMAIN-KEYWORD,.id
   - DOMAIN-KEYWORD,co.id
   - DOMAIN-KEYWORD,ac.id
