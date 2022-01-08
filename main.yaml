@@ -233,37 +233,37 @@ rule-providers:
   ######################
   ###<ONLINE RULE: NO NEED TO EDIT>###
   rule_portgames:
-    type: file
+    type: http
     behavior: classical
     path: "./rule_provider/rule_portgames.yaml"
     url: https://raw.githubusercontent.com/malikshi/open_clash/main/rule_provider/rule_portgames.yaml
     interval: 86400
   rule_videoconferences:
-    type: file
+    type: http
     behavior: classical
     path: "./rule_provider/rule_videoconferences.yaml"
     url: https://raw.githubusercontent.com/malikshi/open_clash/main/rule_provider/rule_videoconferences.yaml
     interval: 86400
   rule_Indo:
-    type: file
+    type: http
     behavior: classical
     path: "./rule_provider/rule_Indo.yaml"
     url: https://raw.githubusercontent.com/malikshi/open_clash/main/rule_provider/rule_Indo.yaml
     interval: 86400
   rule_Sosmed:
-    type: file
+    type: http
     behavior: classical
     path: "./rule_provider/rule_sosmed.yaml"
     url: https://raw.githubusercontent.com/malikshi/open_clash/main/rule_provider/rule_sosmed.yaml
     interval: 86400
   rule_Streaming:
-    type: file
+    type: http
     behavior: classical
     path: "./rule_provider/rule_streaming.yaml"
     url: https://raw.githubusercontent.com/malikshi/open_clash/main/rule_provider/rule_streaming.yaml
     interval: 86400
   rule_Gaming:
-    type: file
+    type: http
     behavior: classical
     path: "./rule_provider/rule_gaming.yaml"
     url: https://raw.githubusercontent.com/malikshi/open_clash/main/rule_provider/rule_gaming.yaml
