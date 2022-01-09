@@ -364,6 +364,12 @@ rule-providers:
     url: https://rules.kr328.app/primevideo.yaml
     path: "./rule_provider/rule_primevideo.yaml"
     interval: 86400
+  rule_playstore:
+    type: http
+    behavior: domain
+    url: https://raw.githubusercontent.com/malikshi/open_clash/main/rule_provider/rule_playstore.yaml
+    path: "./rule_provider/rule_playstore.yaml"
+    interval: 86400
   rule_tiktok:
     type: http
     behavior: domain
@@ -433,6 +439,7 @@ rules:
 - RULE-SET,rule_games,Gaming
 - RULE-SET,rule_portgames,Gaming
 - RULE-SET,rule_videoconferences,Streaming
+- RULE-SET,rule_playstore,Umum
 - RULE-SET,rule_Indo,trafficIndo
 - DST-PORT,21,GLOBAL
 - DST-PORT,23,GLOBAL
