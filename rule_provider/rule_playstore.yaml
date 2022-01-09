@@ -1,0 +1,8 @@
+# Traffic Playstore
+# Behavior: domain
+payload:
+- "+.play-fe.googleapis.com"
+- "+.play-lh.googleusercontent.com"
+- "+.play.google.com"
+- "+.play.googleapis.com"
+- "+.gvt1.com"
