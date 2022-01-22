@@ -292,6 +292,12 @@ rule-providers:
     url: https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/reject.txt
     path: "./rule_provider/rule_reject.yaml"
     interval: 86400
+  rule_basicads:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/malikshi/open_clash/main/rule_provider/rule_basicads.yaml
+    path: "./rule_provider/rule_basicads.yaml"
+    interval: 2628000
   rule_porn:
     type: http
     behavior: domain
@@ -421,6 +427,7 @@ rules:
 - DST-PORT,22,DIRECT
 - RULE-SET,rule_BlockAds,REJECT
 - RULE-SET,rule_reject,REJECT
+- RULE-SET,rule_basicads,REJECT
 - RULE-SET,rule_porn,REJECT
 - RULE-SET,rule_nsfw,REJECT
 - RULE-SET,rule_lancidr,DIRECT,no-resolve
