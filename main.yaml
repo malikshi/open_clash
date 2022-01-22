@@ -298,6 +298,12 @@ rule-providers:
     url: https://rules.kr328.app/category-porn.yaml
     path: "./rule_provider/rule_porn.yaml"
     interval: 86400
+  rule_nsfw:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/malikshi/open_clash/main/rule_provider/rule_nsfw.yaml
+    path: "./rule_provider/rule_nsfw.yaml"
+    interval: 2628000
   rule_lancidr:
     type: http
     behavior: ipcidr
@@ -416,6 +422,7 @@ rules:
 - RULE-SET,rule_BlockAds,REJECT
 - RULE-SET,rule_reject,REJECT
 - RULE-SET,rule_porn,REJECT
+- RULE-SET,rule_nsfw,REJECT
 - RULE-SET,rule_lancidr,DIRECT,no-resolve
 - RULE-SET,rule_Direct,DIRECT
 - RULE-SET,rule_Speedtest,Umum
