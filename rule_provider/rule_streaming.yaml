@@ -287,3 +287,6 @@ payload:
   - DOMAIN-SUFFIX,gogocdn.net
   - DOMAIN-SUFFIX,hidive.com
   - DOMAIN-SUFFIX,vrv.co
+  - DOMAIN-KEYWORD,gogoplay
+  - DOMAIN-KEYWORD,gogoanime
+  
