@@ -36,6 +36,31 @@ proxy-providers:
       url: http://www.gstatic.com/generate_204
       interval: 120
 proxy-groups:
+- name: "Direct WAN A"
+  type: select
+  disable-udp: false
+  interface-name: eth1
+  proxies:
+  - DIRECT
+- name: "Direct WAN B"
+  type: select
+  disable-udp: false
+  interface-name: wwan
+  proxies:
+  - DIRECT
+- name: "Direct WAN C"
+  type: select
+  disable-udp: false
+  interface-name: eth2
+  proxies:
+  - DIRECT
+- name: "Direct Multi-WAN"
+  type: select
+  disable-udp: false
+  proxies:
+  - "Direct WAN A"
+  - "Direct WAN B"
+  - "Direct WAN C"
 - name: Gaming
   type: url-test
   strategy: consistent-hashing
@@ -424,14 +449,14 @@ rules:
 - PROCESS-NAME,trojan-go.exe,DIRECT
 - PROCESS-NAME,ss-local.exe,DIRECT
 - PROCESS-NAME,privoxy.exe,DIRECT
-- DST-PORT,22,DIRECT
+- DST-PORT,22,Direct Multi-WAN
 - RULE-SET,rule_BlockAds,REJECT
 - RULE-SET,rule_reject,REJECT
 - RULE-SET,rule_basicads,REJECT
 - RULE-SET,rule_porn,REJECT
 - RULE-SET,rule_nsfw,REJECT
 - RULE-SET,rule_lancidr,DIRECT,no-resolve
-- RULE-SET,rule_Direct,DIRECT
+- RULE-SET,rule_Direct,Direct Multi-WAN
 - RULE-SET,rule_Speedtest,Umum
 - RULE-SET,rule_Streaming,Streaming
 - RULE-SET,rule_disneyplus,Streaming
