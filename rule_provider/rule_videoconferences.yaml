@@ -1,5 +1,95 @@
 payload:
   - DOMAIN-SUFFIX,
+# > mscft team
+  - DOMAIN-SUFFIX,api.teams.skype.com
+  - DOMAIN-SUFFIX,img.teams.skype.com
+  - DOMAIN-SUFFIX,lync.cn
+  - DOMAIN-SUFFIX,lync.com
+  - DOMAIN-SUFFIX,sfbassets.com
+  - DOMAIN-SUFFIX,skypeforbusiness.com
+  - DOMAIN-SUFFIX,teams-msedge.net
+  - DOMAIN-SUFFIX,teams.cdn.live.net
+  - DOMAIN-SUFFIX,teams.cdn.office.net
+  - DOMAIN-SUFFIX,teams.events.data.microsoft.com
+  - DOMAIN-SUFFIX,teams.live.com
+  - DOMAIN-SUFFIX,teams.microsoft.com
+  - DOMAIN-SUFFIX,teams.microsoft.us
+  - DOMAIN-SUFFIX,teams.office.com
+  - DOMAIN-SUFFIX,teams.office.net
+  - DOMAIN-SUFFIX,teams.skype.com
+#> Office 365
+  - DOMAIN-SUFFIX,assets-yammer.com
+  - DOMAIN-SUFFIX,clo.footprintdns.com
+  - DOMAIN-SUFFIX,microsoftonline-p.com
+  - DOMAIN-SUFFIX,microsoftonline.com
+  - DOMAIN-SUFFIX,msocdn.com
+  - DOMAIN-SUFFIX,msocsp.com
+  - DOMAIN-SUFFIX,nrb.footprintdns.com
+  - DOMAIN-SUFFIX,o365filtering.com
+  - DOMAIN-SUFFIX,office.com
+  - DOMAIN-SUFFIX,office.de
+  - DOMAIN-SUFFIX,office.microsoft
+  - DOMAIN-SUFFIX,office.net
+  - DOMAIN-SUFFIX,office365.com
+  - DOMAIN-SUFFIX,office365.us
+  - DOMAIN-SUFFIX,officeapps.live.com
+  - DOMAIN-SUFFIX,officecdn.microsoft.com
+  - DOMAIN-SUFFIX,officeclient.microsoft.com
+  - DOMAIN-SUFFIX,onmicrosoft.com
+  - DOMAIN-SUFFIX,svc.ms
+  - DOMAIN-SUFFIX,yammer.com
+# > meets hangouts
+  - DOMAIN,alt1-mtalk.google.com
+  - DOMAIN,alt2-mtalk.google.com
+  - DOMAIN,alt3-mtalk.google.com
+  - DOMAIN,alt4-mtalk.google.com
+  - DOMAIN,alt5-mtalk.google.com
+  - DOMAIN,alt6-mtalk.google.com
+  - DOMAIN,alt7-mtalk.google.com
+  - DOMAIN,alt8-mtalk.google.com
+  - DOMAIN,hangouts.clients6.google.com
+  - DOMAIN,hangouts.google.com
+  - DOMAIN,hangouts.googleapis.com
+  - DOMAIN,meet.google.com
+  - DOMAIN,meetings.googleapis.com
+  - DOMAIN,mobile-gtalk.l.google.com
+  - DOMAIN,mobile-gtalk4.l.google.com
+  - DOMAIN,mtalk.google.com
+  - DOMAIN,mtalk4.google.com
+  - DOMAIN,talk.google.com
+  - DOMAIN,talk.l.google.com
+  - DOMAIN,talkx.l.google.com
+#> webex
+  - DOMAIN-SUFFIX,ciscospark.com
+  - DOMAIN-SUFFIX,ciscospark.statuspage.io
+  - DOMAIN-SUFFIX,ciscowebex.com
+  - DOMAIN-SUFFIX,wbx2.com
+  - DOMAIN-SUFFIX,webex.ca
+  - DOMAIN-SUFFIX,webex.co.in
+  - DOMAIN-SUFFIX,webex.co.it
+  - DOMAIN-SUFFIX,webex.co.jp
+  - DOMAIN-SUFFIX,webex.co.kr
+  - DOMAIN-SUFFIX,webex.co.nz
+  - DOMAIN-SUFFIX,webex.co.uk
+  - DOMAIN-SUFFIX,webex.com
+  - DOMAIN-SUFFIX,webex.com.au
+  - DOMAIN-SUFFIX,webex.com.br
+  - DOMAIN-SUFFIX,webex.com.cn
+  - DOMAIN-SUFFIX,webex.com.hk
+  - DOMAIN-SUFFIX,webex.com.mx
+  - DOMAIN-SUFFIX,webex.de
+  - DOMAIN-SUFFIX,webex.es
+  - DOMAIN-SUFFIX,webex.fr
+  - DOMAIN-SUFFIX,webexapis.com
+  - DOMAIN-SUFFIX,webexapps.com
+  - DOMAIN-SUFFIX,webexconnect.com
+  - DOMAIN-SUFFIX,webexcontent.com
+#> zoom
+  - DOMAIN,14qjgk812kgk.statuspage.io
+  - DOMAIN-SUFFIX,zoom.com
+  - DOMAIN-SUFFIX,zoom.com.cn
+  - DOMAIN-SUFFIX,zoom.us
+  - DOMAIN-SUFFIX,zoomgov.com
 #ZOOM PORT
 #  - DST-PORT,3478 bentrok port WA
   - DST-PORT,3479
@@ -24,3 +114,5 @@ payload:
   - DST-PORT,19307
   - DST-PORT,19308
   - DST-PORT,19309
+  #> webex
+  - DST-PORT,9000
