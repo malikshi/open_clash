@@ -631,3 +631,11 @@ payload:
   - DOMAIN-SUFFIX,yt.be
   - DOMAIN-SUFFIX,yt3.ggpht.com
   - DOMAIN-SUFFIX,ytimg.com
+# > Bigo TV
+  - DOMAIN-SUFFIX,likeevideo.com
+  - DOMAIN-SUFFIX,like.video
+  - DOMAIN-SUFFIX,cube.tv
+  - DOMAIN-SUFFIX,bigo.sg
+  - DOMAIN-SUFFIX,bigo.tv
+  - DOMAIN-SUFFIX,hzmk.site
+  - DOMAIN-KEYWORD,bigo
