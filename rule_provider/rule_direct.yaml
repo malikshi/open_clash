@@ -26,6 +26,9 @@ payload:
   - DST-PORT,45395
   - DST-PORT,50318
   - DST-PORT,59234
+  - DST-PORT,12222
+  - DST-PORT,11112
+  - DST-PORT,25566
   - IP-CIDR,31.13.68.0/24,no-resolve
   - IP-CIDR,36.91.231.0/24,no-resolve
   - IP-CIDR,157.240.7.0/24,no-resolve
