@@ -459,10 +459,10 @@ rules:
 - RULE-SET,rule_Direct,Direct Multi-WAN
 - RULE-SET,rule_Speedtest,Umum
 - RULE-SET,rule_Streaming,Streaming
-- RULE-SET,rule_disneyplus,Streaming
+- RULE-SET,rule_disneyplus,trafficIndo
 - RULE-SET,rule_hbo,Streaming
 - RULE-SET,rule_iqiyi,Streaming
-- RULE-SET,rule_netflix,Streaming
+- RULE-SET,rule_netflix,trafficIndo
 - RULE-SET,rule_primevideo,Streaming
 - RULE-SET,rule_twitch,Streaming
 - RULE-SET,rule_Youtube,Streaming

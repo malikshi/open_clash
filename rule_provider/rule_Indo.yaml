@@ -1,13 +1,83 @@
 payload:
   - DOMAIN-SUFFIX,
   # Mulai baris ini kebawah bisa di edit/hapus
+# > LIST Streaming IP/Lokasi Wajib Indo
 # > MOLA TV
   - DOMAIN-SUFFIX,mola.tv
   - DOMAIN-SUFFIX,ws.mola.tv
   - DOMAIN-SUFFIX,res.mola01.koicdn.com
   - DOMAIN-SUFFIX,vod.cdn.mola.tv
   - DOMAIN-SUFFIX,api.sent.tv
-  - DOMAIN-SUFFIX,api.ipify.org
+  - DOMAIN-SUFFIX,cdn01.mola.tv
+  - DOMAIN-SUFFIX,cdn02.mola.tv
+# > Netflix
+  - DOMAIN-SUFFIX,flxvpn.net
+  - DOMAIN-SUFFIX,netflix.ca
+  - DOMAIN-SUFFIX,netflix.com
+  - DOMAIN-SUFFIX,netflix.net
+  - DOMAIN-SUFFIX,netflixdnstest1.com
+  - DOMAIN-SUFFIX,netflixdnstest10.com
+  - DOMAIN-SUFFIX,netflixdnstest2.com
+  - DOMAIN-SUFFIX,netflixdnstest3.com
+  - DOMAIN-SUFFIX,netflixdnstest4.com
+  - DOMAIN-SUFFIX,netflixdnstest5.com
+  - DOMAIN-SUFFIX,netflixdnstest6.com
+  - DOMAIN-SUFFIX,netflixdnstest7.com
+  - DOMAIN-SUFFIX,netflixdnstest8.com
+  - DOMAIN-SUFFIX,netflixdnstest9.com
+  - DOMAIN-SUFFIX,netflixinvestor.com
+  - DOMAIN-SUFFIX,netflixstudios.com
+  - DOMAIN-SUFFIX,netflixtechblog.com
+  - DOMAIN-SUFFIX,nflxext.com
+  - DOMAIN-SUFFIX,nflximg.com
+  - DOMAIN-SUFFIX,nflximg.net
+  - DOMAIN-SUFFIX,nflxso.net
+  - DOMAIN-SUFFIX,nflxvideo.net
+# > Disney Plus
+  - DOMAIN-SUFFIX,disney-plus.net
+  - DOMAIN-SUFFIX,disneyplus.com
+  - DOMAIN-SUFFIX,disneyplus.disney.co.jp
+  - DOMAIN-SUFFIX,dssott.com
+  - DOMAIN-SUFFIX,search-api-disney.bamgrid.com
+  - DOMAIN-SUFFIX,starott.com
+  - DOMAIN-SUFFIX,bifrost-api.hotstar.com
+  - DOMAIN-SUFFIX,img1.hotstarext.com
+  - DOMAIN-SUFFIX,persona.hotstar.com
+  - DOMAIN-SUFFIX,api.hotstar.com
+  - DOMAIN-KEYWORD,hotstar.com
+  - DOMAIN-KEYWORD,hotstarext.com
+  # > Spotify
+  - PROCESS-NAME,com.spotify.music
+  - DOMAIN-SUFFIX,pscdn.co
+  - DOMAIN-SUFFIX,scdn.co
+  - DOMAIN-SUFFIX,spoti.fi
+  - DOMAIN-SUFFIX,spotify.com
+  - DOMAIN-SUFFIX,spotifycdn.com
+  - DOMAIN-SUFFIX,spotifycdn.net
+  - DOMAIN-SUFFIX,spotifycharts.com
+  - DOMAIN-SUFFIX,spotifycodes.com
+  - DOMAIN-SUFFIX,spotifyjobs.com
+  - DOMAIN-SUFFIX,spotifynewsroom.jp
+  - DOMAIN-SUFFIX,spotilocal.com
+  - DOMAIN-SUFFIX,tospotify.com
+  - DOMAIN-KEYWORD,spotify
+# > Vidio
+  - DOMAIN-SUFFIX,thumbor.prod.vid.id
+  - DOMAIN-SUFFIX,static-playback-vidio-com.akamaized.net
+  - DOMAIN-SUFFIX,plenty.vidio.com
+  - DOMAIN-SUFFIX,vidio.com
+  - DOMAIN-SUFFIX,www.vidio.com
+  - DOMAIN-SUFFIX,api.vidio.com
+  - DOMAIN-SUFFIX,media-vidio-com.akamaized.net
+  - DOMAIN-SUFFIX,static-web-prod-vidio.akamaized.net
+  - DOMAIN-SUFFIX,geo-id-media-vidio-com.akamaized.net
+  - DOMAIN-SUFFIX,hermes.vidio.com
+  - DOMAIN-SUFFIX,token-media-vidio-com.akamaized.net
+# > UseeTV
+  - DOMAIN-SUFFIX,useetv.com
+  - DOMAIN-KEYWORD,useetv.com
+# > DensTV
+  - DOMAIN-SUFFIX,dens.tv
 # > LIST Domain tLD Indo & GEOIP INDO
   - DOMAIN-KEYWORD,.id
   - DOMAIN-KEYWORD,co.id

@@ -252,17 +252,10 @@ payload:
   - DOMAIN-SUFFIX,sndcdn.com
   - DOMAIN-SUFFIX,soundcloud.com
 
-  # > Spotify
-  - PROCESS-NAME,com.spotify.music
-  - DOMAIN-SUFFIX,pscdn.co
-  - DOMAIN-SUFFIX,scdn.co
-  - DOMAIN-SUFFIX,spoti.fi
-  - DOMAIN-SUFFIX,spotify.com
-  - DOMAIN-SUFFIX,spotifycdn.net
+
 
 
   # Search Domain
-  - DOMAIN-KEYWORD,spotify
   - DOMAIN-KEYWORD,joox
   - DOMAIN-KEYWORD,soundcloud
   - DOMAIN-KEYWORD,resso
@@ -287,8 +280,36 @@ payload:
   - DOMAIN-SUFFIX,gogocdn.net
   - DOMAIN-SUFFIX,hidive.com
   - DOMAIN-SUFFIX,vrv.co
+  - DOMAIN-SUFFIX,animedao-tv.com
+  - DOMAIN-SUFFIX,animekayo.com
+  - DOMAIN-SUFFIX,kayoanime.com
+  - DOMAIN-SUFFIX,9anime-tv.com
+  - DOMAIN-SUFFIX,kissanime.ru
+  - DOMAIN-SUFFIX,animedao.com
+  - DOMAIN-SUFFIX,animelab.com
+  - DOMAIN-SUFFIX,anime-planet.com
+  - DOMAIN-SUFFIX,viz.com
+  - DOMAIN-SUFFIX,animeheaven.ru
+  - DOMAIN-SUFFIX,animefreak.tv
+  - DOMAIN-SUFFIX,contv.com
+  - DOMAIN-SUFFIX,asiancrush.com
+  - DOMAIN-SUFFIX,animetake.tv
+  - DOMAIN-SUFFIX,aniplus-asia.com
+  - DOMAIN-SUFFIX,tubi.tv
+  - DOMAIN-SUFFIX,midnightpulp.com
   - DOMAIN-KEYWORD,gogoplay
   - DOMAIN-KEYWORD,gogoanime
+  - DOMAIN-KEYWORD,9anime
+# > Niconiconic
+  - DOMAIN-SUFFIX,dmc.nico
+  - DOMAIN-SUFFIX,nicodic.jp
+  - DOMAIN-SUFFIX,nicomanga.jp
+  - DOMAIN-SUFFIX,niconico.com
+  - DOMAIN-SUFFIX,nicoseiga.jp
+  - DOMAIN-SUFFIX,nicovideo.jp
+  - DOMAIN-SUFFIX,nimg.jp
+  - DOMAIN-SUFFIX,simg.jp
+  - DOMAIN-SUFFIX,socdm.com
 # > Acast
   - DOMAIN-SUFFIX,acast.com
 # > Amazon Video
@@ -323,19 +344,6 @@ payload:
   - DOMAIN-SUFFIX,deezer.com
   - DOMAIN-SUFFIX,dzcdn.net
   - DOMAIN-SUFFIX,e28200.a.akamaiedge.net
-# > Disney Plus
-  - DOMAIN-SUFFIX,disney-plus.net
-  - DOMAIN-SUFFIX,disneyplus.com
-  - DOMAIN-SUFFIX,disneyplus.disney.co.jp
-  - DOMAIN-SUFFIX,dssott.com
-  - DOMAIN-SUFFIX,search-api-disney.bamgrid.com
-  - DOMAIN-SUFFIX,starott.com
-  - DOMAIN-SUFFIX,bifrost-api.hotstar.com
-  - DOMAIN-SUFFIX,img1.hotstarext.com
-  - DOMAIN-SUFFIX,persona.hotstar.com
-  - DOMAIN-SUFFIX,api.hotstar.com
-  - DOMAIN-KEYWORD,hotstar.com
-  - DOMAIN-KEYWORD,hotstarext.com
 # > HBO
   - DOMAIN-SUFFIX,hbo.com
   - DOMAIN-SUFFIX,hbogo.co.th
@@ -381,29 +389,6 @@ payload:
   - DOMAIN-SUFFIX,qy.net
 # > LastFM
   - DOMAIN-SUFFIX,last.fm
-# > Netflix
-  - DOMAIN-SUFFIX,flxvpn.net
-  - DOMAIN-SUFFIX,netflix.ca
-  - DOMAIN-SUFFIX,netflix.com
-  - DOMAIN-SUFFIX,netflix.net
-  - DOMAIN-SUFFIX,netflixdnstest1.com
-  - DOMAIN-SUFFIX,netflixdnstest10.com
-  - DOMAIN-SUFFIX,netflixdnstest2.com
-  - DOMAIN-SUFFIX,netflixdnstest3.com
-  - DOMAIN-SUFFIX,netflixdnstest4.com
-  - DOMAIN-SUFFIX,netflixdnstest5.com
-  - DOMAIN-SUFFIX,netflixdnstest6.com
-  - DOMAIN-SUFFIX,netflixdnstest7.com
-  - DOMAIN-SUFFIX,netflixdnstest8.com
-  - DOMAIN-SUFFIX,netflixdnstest9.com
-  - DOMAIN-SUFFIX,netflixinvestor.com
-  - DOMAIN-SUFFIX,netflixstudios.com
-  - DOMAIN-SUFFIX,netflixtechblog.com
-  - DOMAIN-SUFFIX,nflxext.com
-  - DOMAIN-SUFFIX,nflximg.com
-  - DOMAIN-SUFFIX,nflximg.net
-  - DOMAIN-SUFFIX,nflxso.net
-  - DOMAIN-SUFFIX,nflxvideo.net
 # > OCS
   - DOMAIN-SUFFIX,ocs.fr
   - DOMAIN-SUFFIX,ocsdomain.com
@@ -427,19 +412,6 @@ payload:
   - DOMAIN-SUFFIX,soundcloud.app.goo.gl
   - DOMAIN-SUFFIX,soundcloud.com
   - DOMAIN-SUFFIX,soundcloudmail.com
-# > Spotify
-  - DOMAIN-SUFFIX,pscdn.co
-  - DOMAIN-SUFFIX,scdn.co
-  - DOMAIN-SUFFIX,spoti.fi
-  - DOMAIN-SUFFIX,spotify.com
-  - DOMAIN-SUFFIX,spotifycdn.com
-  - DOMAIN-SUFFIX,spotifycdn.net
-  - DOMAIN-SUFFIX,spotifycharts.com
-  - DOMAIN-SUFFIX,spotifycodes.com
-  - DOMAIN-SUFFIX,spotifyjobs.com
-  - DOMAIN-SUFFIX,spotifynewsroom.jp
-  - DOMAIN-SUFFIX,spotilocal.com
-  - DOMAIN-SUFFIX,tospotify.com
 # > Streamable
   - DOMAIN-SUFFIX,streamable.com
 # > Tubi
