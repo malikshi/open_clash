@@ -330,6 +330,12 @@ payload:
   - DOMAIN-SUFFIX,dssott.com
   - DOMAIN-SUFFIX,search-api-disney.bamgrid.com
   - DOMAIN-SUFFIX,starott.com
+  - DOMAIN-SUFFIX,bifrost-api.hotstar.com
+  - DOMAIN-SUFFIX,img1.hotstarext.com
+  - DOMAIN-SUFFIX,persona.hotstar.com
+  - DOMAIN-SUFFIX,api.hotstar.com
+  - DOMAIN-KEYWORD,hotstar.com
+  - DOMAIN-KEYWORD,hotstarext.com
 # > HBO
   - DOMAIN-SUFFIX,hbo.com
   - DOMAIN-SUFFIX,hbogo.co.th
