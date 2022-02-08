@@ -297,6 +297,7 @@ payload:
   - DOMAIN-SUFFIX,aniplus-asia.com
   - DOMAIN-SUFFIX,tubi.tv
   - DOMAIN-SUFFIX,midnightpulp.com
+  - DOMAIN-SUFFIX,animebee.to
   - DOMAIN-KEYWORD,gogoplay
   - DOMAIN-KEYWORD,gogoanime
   - DOMAIN-KEYWORD,9anime
