@@ -73,6 +73,7 @@ payload:
   - DOMAIN-SUFFIX,geo-id-media-vidio-com.akamaized.net
   - DOMAIN-SUFFIX,hermes.vidio.com
   - DOMAIN-SUFFIX,token-media-vidio-com.akamaized.net
+  - DOMAIN-SUFFIX,etslive-2-vidio-com.akamaized.net
 # > UseeTV
   - DOMAIN-SUFFIX,useetv.com
   - DOMAIN-KEYWORD,useetv.com
