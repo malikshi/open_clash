@@ -79,6 +79,14 @@ payload:
   - DOMAIN-KEYWORD,useetv.com
 # > DensTV
   - DOMAIN-SUFFIX,dens.tv
+# > Mncnow
+  - DOMAIN-SUFFIX,mncnow.id
+  - DOMAIN-SUFFIX,mncplay.id
+# > VisionPlus
+  - DOMAIN-SUFFIX,visionplus.id
+  - DOMAIN-SUFFIX,dtaarjaj1diy9.cloudfront.net
+  - DOMAIN-SUFFIX,mrpw.ptmnc01.verspective.net
+  - DOMAIN-SUFFIX,rmp-data.com
 # > LIST Domain tLD Indo & GEOIP INDO
   - DOMAIN-KEYWORD,.id
   - DOMAIN-KEYWORD,co.id
