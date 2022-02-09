@@ -87,6 +87,19 @@ payload:
   - DOMAIN-SUFFIX,dtaarjaj1diy9.cloudfront.net
   - DOMAIN-SUFFIX,mrpw.ptmnc01.verspective.net
   - DOMAIN-SUFFIX,rmp-data.com
+# > We TV
+  - DOMAIN-SUFFIX,webrtcpunch.video.qq.com
+  - DOMAIN-SUFFIX,api.weathercn.com
+  - DOMAIN-SUFFIX,iflix-images.akamaized.net
+  - DOMAIN-SUFFIX,iflix.com
+  - DOMAIN-SUFFIX,v.smtcdns.com
+  - DOMAIN-SUFFIX,v.smtcdns.net
+  - DOMAIN-SUFFIX,vv.video.qq.com
+  - DOMAIN-SUFFIX,wetv.vip
+  - DOMAIN-SUFFIX,wetvinfo.com
+  - IP-CIDR,150.109.28.51/32,no-resolve
+  - PROCESS-NAME,com.tencent.qqlivei18n
+  - PROCESS-NAME,com.tencent.qqlivei18n.us
 # > LIST Domain tLD Indo & GEOIP INDO
   - DOMAIN-KEYWORD,.id
   - DOMAIN-KEYWORD,co.id

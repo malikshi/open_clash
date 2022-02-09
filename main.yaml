@@ -473,13 +473,13 @@ rules:
 - RULE-SET,rule_twitter,Sosmed
 - RULE-SET,rule_telegram,Sosmed
 - RULE-SET,rule_telegramcidr,Sosmed
+- RULE-SET,rule_Indo,trafficIndo
 - RULE-SET,rule_Gaming,Gaming
 - RULE-SET,rule_discord,Gaming
 - RULE-SET,rule_games,Gaming
 - RULE-SET,rule_portgames,Gaming
 - RULE-SET,rule_videoconferences,Streaming
 - RULE-SET,rule_playstore,Umum
-- RULE-SET,rule_Indo,trafficIndo
 - DST-PORT,21,GLOBAL
 - DST-PORT,23,GLOBAL
 - DST-PORT,25,GLOBAL
