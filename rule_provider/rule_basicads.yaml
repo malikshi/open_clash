@@ -6,7 +6,7 @@ payload:
   - DOMAIN,d.reddit.com
   - DOMAIN,api-hotjar.com
   - DOMAIN,hotjar-analytics.com
-  - IP-CIDR,845.130.41.12/32
+  - IP-CIDR,45.130.41.12/32
   - DOMAIN,widgets.pinterest.com
   - DOMAIN-SUFFIX,00-gov.cn
   - DOMAIN-SUFFIX,000.0x1f4b0.com
