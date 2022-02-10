@@ -317,6 +317,12 @@ rule-providers:
     url: https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/reject.txt
     path: "./rule_provider/rule_reject.yaml"
     interval: 86400
+  rule_privacy:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Privacy/Privacy_Classical.yaml
+    path: "./rule_provider/rule_privacy.yaml"
+    interval: 86400
   rule_basicads:
     type: http
     behavior: classical
@@ -453,6 +459,11 @@ rules:
 - RULE-SET,rule_BlockAds,REJECT
 - RULE-SET,rule_reject,REJECT
 - RULE-SET,rule_basicads,REJECT
+- RULE-SET,rule_privacy,REJECT
+- DOMAIN,d.reddit.com,REJECT
+- DOMAIN,api-hotjar.com,REJECT
+- DOMAIN,hotjar-analytics.com,REJECT
+- DOMAIN,widgets.pinterest.com,REJECT
 - RULE-SET,rule_porn,REJECT
 - RULE-SET,rule_nsfw,REJECT
 - RULE-SET,rule_lancidr,DIRECT,no-resolve
