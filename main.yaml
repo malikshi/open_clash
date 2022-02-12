@@ -62,17 +62,13 @@ proxy-groups:
   - "Direct WAN B"
   - "Direct WAN C"
 - name: Gaming
-  type: url-test
-  strategy: consistent-hashing
+  type: select
   disable-udp: false
   use:
   - Gaming
-  url: http://www.gstatic.com/generate_204
-  interval: '600'
-  tolerance: '50'
 - name: Sosmed
   type: load-balance
-  strategy: consistent-hashing
+  strategy: round-robin
   disable-udp: false
   use:
   - Sosmed
@@ -80,7 +76,7 @@ proxy-groups:
   interval: '300'
 - name: Streaming
   type: load-balance
-  strategy: consistent-hashing
+  strategy: round-robin
   disable-udp: false
   use:
   - Streaming
@@ -94,7 +90,8 @@ proxy-groups:
   url: http://www.gstatic.com/generate_204
   interval: '300'
 - name: Umum
-  type: fallback
+  type: load-balance
+  strategy: round-robin
   disable-udp: false
   use:
   - Umum
@@ -116,36 +113,6 @@ dns:
   ipv6: true
   enhanced-mode: fake-ip
   listen: 0.0.0.0:7874
-fallback-filter:
-  geoip: true
-  geoip-code: ID
-  ipcidr:
-    - 0.0.0.0/8
-    - 10.0.0.0/8
-    - 100.64.0.0/10
-    - 127.0.0.0/8
-    - 169.254.0.0/16
-    - 172.16.0.0/12
-    - 192.0.0.0/24
-    - 192.0.2.0/24
-    - 192.88.99.0/24
-    - 192.168.0.0/16
-    - 198.18.0.0/15
-    - 198.51.100.0/24
-    - 203.0.113.0/24
-    - 224.0.0.0/4
-    - 240.0.0.0/4
-    - 255.255.255.255/32
-  domain:
-    - "+.google.com"
-    - "+.facebook.com"
-    - "+.youtube.com"
-    - "+.githubusercontent.com"
-    - "+.googlevideo.com"
-  nameserver:
-  - 127.0.0.1:5054
-  fallback:
-  - 127.0.0.1:5053
   fake-ip-range: 198.18.0.1/16
   fake-ip-filter:
   - "*.lan"
@@ -243,11 +210,128 @@ fallback-filter:
   default-nameserver:
   - 127.0.0.1:5054
   - 127.0.0.1:5053
-ipv6: true
+  - 10.0.8.1
+  - 192.168.11.1
+  - 192.168.10.1
+  - 8.8.8.8
+  - 1.1.1.1
+  fallback-filter:
+    geoip: true
+    geoip-code: ID
+    ipcidr:
+    - 0.0.0.0/8
+    - 10.0.0.0/8
+    - 100.64.0.0/10
+    - 127.0.0.0/8
+    - 169.254.0.0/16
+    - 172.16.0.0/12
+    - 192.0.0.0/24
+    - 192.0.2.0/24
+    - 192.88.99.0/24
+    - 192.168.0.0/16
+    - 198.18.0.0/15
+    - 198.51.100.0/24
+    - 203.0.113.0/24
+    - 224.0.0.0/4
+    - 240.0.0.0/4
+    - 255.255.255.255/32
+    domain:
+    - "+.google.com"
+    - "+.facebook.com"
+    - "+.youtube.com"
+    - "+.githubusercontent.com"
+    - "+.googlevideo.com"
+  nameserver:
+  - 10.0.8.1
+  - 192.168.11.1
+  - 192.168.10.1
+  - dhcp://"eth1"
+  - dhcp://"eth2"
+  - dhcp://"wwan"
+  - 127.0.0.1:5053
+  - 8.8.8.8
+  fallback:
+  - 127.0.0.1:5054
+  - 1.1.1.1
 profile:
   store-selected: true
   store-fakeip: true
   store-fake-ip: true
+rules:
+- IP-CIDR,198.18.0.1/16,REJECT,no-resolve
+- PROCESS-NAME,v2ray,DIRECT
+- PROCESS-NAME,xray,DIRECT
+- PROCESS-NAME,naive,DIRECT
+- PROCESS-NAME,trojan,DIRECT
+- PROCESS-NAME,trojan-go,DIRECT
+- PROCESS-NAME,ss-local,DIRECT
+- PROCESS-NAME,privoxy,DIRECT
+- PROCESS-NAME,leaf,DIRECT
+- PROCESS-NAME,v2ray.exe,DIRECT
+- PROCESS-NAME,xray.exe,DIRECT
+- PROCESS-NAME,naive.exe,DIRECT
+- PROCESS-NAME,trojan.exe,DIRECT
+- PROCESS-NAME,trojan-go.exe,DIRECT
+- PROCESS-NAME,ss-local.exe,DIRECT
+- PROCESS-NAME,privoxy.exe,DIRECT
+- DST-PORT,22,Direct Multi-WAN
+- RULE-SET,rule_BlockAds,REJECT
+- RULE-SET,rule_reject,REJECT
+- RULE-SET,rule_basicads,REJECT
+- RULE-SET,rule_privacy,REJECT
+- RULE-SET,rule_porn,REJECT
+- RULE-SET,rule_nsfw,REJECT
+- RULE-SET,rule_lancidr,DIRECT,no-resolve
+- RULE-SET,rule_Direct,Direct Multi-WAN
+- RULE-SET,rule_Speedtest,Umum
+- RULE-SET,rule_Streaming,Streaming
+- RULE-SET,rule_disneyplus,trafficIndo
+- RULE-SET,rule_hbo,Streaming
+- RULE-SET,rule_iqiyi,Streaming
+- RULE-SET,rule_netflix,trafficIndo
+- RULE-SET,rule_primevideo,Streaming
+- RULE-SET,rule_twitch,Streaming
+- RULE-SET,rule_Youtube,Streaming
+- RULE-SET,rule_Sosmed,Sosmed
+- RULE-SET,rule_line,Sosmed
+- RULE-SET,rule_metaverse,Sosmed
+- RULE-SET,rule_tiktok,Sosmed
+- RULE-SET,rule_twitter,Sosmed
+- RULE-SET,rule_telegram,Sosmed
+- RULE-SET,rule_telegramcidr,Sosmed
+- RULE-SET,rule_Indo,trafficIndo
+- RULE-SET,rule_Gaming,Gaming
+- RULE-SET,rule_discord,Gaming
+- RULE-SET,rule_games,Gaming
+- RULE-SET,rule_portgames,Gaming
+- RULE-SET,rule_videoconferences,Streaming
+- RULE-SET,rule_playstore,Umum
+- DST-PORT,21,GLOBAL
+- DST-PORT,23,GLOBAL
+- DST-PORT,25,GLOBAL
+- DST-PORT,80,GLOBAL
+- DST-PORT,81,GLOBAL
+- DST-PORT,143,GLOBAL
+- DST-PORT,443,GLOBAL
+- DST-PORT,465,GLOBAL
+- DST-PORT,587,GLOBAL
+- DST-PORT,993,GLOBAL
+- DST-PORT,995,GLOBAL
+- DST-PORT,8000,GLOBAL
+- DST-PORT,8008,GLOBAL
+- DST-PORT,8080,GLOBAL
+- DST-PORT,8081,GLOBAL
+- DST-PORT,8090,GLOBAL
+- DST-PORT,8443,GLOBAL
+- DST-PORT,8888,GLOBAL
+- MATCH,GLOBAL
+tun:
+  enable: true
+  stack: system
+  dns-hijack:
+  - tcp://8.8.8.8:53
+  - tcp://8.8.4.4:53
+tproxy-port: 7895
 rule-providers:
   ###<FREEE TO EDIT>###
   rule_Direct:
@@ -438,78 +522,3 @@ rule-providers:
     path: "./rule_provider/rule_Youtube.yaml"
     interval: 86400
   ###<ONLINE RULE: NO NEED TO EDIT\>###
-rules:
-- IP-CIDR,198.18.0.1/16,REJECT,no-resolve
-- PROCESS-NAME,v2ray,DIRECT
-- PROCESS-NAME,xray,DIRECT
-- PROCESS-NAME,naive,DIRECT
-- PROCESS-NAME,trojan,DIRECT
-- PROCESS-NAME,trojan-go,DIRECT
-- PROCESS-NAME,ss-local,DIRECT
-- PROCESS-NAME,privoxy,DIRECT
-- PROCESS-NAME,leaf,DIRECT
-- PROCESS-NAME,v2ray.exe,DIRECT
-- PROCESS-NAME,xray.exe,DIRECT
-- PROCESS-NAME,naive.exe,DIRECT
-- PROCESS-NAME,trojan.exe,DIRECT
-- PROCESS-NAME,trojan-go.exe,DIRECT
-- PROCESS-NAME,ss-local.exe,DIRECT
-- PROCESS-NAME,privoxy.exe,DIRECT
-- DST-PORT,22,Direct Multi-WAN
-- RULE-SET,rule_BlockAds,REJECT
-- RULE-SET,rule_reject,REJECT
-- RULE-SET,rule_basicads,REJECT
-- RULE-SET,rule_privacy,REJECT
-- RULE-SET,rule_porn,REJECT
-- RULE-SET,rule_nsfw,REJECT
-- RULE-SET,rule_lancidr,DIRECT,no-resolve
-- RULE-SET,rule_Direct,Direct Multi-WAN
-- RULE-SET,rule_Speedtest,Umum
-- RULE-SET,rule_Streaming,Streaming
-- RULE-SET,rule_disneyplus,trafficIndo
-- RULE-SET,rule_hbo,Streaming
-- RULE-SET,rule_iqiyi,Streaming
-- RULE-SET,rule_netflix,trafficIndo
-- RULE-SET,rule_primevideo,Streaming
-- RULE-SET,rule_twitch,Streaming
-- RULE-SET,rule_Youtube,Streaming
-- RULE-SET,rule_Sosmed,Sosmed
-- RULE-SET,rule_line,Sosmed
-- RULE-SET,rule_metaverse,Sosmed
-- RULE-SET,rule_tiktok,Sosmed
-- RULE-SET,rule_twitter,Sosmed
-- RULE-SET,rule_telegram,Sosmed
-- RULE-SET,rule_telegramcidr,Sosmed
-- RULE-SET,rule_Indo,trafficIndo
-- RULE-SET,rule_Gaming,Gaming
-- RULE-SET,rule_discord,Gaming
-- RULE-SET,rule_games,Gaming
-- RULE-SET,rule_portgames,Gaming
-- RULE-SET,rule_videoconferences,Streaming
-- RULE-SET,rule_playstore,Umum
-- DST-PORT,21,GLOBAL
-- DST-PORT,23,GLOBAL
-- DST-PORT,25,GLOBAL
-- DST-PORT,80,GLOBAL
-- DST-PORT,81,GLOBAL
-- DST-PORT,143,GLOBAL
-- DST-PORT,443,GLOBAL
-- DST-PORT,465,GLOBAL
-- DST-PORT,587,GLOBAL
-- DST-PORT,993,GLOBAL
-- DST-PORT,995,GLOBAL
-- DST-PORT,8000,GLOBAL
-- DST-PORT,8008,GLOBAL
-- DST-PORT,8080,GLOBAL
-- DST-PORT,8081,GLOBAL
-- DST-PORT,8090,GLOBAL
-- DST-PORT,8443,GLOBAL
-- DST-PORT,8888,GLOBAL
-- MATCH,GLOBAL
-tun:
-  enable: true
-  stack: system
-  dns-hijack:
-  - tcp://8.8.8.8:53
-  - tcp://8.8.4.4:53
-tproxy-port: 7895
