@@ -36,31 +36,31 @@ proxy-providers:
       url: http://www.gstatic.com/generate_204
       interval: 120
 proxy-groups:
-- name: "Direct WAN A"
+- name: Direct WAN A
   type: select
   disable-udp: false
   interface-name: eth1
   proxies:
   - DIRECT
-- name: "Direct WAN B"
+- name: Direct WAN B
   type: select
   disable-udp: false
   interface-name: wwan
   proxies:
   - DIRECT
-- name: "Direct WAN C"
+- name: Direct WAN C
   type: select
   disable-udp: false
   interface-name: eth2
   proxies:
   - DIRECT
-- name: "Direct Multi-WAN"
+- name: Direct Multi-WAN
   type: select
   disable-udp: false
   proxies:
-  - "Direct WAN A"
-  - "Direct WAN B"
-  - "Direct WAN C"
+  - Direct WAN A
+  - Direct WAN B
+  - Direct WAN C
 - name: Gaming
   type: select
   disable-udp: false
@@ -333,14 +333,10 @@ tun:
   - tcp://8.8.4.4:53
 tproxy-port: 7895
 rule-providers:
-  ###<FREEE TO EDIT>###
   rule_Direct:
     type: file
     behavior: classical
     path: "./rule_provider/rule_direct.yaml"
-  ###<FREEE TO EDIT\>###
-  ######################
-  ###<ONLINE RULE: NO NEED TO EDIT>###
   rule_portgames:
     type: http
     behavior: classical
@@ -412,7 +408,7 @@ rule-providers:
     behavior: classical
     url: https://raw.githubusercontent.com/malikshi/open_clash/main/rule_provider/rule_basicads.yaml
     path: "./rule_provider/rule_basicads.yaml"
-    interval: 2628000
+    interval: 86400
   rule_porn:
     type: http
     behavior: domain
@@ -424,7 +420,7 @@ rule-providers:
     behavior: classical
     url: https://raw.githubusercontent.com/malikshi/open_clash/main/rule_provider/rule_nsfw.yaml
     path: "./rule_provider/rule_nsfw.yaml"
-    interval: 2628000
+    interval: 86400
   rule_lancidr:
     type: http
     behavior: ipcidr
@@ -521,4 +517,4 @@ rule-providers:
     url: https://rules.kr328.app/youtube.yaml
     path: "./rule_provider/rule_Youtube.yaml"
     interval: 86400
-  ###<ONLINE RULE: NO NEED TO EDIT\>###
+ipv6: true
