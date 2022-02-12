@@ -100,6 +100,27 @@ payload:
   - IP-CIDR,150.109.28.51/32,no-resolve
   - PROCESS-NAME,com.tencent.qqlivei18n
   - PROCESS-NAME,com.tencent.qqlivei18n.us
+# > MARKET PLACE
+  - DOMAIN-SUFFIX,tokopedia.com
+  - DOMAIN-SUFFIX,shopee.co.id
+  - DOMAIN-SUFFIX,shopeemobile.com
+  - DOMAIN-SUFFIX,bukalapak.com
+  - DOMAIN-SUFFIX,lazada.co.id
+  - DOMAIN-SUFFIX,blibli.com
+  - DOMAIN-SUFFIX,orami.co.id
+  - DOMAIN-SUFFIX,ralali.com
+  - DOMAIN-SUFFIX,bhinneka.com
+  - DOMAIN-SUFFIX,jd.id
+  - DOMAIN-SUFFIX,zalora.co.id
+  - DOMAIN-KEYWORD,tokopedia
+  - DOMAIN-KEYWORD,shopee
+  - DOMAIN-KEYWORD,bukalapak
+  - DOMAIN-KEYWORD,lazada
+  - DOMAIN-KEYWORD,blibli
+  - DOMAIN-KEYWORD,orami
+  - DOMAIN-KEYWORD,ralali
+  - DOMAIN-KEYWORD,bhinneka
+  - DOMAIN-KEYWORD,zalora
 # > LIST Domain tLD Indo & GEOIP INDO
   - DOMAIN-KEYWORD,.id
   - DOMAIN-KEYWORD,co.id
