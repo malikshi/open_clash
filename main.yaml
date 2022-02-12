@@ -83,7 +83,8 @@ proxy-groups:
   url: http://www.gstatic.com/generate_204
   interval: '300'
 - name: trafficIndo
-  type: fallback
+  type: load-balance
+  strategy: round-robin
   disable-udp: false
   use:
   - trafficIndo
