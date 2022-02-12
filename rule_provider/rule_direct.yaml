@@ -29,13 +29,6 @@ payload:
   - DST-PORT,12222
   - DST-PORT,11112
   - DST-PORT,25566
-  - IP-CIDR,31.13.68.0/24,no-resolve
-  - IP-CIDR,36.91.231.0/24,no-resolve
-  - IP-CIDR,157.240.7.0/24,no-resolve
-  - IP-CIDR,157.240.15.0/24,no-resolve
-  - IP-CIDR,157.240.218.0/24,no-resolve
-  - IP-CIDR,157.240.235.0/24,no-resolve
-  - IP-CIDR,180.253.185.0/24,no-resolve
 # >#MLBB PORT
   - DST-PORT,5000
   - DST-PORT,5001
