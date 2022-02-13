@@ -1,35 +1,35 @@
 **Table of Contents**
 
 - [Openclash Config](#openclash-config)
-  - [Features](#features)
-  - [Full Settings](#full-settings)
-    - [Https dns proxy](#https-dns-proxy)
-      - [Install https dns proxy](#install-https-dns-proxy)
-      - [Setting https dns proxy](#setting-https-dns-proxy)
-    - [Openclash](#openclash)
-      - [Download Config](#download-config)
-      - [Edit Files Proxy Provider](#edit-files-proxy-provider)
-        - [Shadowsocks](#shadowsocks)
-        - [Vmess](#vmess)
-        - [Snell](#snell)
-        - [Trojan](#trojan)
-      - [Multi-WAN ISP](#multi-wan-isp)
-      - [Edit Files Rule Provider](#edit-files-rule-provider)
-        - [Rule Direct/Bypassed Connection](#rule-directbypassed-connection)
-      - [Setting Openclash App](#setting-openclash-app)
-        - [Global Setting](#global-setting)
-          - [Operation Mode](#operation-mode)
-          - [DNS Setting](#dns-setting)
-          - [GEOIP Update](#geoip-update)
-          - [Update Version](#update-version)
-        - [Manage Config](#manage-config)
-          - [Import Main.yaml](#import-mainyaml)
-          - [Import Proxy Provider](#import-proxy-provider)
-          - [Import Rule Provider](#import-rule-provider)
-        - [Overviews](#overviews)
-      - [Setting Yacd](#setting-yacd)
-        - [Proxies](#proxies)
-        - [Config](#config)
+- [Features](#features)
+- [Full Settings](#full-settings)
+  - [Https dns proxy](#https-dns-proxy)
+    - [Install https dns proxy](#install-https-dns-proxy)
+    - [Setting https dns proxy](#setting-https-dns-proxy)
+  - [Openclash](#openclash)
+    - [Download Config](#download-config)
+    - [Edit Files Proxy Provider](#edit-files-proxy-provider)
+      - [Shadowsocks](#shadowsocks)
+      - [Vmess](#vmess)
+      - [Snell](#snell)
+      - [Trojan](#trojan)
+    - [Multi-WAN ISP](#multi-wan-isp)
+    - [Edit Files Rule Provider](#edit-files-rule-provider)
+      - [Rule Direct/Bypassed Connection](#rule-directbypassed-connection)
+    - [Setting Openclash App](#setting-openclash-app)
+      - [Global Setting](#global-setting)
+        - [Operation Mode](#operation-mode)
+        - [DNS Setting](#dns-setting)
+        - [GEOIP Update](#geoip-update)
+        - [Update Version](#update-version)
+      - [Manage Config](#manage-config)
+        - [Import Main.yaml](#import-mainyaml)
+        - [Import Proxy Provider](#import-proxy-provider)
+        - [Import Rule Provider](#import-rule-provider)
+      - [Overviews](#overviews)
+    - [Setting Yacd](#setting-yacd)
+      - [Proxies](#proxies)
+      - [Config](#config)
 
 # Openclash Config
 
@@ -38,7 +38,7 @@ OpenClash Config untuk VVIP IPTUNNELS
 - [Join Telegram](https://t.me/joinchat/RihiceTtK1QhBMm7)
 - [Requests Rules](https://github.com/malikshi/open_clash/issues/new/choose)
 
-## Features
+# Features
 
 * Support Multi-WAN *(default 3 ISP)*
 * Pisah traffik umum, sosmed, streaming, gaming.
@@ -48,11 +48,11 @@ OpenClash Config untuk VVIP IPTUNNELS
 * Support 10 marketplace ID.
 * Support Direct/Bypass traffik.
 
-## Full Settings
+# Full Settings
 
 Openclash config yang disediakan pada repositori ini dikhususkan untuk pengguna VVIP IPTUNNELS dan pengguna openclash di indonesia. Disini sangat disarankan untuk menggunakan https-dns-proxy (DoH) untuk mencegah adanya kebocoran dns dari isp yang digunakan. Silahkan untuk membaca baik - baik tutorial yang diberikan, dan jika ada pertanyaan silahkan open issues atau chat digroup telegram IPTUNNELS.
 
-### Https dns proxy
+## Https dns proxy
 
 Fungsi dari http dns proxy:
 * Encrypt your DNS traffic improving security and privacy.
@@ -60,14 +60,14 @@ Fungsi dari http dns proxy:
 * Bypass regional restrictions using public DNS providers.
 * Escape DNS-based content filters and internet censorship.
 
-#### Install https dns proxy
+### Install https dns proxy
 
 ```sh
 opkg update &&\
 opkg install https-dns-proxy luci-app-https-dns-proxy
 ```
 
-#### Setting https dns proxy
+### Setting https dns proxy
 
 - Setting dns https proxy, saran memakai DoH dari ControlD (Block Malware + Ads) atau dari AdGuard (Standard). Lihat screenshot cara settingnya
 <img src="https://raw.githubusercontent.com/malikshi/open_clash/main/assets/dns-https-proxy.jpg" border="0">
@@ -75,15 +75,15 @@ opkg install https-dns-proxy luci-app-https-dns-proxy
 
 - Save & Apply
 
-### Openclash
+## Openclash
 
 Plugin ini adalah klien Clash yang bisa dijalankan di OpenWrt. Kompatibel dengan Shadowsocks ShadowsocksR, Vmess, Trojan, Snell dan protokol lainnya, dan mengimplementasikan proxy kebijakan sesuai dengan konfigurasi aturan yang fleksibel.
 
-#### Download Config
+### Download Config
 
 Download zip master dan ekstrak file [**open_clash-main.zip**](https://codeload.github.com/malikshi/open_clash/zip/refs/heads/main)
 
-#### Edit Files Proxy Provider
+### Edit Files Proxy Provider
 
 
 Mengisi akun tunnel pada setiap files pada folder proxy_provider yang dimana terdapat file umum.yaml, gaming.yaml, sosmed.yaml, streaming.yaml, dan trafficIndo.yaml.
@@ -94,7 +94,7 @@ Fungsi dari masing masing proxy provider
 * streaming.yaml digunakan untuk traffic streaming seperti youtube, twitch, anime.
 * trafficIndo.yaml dikhususkan untuk websites/layanan yang diharuskan untuk menggunakan lokasi Indonesia seperti netflix, disney+, marketplace online, dan VOD Streaming lainnya.
 
-##### Shadowsocks
+#### Shadowsocks
 
 * Shadowsocks Original / tanpa plugin
 ```yaml
@@ -120,7 +120,7 @@ Fungsi dari masing masing proxy provider
       host: BUG.COM
 ```
 
-##### Vmess
+#### Vmess
 
 * Vmess websocket dengan BUG SNI
 ```yaml
@@ -199,7 +199,7 @@ proxies:
       grpc-service-name: grpcpath
 ```
 
-##### Snell
+#### Snell
 
 * Snell Server v3 (support udp).
 ```yaml
@@ -215,7 +215,7 @@ proxies:
     host: BUGSNI.COM
 ```
 
-##### Trojan
+#### Trojan
 
 * Trojan-gfw bug SNI
 ```yaml
@@ -280,7 +280,7 @@ proxies:
     grpc-service-name: iptunnelstrojangrpc
 ```
 
-#### Multi-WAN ISP
+### Multi-WAN ISP
 
 Nah disini secara default menggunakan 3 ISP yakni WAN A, WAN B, WAN C, dimana WAN A bersumber dari interface `eth1` dan WAN B bersumber dari `wwan` serta WAN C bersumber dari `eth2`. Mengecek nama interface WAN mu bisa dari LuCI > Network > Interface atau bisa jalankan commandline `ifconfig`. Setelah memperoleh nama interface dari tiap WAN maka kita tentukan routing-mark untuk setiap proxy/interface diatas. Misalkan interface `eth1` routing-mark `1333`, `wwan` routing-mark `2333`, `wwan` routing-mark `3333`. Disini kita akan menentukan WAN mana yang akan dijadikan koneksi Load-Balancing (LB) dan WAN untuk khusus traffic direct/bypass koneksi. Sebagai contoh WAN A/`eth1` dan WAN B/`wwan` dijadikan koneksi (LB) dan WAN C/`eth2` sebagai koneksi direct/bypass traffic ataupun Gaming. Setelah semuanya sudah ditentukan maka tinggal cara settingnya sebagai berikut:
 * Edit file main.yaml.
@@ -332,23 +332,23 @@ Nah disini secara default menggunakan 3 ISP yakni WAN A, WAN B, WAN C, dimana WA
       routing-mark: 2333
     ```
 
-#### Edit Files Rule Provider
+### Edit Files Rule Provider
 
 Config Openclash VVIP IPTUNNELS kalian tidak perlu melakukan update manual dari banyaknya rules pada folder rule_provider. Cukup edit rule_direct.yaml dikarenakan itu customize tiap orang untuk bypass trafficnya. Untuk rule yang lain jika ada tambahan silahkan chat ke grup telegram IPTUNNELS atau open issues pada repository ini.
 
-##### Rule Direct/Bypassed Connection
+#### Rule Direct/Bypassed Connection
 
 rule_direct.yaml bersifat offline dimana pengguna dapat mengedit traffic apa saja yang di direct/bypass (tidak menggunakan tunnel). Agar lebih mudah sebagai default sudah disetting bypass traffic Whatsapp dan traffic game Mobile Legends (port tcp & udp ingame) jadi untuk dilobby akan menggunakan traffic dari proxy-groups Gaming.
 
-#### Setting Openclash App
+### Setting Openclash App
 
 Setelah Selesai Setting https dns proxy(DoH). mengedit config main.yaml dan setiap file pada folder proxy_provider serta rule_direct.yaml pada folder rule_provider maka kita akan setting openclash via luCI. Silahkan Login LuCI dan masuk ke Services > Openclash
 
-##### Global Setting
+#### Global Setting
 
 Hasil settingan pada global setting akan meng-overide settingal awal pada file main.yaml.
 
-###### Operation Mode
+##### Operation Mode
 
 * Operation Mode **SWITCH PAGE TO FAKE IP MODE** terlebih dahulu.
 * Ceklist/centang opsi sesuai gambar berikut:
@@ -356,7 +356,7 @@ Hasil settingan pada global setting akan meng-overide settingal awal pada file m
 <img src="https://raw.githubusercontent.com/malikshi/open_clash/main/assets/operation-mode.jpg" border="0">
 
 
-###### DNS Setting
+##### DNS Setting
 
 * Ceklist/Centang sesuai gambar:
 
@@ -366,12 +366,12 @@ Hasil settingan pada global setting akan meng-overide settingal awal pada file m
 
 <img src="https://raw.githubusercontent.com/malikshi/open_clash/main/assets/dns-setting-2.jpg" border="0">
 
-###### GEOIP Update
+##### GEOIP Update
 
 Pada rule_indo.yaml menggunakan geoip:ID dimana jika IP tersebut bercode/berasal negara Indonesia maka akan menggunakan trafficIndo.yaml dan itu membutuhkan mmdb yang selalu updated sebagai data geoip seluruh negara.
 <img src="https://raw.githubusercontent.com/malikshi/open_clash/main/assets/geoip-update.jpg" border="0">
 
-###### Update Version
+##### Update Version
 
 Pada Update Version Openclash ada dua branch/cabang yakni versi master dan developer. Secara umum banyak yang menggunakan versi master karena bisa dibilang versi beta yang stable. Dan satu lagi versi developer dimana branch/cabang ini digunakan untuk fix issues/problem jadi bisa dibilang cabang yang selalu update dan jika sudah cukup stable maka akan diriliskan keversi master. Berikut cara settingnya:
 <img src="https://raw.githubusercontent.com/malikshi/open_clash/main/assets/version-update.jpg" border="0">
@@ -380,40 +380,40 @@ Pada Update Version Openclash ada dua branch/cabang yakni versi master dan devel
 2. Jika sudah memilih branch maka update dengan klik `Check & Update`.
 3. Jika ada Versi Terbaru sesuai Branch yang dipilih akan terdapat status \<New>.
 
-##### Manage Config
+#### Manage Config
 
 Mulai dari versi v0.44.22-beta pada branch dev, menu Manage Config support dengan fungsi create,edit,delete file jadi tidak perlu login ssh untuk edit via terminal router openwrt. Tidak membutuhkan tiny fm (file manager) karena config editor built-in openclash terdapat validator config jika terdapat kesalahan/error saat melakukan pengeditan.
 
-###### Import Main.yaml
+##### Import Main.yaml
 
 Setelah melakukan pengeditan main.yaml maka kita import main.yaml via Manage Config. Dan khusus main.yaml jangan import/edit melalui winscp/sftp.
 <img src="https://raw.githubusercontent.com/malikshi/open_clash/main/assets/main-yaml.jpg" border="0">
 
-###### Import Proxy Provider
+##### Import Proxy Provider
 
 Jika Semua file pada folder proxy_provider yang terdiri dari umum.yaml, trafficIndo.yaml, streaming.yaml, sosmed.yaml dan gaming.yaml sudah diisi dengan akun maka selanjutnya import file-file tersebut pada **Upload File Type : Proxy Provider File**.
 <img src="https://raw.githubusercontent.com/malikshi/open_clash/main/assets/proxy-provider.jpg" border="0">
 
-###### Import Rule Provider
+##### Import Rule Provider
 
 traffic direct/bypass sudah disikan ke rule_direct.yaml maka bisa langsung import semua files pada folder rule_provider pada **Upload File Type : Rule Provider File**.
 <img src="https://raw.githubusercontent.com/malikshi/open_clash/main/assets/rule-provider.jpg" border="0">
 
-##### Overviews
+#### Overviews
 
 Pada Overviews kita bisa melihat sepintas status Openclash yang berjalan, status versi openclash terbaru dan menjalankan tools openclash yakni dengan klik `Enable Openclash` untuk start, klik `Disable Openclash` untuk stop.
 <img src="https://raw.githubusercontent.com/malikshi/open_clash/main/assets/overviews.jpg" border="0">
 
-#### Setting Yacd
+### Setting Yacd
 
 Yacd adalah yet another clash dashboard, yakni dashboard clash yang dapat digunakan untuk mengatur proxy dan memantau services clash yang dijalankan oleh Openclash.
 
-##### Proxies
+#### Proxies
 
 Untuk pertama kali start openclash maka harus setting proxies `GLOBAL` ke traffic proxy-groups `Umum`.
 <img src="https://raw.githubusercontent.com/malikshi/open_clash/main/assets/yacd-config-2.jpg" border="0">
 
-##### Config
+#### Config
 
 Pada menu yacd > config untuk pertama kali menjalankan openclash maka perlu setting Mode ke `Rule` dan `Enable Allow LAN` serta bisa mengaktifkan log level untuk melakukan debugging/tracing traffic jika ada rule yang salah.
 <img src="https://raw.githubusercontent.com/malikshi/open_clash/main/assets/yacd-config.jpg" border="0">
