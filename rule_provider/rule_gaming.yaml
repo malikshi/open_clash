@@ -1148,3 +1148,7 @@ payload:
   - DOMAIN-SUFFIX,zyngagames.com
   - DOMAIN-SUFFIX,zyngapoker.com
   - DOMAIN-SUFFIX,zyngasupport.helpshift.com
+# > Bleach ES
+  - DOMAIN-SUFFIX,vsplay.com
+  - DOMAIN-SUFFIX,efun.com
+  - DOMAIN-SUFFIX,efunen.com
