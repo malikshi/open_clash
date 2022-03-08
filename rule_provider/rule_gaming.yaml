@@ -1152,3 +1152,20 @@ payload:
   - DOMAIN-SUFFIX,vsplay.com
   - DOMAIN-SUFFIX,efun.com
   - DOMAIN-SUFFIX,efunen.com
+# > Apex Legends Mobile
+  - DOMAIN-SUFFIX,tdm.mgapex.com
+  - DOMAIN-SUFFIX,download.2.707369824.dmp.mgapex.com
+  - DOMAIN-SUFFIX,bugly-android.mgapex.com
+  - DOMAIN-SUFFIX,itop.mgapex.com
+  - DOMAIN-SUFFIX,tgpa.mgapex.com
+  - DOMAIN-SUFFIX,cloudctrl.mgapex.com
+  - DOMAIN-SUFFIX,file.mgapex.com
+  - DOMAIN-SUFFIX,ire.csoversea.mgapex.com
+  - DOMAIN-SUFFIX,voice-sg.mgapex.com
+  - DOMAIN-SUFFIX,pay.mgapex.com
+  - DOMAIN-SUFFIX,lobby.mgapex.com
+  - DOMAIN-SUFFIX,apex.go.sonobi.com
+  - DOMAIN-SUFFIX,mgapex.com
+  - DOMAIN-SUFFIX,devmgapex.com
+  - DOMAIN-KEYWORD,mgapex
+  - DOMAIN-KEYWORD,devmgapex
