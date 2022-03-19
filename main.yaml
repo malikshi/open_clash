@@ -308,24 +308,7 @@ rules:
 - RULE-SET,rule_games,Gaming
 - RULE-SET,rule_portgames,Gaming
 - SCRIPT,allgames,Gaming
-- DST-PORT,21,GLOBAL
-- DST-PORT,23,GLOBAL
-- DST-PORT,25,GLOBAL
-- DST-PORT,80,GLOBAL
-- DST-PORT,81,GLOBAL
-- DST-PORT,143,GLOBAL
-- DST-PORT,443,GLOBAL
-- DST-PORT,465,GLOBAL
-- DST-PORT,587,GLOBAL
-- DST-PORT,993,GLOBAL
-- DST-PORT,995,GLOBAL
-- DST-PORT,8000,GLOBAL
-- DST-PORT,8008,GLOBAL
-- DST-PORT,8080,GLOBAL
-- DST-PORT,8081,GLOBAL
-- DST-PORT,8090,GLOBAL
-- DST-PORT,8443,GLOBAL
-- DST-PORT,8888,GLOBAL
+- RULE-SET,rule_umum,Umum
 - MATCH,GLOBAL
 tun:
   enable: true
@@ -342,6 +325,12 @@ rule-providers:
     type: file
     behavior: classical
     path: "./rule_provider/rule_direct.yaml"
+  rule_umum:
+    type: http
+    behavior: classical
+    path: "./rule_provider/rule_portgames.yaml"
+    url: https://cdn.jsdelivr.net/gh/malikshi/open_clash@main/rule_provider/rule_umum.yaml
+    interval: 86400
   rule_portgames:
     type: http
     behavior: classical
