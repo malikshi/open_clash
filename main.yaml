@@ -328,7 +328,7 @@ rule-providers:
   rule_umum:
     type: http
     behavior: classical
-    path: "./rule_provider/rule_portgames.yaml"
+    path: "./rule_provider/rule_umum.yaml"
     url: https://cdn.jsdelivr.net/gh/malikshi/open_clash@main/rule_provider/rule_umum.yaml
     interval: 86400
   rule_portgames:
