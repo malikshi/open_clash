@@ -100,6 +100,10 @@ payload:
   - IP-CIDR,150.109.28.51/32,no-resolve
   - PROCESS-NAME,com.tencent.qqlivei18n
   - PROCESS-NAME,com.tencent.qqlivei18n.us
+# > BILIBILI COMMICS
+  - DOMAIN-SUFFIX,bilibilicomics.com
+  - DOMAIN-SUFFIX,bilibili.com
+  - DOMAIN-SUFFIX,hdslb.com
 # > MARKET PLACE
   - DOMAIN-SUFFIX,tokopedia.com
   - DOMAIN-SUFFIX,shopee.co.id
