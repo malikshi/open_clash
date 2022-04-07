@@ -1,5 +1,4 @@
 payload:
-  - DOMAIN-SUFFIX,
   # Mulai baris ini kebawah bisa di edit/hapus
   - DOMAIN-SUFFIX,iq.com
   # > Tencent Video

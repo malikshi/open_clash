@@ -2,7 +2,6 @@
 #behavior classical
 #updated every month
 payload:
-  - DOMAIN-SUFFIX,
   - DOMAIN-SUFFIX,05ee3a24ed11df058c8.com
   - IP-CIDR,108.168.231.179/32
   - DOMAIN-SUFFIX,1486050000.rsc.cdn77.org

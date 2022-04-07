@@ -1,5 +1,4 @@
 payload:
-  - DOMAIN-SUFFIX,
 # > mscft team
   - DOMAIN-SUFFIX,api.teams.skype.com
   - DOMAIN-SUFFIX,img.teams.skype.com
