@@ -1,14 +1,8 @@
 payload:
   - DOMAIN-SUFFIX,
   - DOMAIN-KEYWORD,pinterest
-  - PROCESS-NAME,com.pinterest
-  - PROCESS-NAME,com.pinterest.twa
-  - PROCESS-NAME,com.ss.android.ugc.trill
-  - PROCESS-NAME,com.zhiliaoapp.musically.go
   - DOMAIN-KEYWORD,helo
-  - PROCESS-NAME,world.social.group.video.share
   - DOMAIN-KEYWORD,snackvideo
-  - PROCESS-NAME,com.kwai.bulldog
 # > Badoo
   - DOMAIN-SUFFIX,badoo.app
   - DOMAIN-SUFFIX,badoo.com

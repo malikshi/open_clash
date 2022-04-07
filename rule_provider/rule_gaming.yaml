@@ -2,7 +2,6 @@ payload:
   - DOMAIN-SUFFIX,
   # Mulai baris ini kebawah bisa di edit/hapus
   #MBLBB
-  - PROCESS-NAME,com.mobile.legends
   - DOMAIN-SUFFIX,mobilelegends.com
   - DOMAIN-SUFFIX,mobilelegends.ca
   - DOMAIN-SUFFIX,mobilelegends.cn
@@ -13,10 +12,8 @@ payload:
   - DOMAIN-SUFFIX,mobilelegends.org
   - DOMAIN-SUFFIX,mobilelegends.com.cn
   # FreeFire
-  - PROCESS-NAME,com.dts.freefireth
   - DOMAIN-KEYWORD,freefire
   # PUBG
-  - PROCESS-NAME,com.tencent.ig
   - DOMAIN-SUFFIX,pubgmobile.com
   - DOMAIN-SUFFIX,igamecj.com
   - DOMAIN,file-igamecj.akamaized.net
@@ -25,7 +22,6 @@ payload:
   - IP-CIDR,49.51.228.0/23
   - IP-CIDR,170.106.102.0/24
   # Roblox
-  - PROCESS-NAME,com.roblox.client
   - DOMAIN-SUFFIX,roblox.com
   - DOMAIN-SUFFIX,rbxcdn.com
   - DOMAIN-SUFFIX,rbxtrk.com

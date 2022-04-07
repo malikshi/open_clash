@@ -24,7 +24,6 @@ payload:
   - DOMAIN-SUFFIX,statwup.nimo.tv
   - DOMAIN-KEYWORD,nimo.tv
   # > Discovery Plus
-  - PROCESS-NAME,com.discovery.discoveryplus.mobile
   - DOMAIN-SUFFIX,content-ause1-ur-discovery1.uplynk.com
   - DOMAIN-SUFFIX,disco-api.com
   - DOMAIN-SUFFIX,discoveryplus.com
@@ -35,7 +34,6 @@ payload:
   - DOMAIN-SUFFIX,uplynk.com
   # > AbemaTV
   # - USER-AGENT,AbemaTV*
-  - PROCESS-NAME,tv.abema
   - DOMAIN-SUFFIX,abema.io
   - DOMAIN-SUFFIX,abema.tv
   - DOMAIN-SUFFIX,akamaized.net
@@ -71,7 +69,6 @@ payload:
   - DOMAIN-SUFFIX,apple.news
   
   # > Apple Maps
-  - PROCESS-NAME,com.apple.geod
   
   # > Apple TV
   - DOMAIN,np-edge.itunes.apple.com
@@ -79,7 +76,6 @@ payload:
   - DOMAIN-SUFFIX,tv.apple.com
   
   # > BBC iPlayer
-  - PROCESS-NAME,bbc.iplayer.android
   - DOMAIN-KEYWORD,bbcfmt
   - DOMAIN,aod-dash-uk-live.akamaized.net
   - DOMAIN,aod-hls-uk-live.akamaized.net
@@ -93,7 +89,6 @@ payload:
   - DOMAIN-SUFFIX,bbci.co.uk
   - DOMAIN-SUFFIX,bidi.net.uk  
   # > encoreTVB
-  - PROCESS-NAME,com.tvbusa.encore
   - DOMAIN-SUFFIX,encoretvb.com
   - DOMAIN,content.jwplatform.com
   - DOMAIN,videos-f.jwpsrv.com
@@ -111,7 +106,6 @@ payload:
   - DOMAIN-SUFFIX,uplynk.com
   
   # > Hulu
-  - PROCESS-NAME,com.hulu.plus
   - DOMAIN-SUFFIX,cws-hulu.conviva.com
   - DOMAIN-SUFFIX,hulu.com
   - DOMAIN-SUFFIX,hulu.hb.omtrdc.net
@@ -121,7 +115,6 @@ payload:
   - DOMAIN-SUFFIX,hulustream.com
   
   # > Hulu(フールー)
-  - PROCESS-NAME,jp.happyon.android
   - DOMAIN-SUFFIX,happyon.jp
   - DOMAIN-SUFFIX,hulu.jp
   - DOMAIN-SUFFIX,prod.hjholdings.tv
@@ -141,8 +134,6 @@ payload:
   - DOMAIN-SUFFIX,japronx.vip
 
   # > JOOX
-  - PROCESS-NAME,com.tencent.ibg.joox
-  - PROCESS-NAME,com.tencent.ibg.jooxtv
   - DOMAIN-SUFFIX,joox.com
   - DOMAIN-KEYWORD,jooxweb-api
 
@@ -152,7 +143,6 @@ payload:
   - DOMAIN-SUFFIX,kfs.io
 
   # > KKTV
-  - PROCESS-NAME,com.kktv.kktv
   - DOMAIN-SUFFIX,kktv.me
   - DOMAIN-SUFFIX,kktv.com.tw
   - DOMAIN,kktv-theater.kk.stream
@@ -244,7 +234,6 @@ payload:
   - IP-CIDR,8.41.4.0/24,no-resolve
 
   # > Pandora
-  - PROCESS-NAME,com.pandora.android
   - DOMAIN-SUFFIX,pandora.com
 
   # > SoundCloud
