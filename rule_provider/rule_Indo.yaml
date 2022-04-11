@@ -1,6 +1,25 @@
 payload:
   # Mulai baris ini kebawah bisa di edit/hapus
 # > LIST Streaming IP/Lokasi Wajib Indo
+# > General akamai servers
+  - DOMAIN-SUFFIX,akadns.net
+  - DOMAIN-SUFFIX,akagtm.org
+  - DOMAIN-SUFFIX,akahost.net
+  - DOMAIN-SUFFIX,akamai.com
+  - DOMAIN-SUFFIX,akamaiedge.net
+  - DOMAIN-SUFFIX,akamaiedge-staging.net
+  - DOMAIN-SUFFIX,akamaientrypoint.net
+  - DOMAIN-SUFFIX,akamaihd.net
+  - DOMAIN-SUFFIX,akamai.net
+  - DOMAIN-SUFFIX,akamaistream.net
+  - DOMAIN-SUFFIX,akamaitech.net
+  - DOMAIN-SUFFIX,akamaitechnologies.com
+  - DOMAIN-SUFFIX,akamaitechnologies.fr
+  - DOMAIN-SUFFIX,akamaized.net
+  - DOMAIN-SUFFIX,akam.net
+  - DOMAIN-SUFFIX,akasecure.net
+  - DOMAIN-SUFFIX,edgekey.net
+  - DOMAIN-SUFFIX,edgesuite.net
 # > MOLA TV
   - DOMAIN-SUFFIX,mola.tv
   - DOMAIN-SUFFIX,ws.mola.tv
@@ -103,6 +122,7 @@ payload:
   - DOMAIN-SUFFIX,bilibilicomics.com
   - DOMAIN-SUFFIX,bilibili.com
   - DOMAIN-SUFFIX,hdslb.com
+  - DOMAIN-SUFFIX,bstarstatic.com
 # > MARKET PLACE
   - DOMAIN-SUFFIX,tokopedia.com
   - DOMAIN-SUFFIX,shopee.co.id
