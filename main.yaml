@@ -1,40 +1,26 @@
 ---
 proxy-providers:
-  Gaming:
+  VVIP-IPTUNNELS-ID:
     type: file
-    path: "./proxy_provider/gaming.yaml"
+    path: "./proxy_provider/vvip-id.yaml"
     health-check:
       enable: true
       url: http://www.gstatic.com/generate_204
-      interval: 120
-  Sosmed:
+      interval: 180
+  VVIP-IPTUNNELS-SG:
     type: file
-    path: "./proxy_provider/sosmed.yaml"
+    path: "./proxy_provider/vvip-sg.yaml"
     health-check:
       enable: true
       url: http://www.gstatic.com/generate_204
-      interval: 120
-  Streaming:
+      interval: 180
+  VVIP-IPTUNNELS-GAME:
     type: file
-    path: "./proxy_provider/streaming.yaml"
+    path: "./proxy_provider/vvip-game.yaml"
     health-check:
       enable: true
       url: http://www.gstatic.com/generate_204
-      interval: 120
-  Umum:
-    type: file
-    path: "./proxy_provider/umum.yaml"
-    health-check:
-      enable: true
-      url: http://www.gstatic.com/generate_204
-      interval: 120
-  trafficIndo:
-    type: file
-    path: "./proxy_provider/trafficIndo.yaml"
-    health-check:
-      enable: true
-      url: http://www.gstatic.com/generate_204
-      interval: 120
+      interval: 180
 proxy-groups:
 - name: Direct WAN A
   type: select
@@ -45,13 +31,13 @@ proxy-groups:
 - name: Direct WAN B
   type: select
   disable-udp: false
-  interface-name: wwan
+  interface-name: eth2
   proxies:
   - DIRECT
 - name: Direct WAN C
   type: select
   disable-udp: false
-  interface-name: eth2
+  interface-name: eth3
   proxies:
   - DIRECT
 - name: Direct Multi-WAN
@@ -61,43 +47,97 @@ proxy-groups:
   - Direct WAN A
   - Direct WAN B
   - Direct WAN C
-- name: Gaming
+- name: Route VVIP ID
+  type: load-balance
+  strategy: round-robin
+  disable-udp: false
+  use:
+  - VVIP-IPTUNNELS-ID
+  url: http://www.gstatic.com/generate_204
+  interval: 360
+- name: Route VVIP SG
+  type: load-balance
+  strategy: round-robin
+  disable-udp: false
+  use:
+  - VVIP-IPTUNNELS-SG
+  url: http://www.gstatic.com/generate_204
+  interval: 360
+- name: Route VVIP GAME
+  type: url-test
+  disable-udp: false
+  use:
+  - VVIP-IPTUNNELS-GAME
+  url: http://www.gstatic.com/generate_204
+  interval: 600
+- name: TrafficAds
   type: select
   disable-udp: false
-  use:
-  - Gaming
-- name: Sosmed
-  type: load-balance
-  strategy: round-robin
+  proxies:
+  - REJECT
+  - Route VVIP SG
+  - Route VVIP ID
+- name: TrafficPorn
+  type: select
   disable-udp: false
-  use:
-  - Sosmed
-  url: http://www.gstatic.com/generate_204
-  interval: '300'
-- name: Streaming
-  type: load-balance
-  strategy: round-robin
+  proxies:
+  - REJECT
+  - Route VVIP SG
+  - Route VVIP ID
+- name: TrafficDirect
+  type: select
   disable-udp: false
-  use:
-  - Streaming
-  url: http://www.gstatic.com/generate_204
-  interval: '300'
-- name: trafficIndo
-  type: load-balance
-  strategy: round-robin
+  proxies:
+  - Direct Multi-WAN
+  - Route VVIP ID
+  - Route VVIP SG
+- name: TrafficGaming
+  type: select
   disable-udp: false
+  proxies:
+  - Route VVIP GAME
+  - TrafficDirect
   use:
-  - trafficIndo
-  url: http://www.gstatic.com/generate_204
-  interval: '300'
-- name: Umum
-  type: load-balance
-  strategy: round-robin
+  - VVIP-IPTUNNELS-GAME
+- name: TrafficSosmed
+  type: fallback
+  lazy: true
   disable-udp: false
-  use:
-  - Umum
+  proxies:
+  - Route VVIP ID
+  - Route VVIP SG
+  - Direct Multi-WAN
   url: http://www.gstatic.com/generate_204
-  interval: '300'
+  interval: '30'
+- name: TrafficStreaming
+  type: fallback
+  lazy: true
+  disable-udp: false
+  proxies:
+  - Route VVIP SG
+  - Route VVIP ID
+  - Direct Multi-WAN
+  url: http://www.gstatic.com/generate_204
+  interval: '30'
+- name: TrafficIndo
+  type: fallback
+  lazy: true
+  disable-udp: false
+  proxies:
+  - Route VVIP ID
+  - TrafficDirect
+  url: http://www.gstatic.com/generate_204
+  interval: '30'
+- name: TrafficUmum
+  type: fallback
+  lazy: true
+  disable-udp: false
+  proxies:
+  - Route VVIP SG
+  - Route VVIP ID
+  - Direct Multi-WAN
+  url: http://www.gstatic.com/generate_204
+  interval: '30'
 redir-port: 7892
 port: 7890
 socks-port: 7891
@@ -208,14 +248,6 @@ dns:
   - "*.ffxiv.com"
   - "*.mcdn.bilivideo.cn"
   - "+.media.dssott.com"
-  default-nameserver:
-  - 127.0.0.1:5054
-  - 127.0.0.1:5053
-  - 10.0.8.1
-  - 192.168.11.1
-  - 192.168.10.1
-  - 8.8.8.8
-  - 1.1.1.1
   fallback-filter:
     geoip: true
     geoip-code: ID
@@ -242,66 +274,80 @@ dns:
     - "+.youtube.com"
     - "+.githubusercontent.com"
     - "+.googlevideo.com"
-  nameserver:
-  - 10.0.8.1
-  - 192.168.11.1
-  - 192.168.10.1
-  - dhcp://"eth1"
-  - dhcp://"eth2"
-  - dhcp://"wwan"
-  - 127.0.0.1:5053
+    - "+.msftconnecttest.com"
+    - "+.msftncsi.com"
+    - msftconnecttest.com
+    - msftncsi.com
+  default-nameserver:
   - 8.8.8.8
-  fallback:
-  - 127.0.0.1:5054
+  - 8.8.4.4
   - 1.1.1.1
+  - 1.0.0.1
+  - 9.9.9.9
+  - 149.112.112.112
+  - 208.67.222.222
+  - 208.67.220.220
+  - 185.228.168.9
+  - 185.228.169.168
+  - 76.76.2.0
+  - 76.76.10.0
+  - 94.140.14.140
+  - 94.140.14.141
+  - 172.105.216.54
+  nameserver:
+  - https://cloudflare-dns.com/dns-query
+  - tls://1dot1dot1dot1.cloudflare-dns.com:853
+  fallback:
+  - https://cloudflare-dns.com/dns-query
+  - tls://1dot1dot1dot1.cloudflare-dns.com:853
 profile:
   store-selected: true
   store-fakeip: true
   store-fake-ip: true
 rules:
 - IP-CIDR,198.18.0.1/16,REJECT,no-resolve
-- PROCESS-NAME,v2ray,DIRECT
-- PROCESS-NAME,xray,DIRECT
-- PROCESS-NAME,naive,DIRECT
-- PROCESS-NAME,trojan,DIRECT
-- PROCESS-NAME,trojan-go,DIRECT
-- PROCESS-NAME,ss-local,DIRECT
-- PROCESS-NAME,privoxy,DIRECT
-- PROCESS-NAME,leaf,DIRECT
-- DST-PORT,22,Direct Multi-WAN
-- RULE-SET,rule_BlockAds,REJECT
-- RULE-SET,rule_reject,REJECT
-- RULE-SET,rule_basicads,REJECT
-- RULE-SET,rule_privacy,REJECT
-- RULE-SET,rule_porn,REJECT
-- RULE-SET,rule_nsfw,REJECT
+- PROCESS-NAME,v2ray,DIRECT,no-resolve
+- PROCESS-NAME,xray,DIRECT,no-resolve
+- PROCESS-NAME,naive,DIRECT,no-resolve
+- PROCESS-NAME,trojan,DIRECT,no-resolve
+- PROCESS-NAME,trojan-go,DIRECT,no-resolve
+- PROCESS-NAME,ss-local,DIRECT,no-resolve
+- PROCESS-NAME,privoxy,DIRECT,no-resolve
+- PROCESS-NAME,leaf,DIRECT,no-resolve
+- DST-PORT,22,TrafficDirect
 - RULE-SET,rule_lancidr,DIRECT,no-resolve
-- RULE-SET,rule_Direct,Direct Multi-WAN
-- RULE-SET,rule_Speedtest,Umum
-- RULE-SET,rule_Streaming,Streaming
-- RULE-SET,rule_disneyplus,trafficIndo
-- RULE-SET,rule_hbo,Streaming
-- RULE-SET,rule_iqiyi,Streaming
-- RULE-SET,rule_netflix,trafficIndo
-- RULE-SET,rule_primevideo,Streaming
-- RULE-SET,rule_twitch,Streaming
-- RULE-SET,rule_Youtube,Streaming
-- RULE-SET,rule_Sosmed,Sosmed
-- RULE-SET,rule_line,Sosmed
-- RULE-SET,rule_metaverse,Sosmed
-- RULE-SET,rule_tiktok,Sosmed
-- RULE-SET,rule_twitter,Sosmed
-- RULE-SET,rule_telegram,Sosmed
-- RULE-SET,rule_telegramcidr,Sosmed
-- RULE-SET,rule_Indo,trafficIndo
-- RULE-SET,rule_videoconferences,Streaming
-- RULE-SET,rule_playstore,Umum
-- RULE-SET,rule_Gaming,Gaming
-- RULE-SET,rule_discord,Gaming
-- RULE-SET,rule_games,Gaming
-- RULE-SET,rule_portgames,Gaming
-- SCRIPT,allgames,Gaming
-- RULE-SET,rule_umum,Umum
+- RULE-SET,rule_BlockAds,TrafficAds
+- RULE-SET,rule_reject,TrafficAds
+- RULE-SET,rule_basicads,TrafficAds
+- RULE-SET,rule_privacy,TrafficAds
+- RULE-SET,rule_porn,TrafficPorn
+- RULE-SET,rule_nsfw,TrafficPorn
+- RULE-SET,rule_Direct,TrafficDirect
+- RULE-SET,rule_Speedtest,TrafficUmum
+- RULE-SET,rule_Streaming,TrafficStreaming
+- RULE-SET,rule_disneyplus,TrafficIndo
+- RULE-SET,rule_hbo,TrafficStreaming
+- RULE-SET,rule_iqiyi,TrafficStreaming
+- RULE-SET,rule_netflix,TrafficIndo
+- RULE-SET,rule_primevideo,TrafficStreaming
+- RULE-SET,rule_twitch,TrafficStreaming
+- RULE-SET,rule_Youtube,TrafficStreaming
+- RULE-SET,rule_Sosmed,TrafficSosmed
+- RULE-SET,rule_line,TrafficSosmed
+- RULE-SET,rule_metaverse,TrafficSosmed
+- RULE-SET,rule_tiktok,TrafficSosmed
+- RULE-SET,rule_twitter,TrafficSosmed
+- RULE-SET,rule_telegram,TrafficSosmed
+- RULE-SET,rule_telegramcidr,TrafficSosmed
+- RULE-SET,rule_Indo,TrafficIndo
+- RULE-SET,rule_videoconferences,TrafficStreaming
+- RULE-SET,rule_playstore,TrafficUmum
+- RULE-SET,rule_Gaming,TrafficGaming
+- RULE-SET,rule_discord,TrafficGaming
+- RULE-SET,rule_games,TrafficGaming
+- RULE-SET,rule_portgames,TrafficGaming
+- SCRIPT,allgames,TrafficGaming
+- RULE-SET,rule_umum,TrafficUmum
 - MATCH,GLOBAL
 tun:
   enable: true
