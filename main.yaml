@@ -149,6 +149,8 @@ external-controller: 0.0.0.0:9090
 secret: '123456'
 bind-address: "*"
 external-ui: "/usr/share/openclash/dashboard"
+experimental:
+  ignore-resolve-fail: true
 dns:
   enable: true
   ipv6: true
@@ -320,6 +322,7 @@ rules:
 - RULE-SET,rule_reject,TrafficAds
 - RULE-SET,rule_basicads,TrafficAds
 - RULE-SET,rule_privacy,TrafficAds
+- RULE-SET,rule_blockipv4,TrafficAds
 - RULE-SET,rule_porn,TrafficPorn
 - RULE-SET,rule_nsfw,TrafficPorn
 - RULE-SET,rule_Direct,TrafficDirect
@@ -441,6 +444,12 @@ rule-providers:
     behavior: classical
     url: https://cdn.jsdelivr.net/gh/malikshi/open_clash@main/rule_provider/rule_basicads.yaml
     path: "./rule_provider/rule_basicads.yaml"
+    interval: 86400
+  rule_blockipv4:
+    type: http
+    behavior: ipcidr
+    url: https://cdn.jsdelivr.net/gh/malikshi/open_clash@main/rule_provider/rule_black-mirror.yaml
+    path: "./rule_provider/rule_black-mirror.yaml"
     interval: 86400
   rule_porn:
     type: http
