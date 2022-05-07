@@ -150,7 +150,7 @@ secret: '123456'
 bind-address: "*"
 external-ui: "/usr/share/openclash/dashboard"
 experimental:
-  ignore-resolve-fail: true
+  ignore-resolve-fail: false
 dns:
   enable: true
   ipv6: true
@@ -218,7 +218,10 @@ dns:
   - localhost.ptlogin2.qq.com
   - localhost.sec.qq.com
   - "+.srv.nintendo.net"
+  - "*.n.n.srv.nintendo.net"
   - "+.stun.playstation.net"
+  - xbox.*.*.microsoft.com
+  - "*.*.xboxlive.com"
   - xbox.*.microsoft.com
   - xnotify.xboxlive.com
   - "+.battlenet.com.cn"
@@ -232,6 +235,7 @@ dns:
   - "+.stun.*.*"
   - "+.stun.*.*.*"
   - "+.stun.*.*.*.*"
+  - "+.stun.*.*.*.*.*"
   - heartbeat.belkin.com
   - "*.linksys.com"
   - "*.linksyssmartwifi.com"
@@ -248,6 +252,8 @@ dns:
   - "*.square-enix.com"
   - "*.finalfantasyxiv.com"
   - "*.ffxiv.com"
+  - "*.ff14.sdo.com"
+  - ff.dorado.sdo.com
   - "*.mcdn.bilivideo.cn"
   - "+.media.dssott.com"
   fallback-filter:
@@ -280,6 +286,7 @@ dns:
     - "+.msftncsi.com"
     - msftconnecttest.com
     - msftncsi.com
+    - "+.*"
   default-nameserver:
   - 8.8.8.8
   - 8.8.4.4
@@ -318,8 +325,8 @@ rules:
 - PROCESS-NAME,leaf,DIRECT,no-resolve
 - DST-PORT,22,TrafficDirect
 - RULE-SET,rule_lancidr,DIRECT,no-resolve
+- RULE-SET,rule_falsepositive,TrafficUmum
 - RULE-SET,rule_BlockAds,TrafficAds
-- RULE-SET,rule_reject,TrafficAds
 - RULE-SET,rule_basicads,TrafficAds
 - RULE-SET,rule_privacy,TrafficAds
 - RULE-SET,rule_blockipv4,TrafficAds
@@ -427,12 +434,6 @@ rule-providers:
     path: "./rule_provider/rule_BlockAds.yaml"
     url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Advertising/Advertising_Classical.yaml
     interval: 86400
-  rule_reject:
-    type: http
-    behavior: domain
-    url: https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/reject.txt
-    path: "./rule_provider/rule_reject.yaml"
-    interval: 86400
   rule_privacy:
     type: http
     behavior: classical
@@ -450,6 +451,12 @@ rule-providers:
     behavior: ipcidr
     url: https://cdn.jsdelivr.net/gh/malikshi/open_clash@main/rule_provider/rule_black-mirror.yaml
     path: "./rule_provider/rule_black-mirror.yaml"
+    interval: 86400
+  rule_falsepositive:
+    type: http
+    behavior: classical
+    url: https://cdn.jsdelivr.net/gh/malikshi/open_clash@main/rule_provider/rule_falsepositive.yaml
+    path: "./rule_provider/rule_falsepositive.yaml"
     interval: 86400
   rule_porn:
     type: http
