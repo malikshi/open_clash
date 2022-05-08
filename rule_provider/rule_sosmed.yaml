@@ -41,6 +41,8 @@ payload:
   - DOMAIN-SUFFIX,parse.com
   - DOMAIN-SUFFIX,wit.ai
   - DOMAIN-SUFFIX,fna.fbcdn.net
+  - DOMAIN-KEYWORD,facebook
+  - DOMAIN-KEYWORD,fbcdn
 # > Facebook IP-CIDR
   - IP-CIDR,103.4.96.0/22
   - IP-CIDR,108.168.176.192/26
