@@ -86,13 +86,29 @@ Download zip master dan ekstrak file [**open_clash-main.zip**](https://codeload.
 ### Edit Files Proxy Provider
 
 
-Mengisi akun tunnel pada setiap files pada folder proxy_provider yang dimana terdapat file umum.yaml, gaming.yaml, sosmed.yaml, streaming.yaml, dan trafficIndo.yaml.
-Fungsi dari masing masing proxy provider
-* umum.yaml digunakan untuk traffic browsing secara umum yang tidak masuk dalam rule provider.
-* gaming.yaml digunakan untuk traffic gaming, dan gunakan tipe proxy yang memiliki latency kecil.
-* sosmed.yaml digunakan untuk traffic sosial media.
-* streaming.yaml digunakan untuk traffic streaming seperti youtube, twitch, anime.
-* trafficIndo.yaml dikhususkan untuk websites/layanan yang diharuskan untuk menggunakan lokasi Indonesia seperti netflix, disney+, marketplace online, dan VOD Streaming lainnya.
+Mengisi akun tunnel pada 3 files pada folder proxy_provider yang terdiri dari vvip-sg, vvip-id, dan vvip-game.
+Fungsi dari proxy_provider diatas:
+* vvip-sg.yaml, Gunakan akun VVIP IPTUNNELS berlokasi SINGAPORE untuk memperoleh speed/traffic yang lebih bagus.
+* vvip-id.yaml, Gunakan akun VVIP IPTUNNELS berlokasi INDONESIA untuk keperluan akses websites/marketplace/live stream apps/Video on Demand yang mengharuskan memakai IP Address Publik Indonesia.
+* vvip-game.yaml, Gunakan akun VVIP IPTUNNELS yang memiliki ping atau latency rendah seperti trojan,shadowsocks,grPC,Snell.
+
+Keterangan lebih lanjut:
+Karena config akan disetting dengan sistem fallback dimana jika proxy list pertama gagal maka akan menggunakan proxy list kedua, jika proxy list pertama dan kedua gagal maka akan menggunakan DIRECT, namun jika 30 detik kemudian proxy list pertama kembali aktif maka proxy list urutan pertama akan digunakan, sehingga sangat menguntungkan karena tidak perlu memikirkan jika salah satu proxy gagal.
+
+Traffic dengan Fallback:
+
+* TrafficUmum : VVIP SG -> VVIP ID -> Direct Multi-WAN
+* TrafficStreaming : VVIP SG -> VVIP ID -> Direct Multi-WAN
+* TrafficSosmed : VVIP ID -> VVIP SG -> Direct Multi-WAN
+* TrafficIndo : VVIP ID -> VVIP SG -> Direct Multi-WAN
+
+Traffic dengan Select:
+
+* TrafficDirect : Direct Multi-WAN / VVIP ID / VVIP SG
+* TrafficGaming : TrafficDirect / VVIP GAME
+* TrafficAds : REJECT / VVIP SG / VVIP ID
+* TrafficP0rn : REJECT / VVIP SG / VVIP ID
+
 
 #### Shadowsocks
 
