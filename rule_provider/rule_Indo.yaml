@@ -146,6 +146,30 @@ payload:
   - DOMAIN-KEYWORD,ralali
   - DOMAIN-KEYWORD,bhinneka
   - DOMAIN-KEYWORD,zalora
+# E-Wallet / Dompet Digital
+  - DOMAIN-SUFFIX,gojek.com
+  - DOMAIN-SUFFIX,gobiz.co.id
+  - DOMAIN-SUFFIX,ovo.id
+  - DOMAIN-SUFFIX,dana.id
+  - DOMAIN-SUFFIX,linkaja.id
+  - DOMAIN-SUFFIX,octoclicks.co.id
+  - DOMAIN-SUFFIX,i-saku.com
+  - DOMAIN-SUFFIX,doku.com
+  - DOMAIN-SUFFIX,shopeepay.co.id
+  - DOMAIN-SUFFIX,grab.com
+  - DOMAIN-SUFFIX,grabtaxi.com
+  - DOMAIN-KEYWORD,gojek
+  - DOMAIN-KEYWORD,gobiz
+  - DOMAIN-KEYWORD,ovo
+  - DOMAIN-KEYWORD,dana
+  - DOMAIN-KEYWORD,linkaja
+  - DOMAIN-KEYWORD,octoclicks
+  - DOMAIN-KEYWORD,i-saku
+  - DOMAIN-KEYWORD,doku
+  - DOMAIN-KEYWORD,shopeepay
+  - DOMAIN-KEYWORD,grab
+  - DOMAIN-KEYWORD,grabtaxi
+  
 # > LIST Domain tLD Indo & GEOIP INDO
   - DOMAIN-KEYWORD,.id
   - DOMAIN-KEYWORD,co.id
