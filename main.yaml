@@ -327,8 +327,8 @@ rules:
 - DST-PORT,22,TrafficDirect
 - RULE-SET,rule_lancidr,DIRECT,no-resolve
 - RULE-SET,rule_falsepositive,TrafficUmum
-- RULE-SET,rule_BlockAds,TrafficAds
 - RULE-SET,rule_basicads,TrafficAds
+- RULE-SET,rule_BlockAds,TrafficAds
 - RULE-SET,rule_privacy,TrafficAds
 - RULE-SET,rule_blockipv4,TrafficAds
 - RULE-SET,rule_porn,TrafficPorn
