@@ -1,16 +1,23 @@
-# Generated from https://github.com/v2fly/domain-list-community/tree/master/data/speedtest
-
-# Behavior: domain
+#speedtest list websites
+# Behavior: classical
 
 payload:
-- "+.cdnst.net"
-- "+.cellmaps.com"
-- "+.ekahau.cloud"
-- "+.ekahau.com"
-- "+.ookla.com"
-- "+.ooklaserver.net"
-- "+.pingtest.net"
-- "+.speedtest.co"
-- "+.speedtest.net"
-- "+.speedtestcustom.com"
-- "+.webtest.net"
+  - DOMAIN-SUFFIX,cdnst.net
+  - DOMAIN-SUFFIX,cellmaps.com
+  - DOMAIN-SUFFIX,ekahau.cloud
+  - DOMAIN-SUFFIX,ekahau.com
+  - DOMAIN-SUFFIX,ookla.com
+  - DOMAIN-SUFFIX,ooklaserver.net
+  - DOMAIN-SUFFIX,pingtest.net
+  - DOMAIN-SUFFIX,speedtest.co
+  - DOMAIN-SUFFIX,speedtest.net
+  - DOMAIN-SUFFIX,speedtestcustom.com
+  - DOMAIN-SUFFIX,webtest.net
+  - DOMAIN-SUFFIX,speed.cloudflare.com
+  - DOMAIN-SUFFIX,speed.dler.io
+  - DOMAIN-SUFFIX,openspeedtest.com
+  - DOMAIN-SUFFIX,cachefly.net
+  - DOMAIN-KEYWORD,speedtest
+  - DOMAIN-KEYWORD,speedtestcustom
+  - DST-PORT,8080
+
