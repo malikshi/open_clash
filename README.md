@@ -42,7 +42,7 @@ OpenClash Config untuk VVIP IPTUNNELS
 
 * Support Multi-WAN *(default 3 ISP)*
 * Pisah traffik umum, sosmed, streaming, gaming.
-* Adblock & Privacy rules.
+* Adblock, Privacy rules & P0rn.
 * Support Gaming filtering port.
 * Support web streaming locked region ID.
 * Support 10 marketplace ID.
