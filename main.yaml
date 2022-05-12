@@ -350,7 +350,6 @@ rules:
 - RULE-SET,rule_twitter,TrafficSosmed
 - RULE-SET,rule_telegram,TrafficSosmed
 - RULE-SET,rule_telegramcidr,TrafficSosmed
-- RULE-SET,rule_Indo,TrafficIndo
 - RULE-SET,rule_videoconferences,TrafficStreaming
 - RULE-SET,rule_playstore,TrafficUmum
 - RULE-SET,rule_Gaming,TrafficGaming
@@ -358,6 +357,7 @@ rules:
 - RULE-SET,rule_games,TrafficGaming
 - RULE-SET,rule_portgames,TrafficGaming
 - SCRIPT,allgames,TrafficGaming
+- RULE-SET,rule_Indo,TrafficIndo
 - RULE-SET,rule_umum,TrafficUmum
 - MATCH,GLOBAL
 tun:
