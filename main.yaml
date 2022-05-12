@@ -419,7 +419,7 @@ rule-providers:
     interval: 86400
   rule_Speedtest:
     type: http
-    behavior: domain
+    behavior: classical
     url: https://cdn.jsdelivr.net/gh/malikshi/open_clash@main/rule_provider/rule_speedtest.yaml
     path: "./rule_provider/rule_speedtest.yaml"
     interval: 86400
