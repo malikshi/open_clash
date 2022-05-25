@@ -379,48 +379,48 @@ rule-providers:
     type: http
     behavior: classical
     path: "./rule_provider/rule_umum.yaml"
-    url: https://cdn.jsdelivr.net/gh/malikshi/open_clash@main/rule_provider/rule_umum.yaml
+    url: https://fastly.jsdelivr.net/gh/malikshi/open_clash@main/rule_provider/rule_umum.yaml
     interval: 86400
   rule_portgames:
     type: http
     behavior: classical
     path: "./rule_provider/rule_portgames.yaml"
-    url: https://cdn.jsdelivr.net/gh/malikshi/open_clash@main/rule_provider/rule_portgames.yaml
+    url: https://fastly.jsdelivr.net/gh/malikshi/open_clash@main/rule_provider/rule_portgames.yaml
     interval: 86400
   rule_videoconferences:
     type: http
     behavior: classical
     path: "./rule_provider/rule_videoconferences.yaml"
-    url: https://cdn.jsdelivr.net/gh/malikshi/open_clash@main/rule_provider/rule_videoconferences.yaml
+    url: https://fastly.jsdelivr.net/gh/malikshi/open_clash@main/rule_provider/rule_videoconferences.yaml
     interval: 86400
   rule_Indo:
     type: http
     behavior: classical
     path: "./rule_provider/rule_Indo.yaml"
-    url: https://cdn.jsdelivr.net/gh/malikshi/open_clash@main/rule_provider/rule_Indo.yaml
+    url: https://fastly.jsdelivr.net/gh/malikshi/open_clash@main/rule_provider/rule_Indo.yaml
     interval: 86400
   rule_Sosmed:
     type: http
     behavior: classical
     path: "./rule_provider/rule_sosmed.yaml"
-    url: https://cdn.jsdelivr.net/gh/malikshi/open_clash@main/rule_provider/rule_sosmed.yaml
+    url: https://fastly.jsdelivr.net/gh/malikshi/open_clash@main/rule_provider/rule_sosmed.yaml
     interval: 86400
   rule_Streaming:
     type: http
     behavior: classical
     path: "./rule_provider/rule_streaming.yaml"
-    url: https://cdn.jsdelivr.net/gh/malikshi/open_clash@main/rule_provider/rule_streaming.yaml
+    url: https://fastly.jsdelivr.net/gh/malikshi/open_clash@main/rule_provider/rule_streaming.yaml
     interval: 86400
   rule_Gaming:
     type: http
     behavior: classical
     path: "./rule_provider/rule_gaming.yaml"
-    url: https://cdn.jsdelivr.net/gh/malikshi/open_clash@main/rule_provider/rule_gaming.yaml
+    url: https://fastly.jsdelivr.net/gh/malikshi/open_clash@main/rule_provider/rule_gaming.yaml
     interval: 86400
   rule_Speedtest:
     type: http
     behavior: classical
-    url: https://cdn.jsdelivr.net/gh/malikshi/open_clash@main/rule_provider/rule_speedtest.yaml
+    url: https://fastly.jsdelivr.net/gh/malikshi/open_clash@main/rule_provider/rule_speedtest.yaml
     path: "./rule_provider/rule_speedtest.yaml"
     interval: 86400
   rule_discord:
@@ -433,30 +433,30 @@ rule-providers:
     type: http
     behavior: classical
     path: "./rule_provider/rule_BlockAds.yaml"
-    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Advertising/Advertising_Classical.yaml
+    url: https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Advertising/Advertising_Classical.yaml
     interval: 86400
   rule_privacy:
     type: http
     behavior: classical
-    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Privacy/Privacy_Classical.yaml
+    url: https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Privacy/Privacy_Classical.yaml
     path: "./rule_provider/rule_privacy.yaml"
     interval: 86400
   rule_basicads:
     type: http
     behavior: classical
-    url: https://cdn.jsdelivr.net/gh/malikshi/open_clash@main/rule_provider/rule_basicads.yaml
+    url: https://fastly.jsdelivr.net/gh/malikshi/open_clash@main/rule_provider/rule_basicads.yaml
     path: "./rule_provider/rule_basicads.yaml"
     interval: 86400
   rule_blockipv4:
     type: http
     behavior: ipcidr
-    url: https://cdn.jsdelivr.net/gh/malikshi/open_clash@main/rule_provider/rule_black-mirror.yaml
+    url: https://fastly.jsdelivr.net/gh/malikshi/open_clash@main/rule_provider/rule_black-mirror.yaml
     path: "./rule_provider/rule_black-mirror.yaml"
     interval: 86400
   rule_falsepositive:
     type: http
     behavior: classical
-    url: https://cdn.jsdelivr.net/gh/malikshi/open_clash@main/rule_provider/rule_falsepositive.yaml
+    url: https://fastly.jsdelivr.net/gh/malikshi/open_clash@main/rule_provider/rule_falsepositive.yaml
     path: "./rule_provider/rule_falsepositive.yaml"
     interval: 86400
   rule_porn:
@@ -468,19 +468,19 @@ rule-providers:
   rule_nsfw:
     type: http
     behavior: classical
-    url: https://cdn.jsdelivr.net/gh/malikshi/open_clash@main/rule_provider/rule_nsfw.yaml
+    url: https://fastly.jsdelivr.net/gh/malikshi/open_clash@main/rule_provider/rule_nsfw.yaml
     path: "./rule_provider/rule_nsfw.yaml"
     interval: 86400
   rule_lancidr:
     type: http
     behavior: ipcidr
-    url: https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/lancidr.txt
+    url: https://fastly.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/lancidr.txt
     path: "./rule_provider/rule_lancidr.yaml"
     interval: 86400
   rule_telegramcidr:
     type: http
     behavior: ipcidr
-    url: https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/telegramcidr.txt
+    url: https://fastly.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/telegramcidr.txt
     path: "./rule_provider/rule_telegramcidr.yaml"
     interval: 86400
   rule_telegram:
@@ -540,7 +540,7 @@ rule-providers:
   rule_playstore:
     type: http
     behavior: domain
-    url: https://cdn.jsdelivr.net/gh/malikshi/open_clash@main/rule_provider/rule_playstore.yaml
+    url: https://fastly.jsdelivr.net/gh/malikshi/open_clash@main/rule_provider/rule_playstore.yaml
     path: "./rule_provider/rule_playstore.yaml"
     interval: 86400
   rule_tiktok:
