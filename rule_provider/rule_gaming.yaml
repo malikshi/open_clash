@@ -1164,3 +1164,7 @@ payload:
   - DOMAIN-SUFFIX,devmgapex.com
   - DOMAIN-KEYWORD,mgapex
   - DOMAIN-KEYWORD,devmgapex
+
+# > Konami
+  - DOMAIN-SUFFIX,konami.net
+  - DOMAIN-KEYWORD,konami
