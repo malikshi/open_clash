@@ -1168,3 +1168,4 @@ payload:
 # > Konami
   - DOMAIN-SUFFIX,konami.net
   - DOMAIN-KEYWORD,konami
+  - DOMAIN-SUFFIX,applilink.jp
