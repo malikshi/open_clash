@@ -120,6 +120,9 @@ payload:
   - DOMAIN-SUFFIX,wetv.vip
   - DOMAIN-SUFFIX,wetvinfo.com
   - IP-CIDR,150.109.28.51/32,no-resolve
+# > LiveTVGO
+  - DOMAIN-SUFFIX,livetvgo.my.id
+  - DOMAIN-KEYWORD,livetvgo
 # > BILIBILI COMMICS
   - DOMAIN-SUFFIX,bilibilicomics.com
   - DOMAIN-SUFFIX,bilibili.com
