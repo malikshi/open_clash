@@ -2,7 +2,7 @@ name: Rule Provider
 
 on:
   schedule:
-    - cron: 0 */12 * * *
+    - cron: 0 3 * * *
   workflow_dispatch:
 
 jobs:
@@ -32,6 +32,96 @@ jobs:
           echo "Downloading Discord source list..."
           curl -s https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Discord/Discord.yaml -o rule_discord.yaml
           rm -fr rule_discord.yamle
+
+          echo "Downloading rule_hijacking source list..."
+          curl -s https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Hijacking/Hijacking.yaml -o rule_hijacking.yaml
+          rm -fr rule_hijacking.yamle
+
+          echo "Downloading rule_privacy source list..."
+          curl -s https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Privacy/Privacy_Classical.yaml -o rule_privacy.yaml
+          rm -fr rule_privacy.yamle
+
+          echo "Downloading rule_porn source list..."
+          curl -s https://rules.kr328.app/category-porn.yaml -o rule_porn.yaml
+          rm -fr rule_porn.yamle
+
+          echo "Downloading rule_lancidr source list..."
+          curl -s https://fastly.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/lancidr.txt -o rule_lancidr.yaml
+          rm -fr rule_lancidr.yamle
+
+          echo "Downloading rule_telegramcidr source list..."
+          curl -s https://fastly.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/telegramcidr.txt -o rule_telegramcidr.yaml
+          rm -fr rule_telegramcidr.yamle
+
+          echo "Downloading rule_telegram source list..."
+          curl -s https://rules.kr328.app/telegram.yaml -o rule_telegram.yaml
+          rm -fr rule_telegram.yamle
+
+          echo "Downloading rule_disneyplus source list..."
+          curl -s https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Disney/Disney.yaml -o rule_disneyplus.yaml
+          rm -fr rule_disneyplus.yamle
+
+          echo "Downloading rule_games source list..."
+          curl -s https://rules.kr328.app/category-games.yaml -o rule_games.yaml
+          rm -fr rule_games.yamle
+
+          echo "Downloading rule_hbo source list..."
+          curl -s https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/HBO/HBO.yaml -o rule_hbo.yaml
+          rm -fr rule_hbo.yamle
+
+          echo "Downloading rule_hboasia source list..."
+          curl -s https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/HBOAsia/HBOAsia.yaml -o rule_hboasia.yaml
+          rm -fr rule_hboasia.yamle
+
+          echo "Downloading rule_hbohk source list..."
+          curl -s https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/HBOHK/HBOHK.yaml -o rule_hbohk.yaml
+          rm -fr rule_hbohk.yamle
+
+          echo "Downloading rule_hbousa source list..."
+          curl -s https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/HBOUSA/HBOUSA.yaml -o rule_hbousa.yaml
+          rm -fr rule_hbousa.yamle
+
+          echo "Downloading rule_iqiyi source list..."
+          curl -s https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/iQIYI/iQIYI.yaml -o rule_iqiyi.yaml
+          rm -fr rule_iqiyi.yamle
+
+          echo "Downloading rule_iqiyiinter source list..."
+          curl -s https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/iQIYIIntl/iQIYIIntl.yaml -o rule_iqiyiinter.yaml
+          rm -fr rule_iqiyiinter.yamle
+
+          echo "Downloading rule_line source list..."
+          curl -s https://rules.kr328.app/line.yaml -o rule_line.yaml
+          rm -fr rule_line.yamle
+
+          echo "Downloading rule_metaverse source list..."
+          curl -s https://rules.kr328.app/facebook.yaml -o rule_metaverse.yaml
+          rm -fr rule_metaverse.yamle
+
+          echo "Downloading rule_netflix source list..."
+          curl -s https://rules.kr328.app/netflix.yaml -o rule_netflix.yaml
+          rm -fr rule_netflix.yamle
+
+          echo "Downloading rule_primevideo source list..."
+          curl -s https://rules.kr328.app/primevideo.yaml -o rule_primevideo.yaml
+          rm -fr rule_primevideo.yamle
+
+          echo "Downloading rule_tiktok source list..."
+          curl -s https://rules.kr328.app/tiktok.yaml -o rule_tiktok.yaml
+          rm -fr rule_tiktok.yamle
+
+          echo "Downloading rule_twitch source list..."
+          curl -s https://rules.kr328.app/twitch.yaml -o rule_twitch.yaml
+          rm -fr rule_twitch.yamle
+
+          echo "Downloading rule_twitter source list..."
+          curl -s https://rules.kr328.app/twitter.yaml -o rule_twitter.yaml
+          rm -fr rule_twitter.yamle
+
+          echo "Downloading rule_youtube source list..."
+          curl -s https://rules.kr328.app/youtube.yaml -o rule_youtube.yaml
+          rm -fr rule_youtube.yamle
+
+
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: Automatic update Rule Provider Clash
