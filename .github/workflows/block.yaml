@@ -1,6 +1,9 @@
 name: Download adblock source list
 
 on:
+  push:
+    paths:
+      - rule_provider/**
   schedule:
     - cron: 0 */12 * * *
   workflow_dispatch:
