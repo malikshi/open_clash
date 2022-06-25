@@ -328,15 +328,17 @@ rules:
 - RULE-SET,rule_lancidr,DIRECT,no-resolve
 - RULE-SET,rule_falsepositive,TrafficUmum
 - RULE-SET,rule_basicads,TrafficAds
-- RULE-SET,rule_BlockAds,TrafficAds
+- RULE-SET,rule_hijacking,TrafficAds
 - RULE-SET,rule_privacy,TrafficAds
-- RULE-SET,rule_blockipv4,TrafficAds
 - RULE-SET,rule_porn,TrafficPorn
 - RULE-SET,rule_nsfw,TrafficPorn
 - RULE-SET,rule_Direct,TrafficDirect
 - RULE-SET,rule_Streaming,TrafficStreaming
 - RULE-SET,rule_disneyplus,TrafficIndo
 - RULE-SET,rule_hbo,TrafficStreaming
+- RULE-SET,rule_hboasia,TrafficStreaming
+- RULE-SET,rule_hbohk,TrafficStreaming
+- RULE-SET,rule_hbous,TrafficStreaming
 - RULE-SET,rule_iqiyi,TrafficStreaming
 - RULE-SET,rule_netflix,TrafficIndo
 - RULE-SET,rule_primevideo,TrafficStreaming
@@ -425,15 +427,15 @@ rule-providers:
     interval: 86400
   rule_discord:
     type: http
-    behavior: domain
-    url: https://rules.kr328.app/discord.yaml
+    behavior: classical
+    url: https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Discord/Discord.yaml
     path: "./rule_provider/rule_discord.yaml"
     interval: 86400
-  rule_BlockAds:
+  rule_hijacking:
     type: http
     behavior: classical
-    path: "./rule_provider/rule_BlockAds.yaml"
-    url: https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Advertising/Advertising_Classical.yaml
+    path: "./rule_provider/rule_hijacking.yaml"
+    url: https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Hijacking/Hijacking.yaml
     interval: 86400
   rule_privacy:
     type: http
@@ -446,12 +448,6 @@ rule-providers:
     behavior: classical
     url: https://fastly.jsdelivr.net/gh/malikshi/open_clash@main/rule_provider/rule_basicads.yaml
     path: "./rule_provider/rule_basicads.yaml"
-    interval: 86400
-  rule_blockipv4:
-    type: http
-    behavior: ipcidr
-    url: https://fastly.jsdelivr.net/gh/malikshi/open_clash@main/rule_provider/rule_black-mirror.yaml
-    path: "./rule_provider/rule_black-mirror.yaml"
     interval: 86400
   rule_falsepositive:
     type: http
@@ -491,8 +487,8 @@ rule-providers:
     interval: 86400
   rule_disneyplus:
     type: http
-    behavior: domain
-    url: https://rules.kr328.app/disney.yaml
+    behavior: classical
+    url: https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Disney/Disney.yaml
     path: "./rule_provider/rule_disneyplus.yaml"
     interval: 86400
   rule_games:
@@ -503,15 +499,39 @@ rule-providers:
     interval: 86400
   rule_hbo:
     type: http
-    behavior: domain
-    url: https://rules.kr328.app/hbo.yaml
+    behavior: classical
+    url: https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/HBO/HBO.yaml
     path: "./rule_provider/rule_hbo.yaml"
+    interval: 86400
+  rule_hboasia:
+    type: http
+    behavior: classical
+    url: https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/HBOAsia/HBOAsia.yaml
+    path: "./rule_provider/rule_hboasia.yaml"
+    interval: 86400
+  rule_hbohk:
+    type: http
+    behavior: classical
+    url: https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/HBOHK/HBOHK.yaml
+    path: "./rule_provider/rule_hbohk.yaml"
+    interval: 86400
+  rule_hbousa:
+    type: http
+    behavior: classical
+    url: https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/HBOUSA/HBOUSA.yaml
+    path: "./rule_provider/rule_hbous.yaml"
     interval: 86400
   rule_iqiyi:
     type: http
-    behavior: domain
-    url: https://rules.kr328.app/iqiyi.yaml
+    behavior: classical
+    url: https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/iQIYI/iQIYI.yaml
     path: "./rule_provider/rule_iqiyi.yaml"
+    interval: 86400
+  rule_iqiyiinter:
+    type: http
+    behavior: classical
+    url: https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/iQIYIIntl/iQIYIIntl.yaml
+    path: "./rule_provider/rule_iqiyiinter.yaml"
     interval: 86400
   rule_line:
     type: http
