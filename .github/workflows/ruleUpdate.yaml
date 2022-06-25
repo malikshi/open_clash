@@ -26,7 +26,7 @@ jobs:
           sed -i '/^$/d' rule_nsfw.yaml
           sed -i '3,6d' rule_nsfw.yaml
           sed -ie '/^#/! s/^/  - DOMAIN,/' rule_nsfw.yaml
-          sed -i 's|# Title: oisd full|payload:|' rule_nsfw.yaml
+          sed -i 's|# Title: oisd nsfw|payload:|' rule_nsfw.yaml
           rm -fr rule_nsfw.yamle
 
           echo "Downloading Discord source list..."
