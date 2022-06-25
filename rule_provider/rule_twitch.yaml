@@ -1,0 +1,11 @@
+# Generated from https://github.com/v2fly/domain-list-community/tree/master/data/twitch
+
+# Behavior: domain
+
+payload:
+- "+.ext-twitch.tv"
+- "+.jtvnw.net"
+- "+.ttvnw.net"
+- "+.twitch.tv"
+- "+.twitchcdn.net"
+- "+.twitchsvc.net"
