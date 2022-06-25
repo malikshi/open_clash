@@ -1,9 +1,6 @@
 name: Download adblock source list
 
 on:
-  push:
-    paths:
-      - rule_provider/**
   schedule:
     - cron: 0 */12 * * *
   workflow_dispatch:
@@ -14,6 +11,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: oisd full
+        working-directory: ./rule_provider
         run: |
           echo "Downloading oisd full source list..."
           curl -s https://dbl.oisd.nl/ -o rule_basicads.yaml
