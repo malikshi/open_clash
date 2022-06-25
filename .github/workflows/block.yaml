@@ -1,4 +1,4 @@
-name: Download adblock source list
+name: Rule Provider
 
 on:
   schedule:
@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: oisd full
+      - name: rule providers
         working-directory: ./rule_provider
         run: |
           echo "Downloading oisd full source list..."
@@ -28,6 +28,10 @@ jobs:
           sed -ie '/^#/! s/^/  - DOMAIN,/' rule_nsfw.yaml
           sed -i 's|# Title: oisd full|payload:|' rule_nsfw.yaml
           rm -fr rule_nsfw.yamle
+
+          echo "Downloading Discord source list..."
+          curl -s https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Discord/Discord.yaml -o rule_discord.yaml
+          rm -fr rule_discord.yamle
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_message: Automatic update
+          commit_message: Automatic update Rule Provider Clash

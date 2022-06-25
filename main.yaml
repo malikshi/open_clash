@@ -340,6 +340,7 @@ rules:
 - RULE-SET,rule_hbohk,TrafficStreaming
 - RULE-SET,rule_hbous,TrafficStreaming
 - RULE-SET,rule_iqiyi,TrafficStreaming
+- RULE-SET,rule_iqiyiinter,TrafficStreaming
 - RULE-SET,rule_netflix,TrafficIndo
 - RULE-SET,rule_primevideo,TrafficStreaming
 - RULE-SET,rule_twitch,TrafficStreaming
