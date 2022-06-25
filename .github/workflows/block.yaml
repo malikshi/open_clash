@@ -1,0 +1,32 @@
+name: Download adblock source list
+
+on:
+  schedule:
+    - cron: 0 */12 * * *
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: oisd full
+        run: |
+          echo "Downloading oisd full source list..."
+          curl -s https://dbl.oisd.nl/ -o rule_basicads.yaml
+          sed -i '/^$/d' rule_basicads.yaml
+          sed -i '3,6d' rule_basicads.yaml
+          sed -ie '/^#/! s/^/  - DOMAIN,/' rule_basicads.yaml
+          sed -i 's|# Title: oisd full|payload:|' rule_basicads.yaml
+          rm -fr rule_basicads.yamle
+          
+          echo "Downloading oisd nsfw source list..."
+          curl -s https://dbl.oisd.nl/nsfw/ -o rule_nsfw.yaml
+          sed -i '/^$/d' rule_nsfw.yaml
+          sed -i '3,6d' rule_nsfw.yaml
+          sed -ie '/^#/! s/^/  - DOMAIN,/' rule_nsfw.yaml
+          sed -i 's|# Title: oisd full|payload:|' rule_nsfw.yaml
+          rm -fr rule_nsfw.yamle
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Automatic update
