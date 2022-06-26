@@ -10,6 +10,13 @@ payload:
   - DOMAIN-SUFFIX,mobilelegends.net
   - DOMAIN-SUFFIX,mobilelegends.org
   - DOMAIN-SUFFIX,mobilelegends.com.cn
+  - DOMAIN-SUFFIX,youngjoygame.com
+  - DOMAIN-SUFFIX,yuanzhanapp.com
+  - DOMAIN-SUFFIX,aihelp.net
+  - DOMAIN,tnc16-alisg.isnssdk.com
+  - DOMAIN,gplog-sg.byteoversea.com
+  - DOMAIN,xlog.byteoversea.com
+
   # FreeFire
   - DOMAIN-KEYWORD,freefire
   # PUBG
@@ -1162,6 +1169,7 @@ payload:
   - DOMAIN-SUFFIX,apex.go.sonobi.com
   - DOMAIN-SUFFIX,mgapex.com
   - DOMAIN-SUFFIX,devmgapex.com
+  - DOMAIN-SUFFIX,listdl.com
   - DOMAIN-KEYWORD,mgapex
   - DOMAIN-KEYWORD,devmgapex
 
