@@ -22,31 +22,6 @@ proxy-providers:
       url: http://www.gstatic.com/generate_204
       interval: 180
 proxy-groups:
-- name: Direct WAN A
-  type: select
-  disable-udp: false
-  interface-name: eth1
-  proxies:
-  - DIRECT
-- name: Direct WAN B
-  type: select
-  disable-udp: false
-  interface-name: eth2
-  proxies:
-  - DIRECT
-- name: Direct WAN C
-  type: select
-  disable-udp: false
-  interface-name: eth3
-  proxies:
-  - DIRECT
-- name: Direct Multi-WAN
-  type: select
-  disable-udp: false
-  proxies:
-  - Direct WAN A
-  - Direct WAN B
-  - Direct WAN C
 - name: Route VVIP ID
   type: load-balance
   strategy: round-robin
@@ -70,6 +45,52 @@ proxy-groups:
   - VVIP-IPTUNNELS-GAME
   url: http://www.gstatic.com/generate_204
   interval: 600
+- name: TrafficDirect
+  type: select
+  disable-udp: false
+  proxies:
+  - Direct Multi-WAN
+  - Route VVIP ID
+  - Route VVIP SG
+- name: Direct Multi-WAN
+  type: select
+  disable-udp: false
+  proxies:
+  - Direct WAN A
+  - Direct WAN B
+  - Direct WAN C
+- name: Direct WAN A
+  type: select
+  disable-udp: false
+  interface-name: eth1
+  proxies:
+  - DIRECT
+- name: Direct WAN B
+  type: select
+  disable-udp: false
+  interface-name: eth2
+  proxies:
+  - DIRECT
+- name: Direct WAN C
+  type: select
+  disable-udp: false
+  interface-name: eth3
+  proxies:
+  - DIRECT
+- name: TrafficPortGames
+  type: select
+  disable-udp: false
+  proxies:
+  - TrafficDirect
+  - Route VVIP GAME
+- name: TrafficGaming
+  type: select
+  disable-udp: false
+  proxies:
+  - Route VVIP GAME
+  - TrafficDirect
+  use:
+  - VVIP-IPTUNNELS-GAME
 - name: TrafficAds
   type: select
   disable-udp: false
@@ -84,38 +105,7 @@ proxy-groups:
   - REJECT
   - Route VVIP SG
   - Route VVIP ID
-- name: TrafficDirect
-  type: select
-  disable-udp: false
-  proxies:
-  - Direct Multi-WAN
-  - Route VVIP ID
-  - Route VVIP SG
-- name: TrafficGaming
-  type: select
-  disable-udp: false
-  proxies:
-  - Route VVIP GAME
-  - TrafficDirect
-  use:
-  - VVIP-IPTUNNELS-GAME
-- name: TrafficPortGames
-  type: select
-  disable-udp: false
-  proxies:
-  - TrafficDirect
-  - Route VVIP GAME
-- name: TrafficSosmed
-  type: fallback
-  lazy: true
-  disable-udp: false
-  proxies:
-  - Route VVIP ID
-  - Route VVIP SG
-  - Direct Multi-WAN
-  url: http://www.gstatic.com/generate_204
-  interval: '30'
-- name: TrafficStreaming
+- name: TrafficUmum
   type: fallback
   lazy: true
   disable-udp: false
@@ -135,13 +125,23 @@ proxy-groups:
   - TrafficDirect
   url: http://www.gstatic.com/generate_204
   interval: '30'
-- name: TrafficUmum
+- name: TrafficStreaming
   type: fallback
   lazy: true
   disable-udp: false
   proxies:
   - Route VVIP SG
   - Route VVIP ID
+  - Direct Multi-WAN
+  url: http://www.gstatic.com/generate_204
+  interval: '30'
+- name: TrafficSosmed
+  type: fallback
+  lazy: true
+  disable-udp: false
+  proxies:
+  - Route VVIP ID
+  - Route VVIP SG
   - Direct Multi-WAN
   url: http://www.gstatic.com/generate_204
   interval: '30'
