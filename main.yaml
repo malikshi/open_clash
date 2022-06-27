@@ -382,210 +382,210 @@ rule-providers:
     type: http
     behavior: classical
     path: "./rule_provider/rule_umum.yaml"
-    url: https://fastly.jsdelivr.net/gh/malikshi/open_clash@main/rule_provider/rule_umum.yaml
+    url: https://raw.githubusercontent.com/malikshi/open_clash/main/rule_provider/rule_umum.yaml
     interval: 86400
   rule_portgames:
     type: http
     behavior: classical
     path: "./rule_provider/rule_portgames.yaml"
-    url: https://fastly.jsdelivr.net/gh/malikshi/open_clash@main/rule_provider/rule_portgames.yaml
+    url: https://raw.githubusercontent.com/malikshi/open_clash/main/rule_provider/rule_portgames.yaml
     interval: 86400
   rule_videoconferences:
     type: http
     behavior: classical
     path: "./rule_provider/rule_videoconferences.yaml"
-    url: https://fastly.jsdelivr.net/gh/malikshi/open_clash@main/rule_provider/rule_videoconferences.yaml
+    url: https://raw.githubusercontent.com/malikshi/open_clash/main/rule_provider/rule_videoconferences.yaml
     interval: 86400
   rule_Indo:
     type: http
     behavior: classical
     path: "./rule_provider/rule_Indo.yaml"
-    url: https://fastly.jsdelivr.net/gh/malikshi/open_clash@main/rule_provider/rule_Indo.yaml
+    url: https://raw.githubusercontent.com/malikshi/open_clash/main/rule_provider/rule_Indo.yaml
     interval: 86400
   rule_Sosmed:
     type: http
     behavior: classical
     path: "./rule_provider/rule_sosmed.yaml"
-    url: https://fastly.jsdelivr.net/gh/malikshi/open_clash@main/rule_provider/rule_sosmed.yaml
+    url: https://raw.githubusercontent.com/malikshi/open_clash/main/rule_provider/rule_sosmed.yaml
     interval: 86400
   rule_Streaming:
     type: http
     behavior: classical
     path: "./rule_provider/rule_streaming.yaml"
-    url: https://fastly.jsdelivr.net/gh/malikshi/open_clash@main/rule_provider/rule_streaming.yaml
+    url: https://raw.githubusercontent.com/malikshi/open_clash/main/rule_provider/rule_streaming.yaml
     interval: 86400
   rule_Gaming:
     type: http
     behavior: classical
     path: "./rule_provider/rule_gaming.yaml"
-    url: https://fastly.jsdelivr.net/gh/malikshi/open_clash@main/rule_provider/rule_gaming.yaml
+    url: https://raw.githubusercontent.com/malikshi/open_clash/main/rule_provider/rule_gaming.yaml
     interval: 86400
   rule_Speedtest:
     type: http
     behavior: classical
-    url: https://fastly.jsdelivr.net/gh/malikshi/open_clash@main/rule_provider/rule_speedtest.yaml
+    url: https://raw.githubusercontent.com/malikshi/open_clash/main/rule_provider/rule_speedtest.yaml
     path: "./rule_provider/rule_speedtest.yaml"
     interval: 86400
   rule_discord:
     type: http
     behavior: classical
-    url: https://fastly.jsdelivr.net/gh/malikshi/open_clash@main/rule_provider/rule_discord.yaml
+    url: https://raw.githubusercontent.com/malikshi/open_clash/main/rule_provider/rule_discord.yaml
     path: "./rule_provider/rule_discord.yaml"
     interval: 86400
   rule_hijacking:
     type: http
     behavior: classical
     path: "./rule_provider/rule_hijacking.yaml"
-    url: https://fastly.jsdelivr.net/gh/malikshi/open_clash@main/rule_provider/rule_hijacking.yaml
+    url: https://raw.githubusercontent.com/malikshi/open_clash/main/rule_provider/rule_hijacking.yaml
     interval: 86400
   rule_privacy:
     type: http
     behavior: classical
-    url: https://fastly.jsdelivr.net/gh/malikshi/open_clash@main/rule_provider/rule_privacy.yaml
+    url: https://raw.githubusercontent.com/malikshi/open_clash/main/rule_provider/rule_privacy.yaml
     path: "./rule_provider/rule_privacy.yaml"
     interval: 86400
   rule_basicads:
     type: http
     behavior: classical
-    url: https://fastly.jsdelivr.net/gh/malikshi/open_clash@main/rule_provider/rule_basicads.yaml
+    url: https://raw.githubusercontent.com/malikshi/open_clash/main/rule_provider/rule_basicads.yaml
     path: "./rule_provider/rule_basicads.yaml"
     interval: 86400
   rule_falsepositive:
     type: http
     behavior: classical
-    url: https://fastly.jsdelivr.net/gh/malikshi/open_clash@main/rule_provider/rule_falsepositive.yaml
+    url: https://raw.githubusercontent.com/malikshi/open_clash/main/rule_provider/rule_falsepositive.yaml
     path: "./rule_provider/rule_falsepositive.yaml"
     interval: 86400
   rule_porn:
     type: http
     behavior: domain
-    url: https://fastly.jsdelivr.net/gh/malikshi/open_clash@main/rule_provider/rule_porn.yaml
+    url: https://raw.githubusercontent.com/malikshi/open_clash/main/rule_provider/rule_porn.yaml
     path: "./rule_provider/rule_porn.yaml"
     interval: 86400
   rule_nsfw:
     type: http
     behavior: classical
-    url: https://fastly.jsdelivr.net/gh/malikshi/open_clash@main/rule_provider/rule_nsfw.yaml
+    url: https://raw.githubusercontent.com/malikshi/open_clash/main/rule_provider/rule_nsfw.yaml
     path: "./rule_provider/rule_nsfw.yaml"
     interval: 86400
   rule_lancidr:
     type: http
     behavior: ipcidr
-    url: https://fastly.jsdelivr.net/gh/malikshi/open_clash@main/rule_provider/rule_lancidr.yaml
+    url: https://raw.githubusercontent.com/malikshi/open_clash/main/rule_provider/rule_lancidr.yaml
     path: "./rule_provider/rule_lancidr.yaml"
     interval: 86400
   rule_telegramcidr:
     type: http
     behavior: ipcidr
-    url: https://fastly.jsdelivr.net/gh/malikshi/open_clash@main/rule_provider/rule_telegramcidr.yaml
+    url: https://raw.githubusercontent.com/malikshi/open_clash/main/rule_provider/rule_telegramcidr.yaml
     path: "./rule_provider/rule_telegramcidr.yaml"
     interval: 86400
   rule_telegram:
     type: http
     behavior: domain
-    url: https://fastly.jsdelivr.net/gh/malikshi/open_clash@main/rule_provider/rule_telegram.yaml
+    url: https://raw.githubusercontent.com/malikshi/open_clash/main/rule_provider/rule_telegram.yaml
     path: "./rule_provider/rule_telegram.yaml"
     interval: 86400
   rule_disneyplus:
     type: http
     behavior: classical
-    url: https://fastly.jsdelivr.net/gh/malikshi/open_clash@main/rule_provider/rule_disneyplus.yaml
+    url: https://raw.githubusercontent.com/malikshi/open_clash/main/rule_provider/rule_disneyplus.yaml
     path: "./rule_provider/rule_disneyplus.yaml"
     interval: 86400
   rule_games:
     type: http
     behavior: domain
-    url: https://fastly.jsdelivr.net/gh/malikshi/open_clash@main/rule_provider/rule_games.yaml
+    url: https://raw.githubusercontent.com/malikshi/open_clash/main/rule_provider/rule_games.yaml
     path: "./rule_provider/rule_games.yaml"
     interval: 86400
   rule_hbo:
     type: http
     behavior: classical
-    url: https://fastly.jsdelivr.net/gh/malikshi/open_clash@main/rule_provider/rule_hbo.yaml
+    url: https://raw.githubusercontent.com/malikshi/open_clash/main/rule_provider/rule_hbo.yaml
     path: "./rule_provider/rule_hbo.yaml"
     interval: 86400
   rule_hboasia:
     type: http
     behavior: classical
-    url: https://fastly.jsdelivr.net/gh/malikshi/open_clash@main/rule_provider/rule_hboasia.yaml
+    url: https://raw.githubusercontent.com/malikshi/open_clash/main/rule_provider/rule_hboasia.yaml
     path: "./rule_provider/rule_hboasia.yaml"
     interval: 86400
   rule_hbohk:
     type: http
     behavior: classical
-    url: https://fastly.jsdelivr.net/gh/malikshi/open_clash@main/rule_provider/rule_hbohk.yaml
+    url: https://raw.githubusercontent.com/malikshi/open_clash/main/rule_provider/rule_hbohk.yaml
     path: "./rule_provider/rule_hbohk.yaml"
     interval: 86400
   rule_hbousa:
     type: http
     behavior: classical
-    url: https://fastly.jsdelivr.net/gh/malikshi/open_clash@main/rule_provider/rule_hbousa.yaml
+    url: https://raw.githubusercontent.com/malikshi/open_clash/main/rule_provider/rule_hbousa.yaml
     path: "./rule_provider/rule_hbousa.yaml"
     interval: 86400
   rule_iqiyi:
     type: http
     behavior: classical
-    url: https://fastly.jsdelivr.net/gh/malikshi/open_clash@main/rule_provider/rule_iqiyi.yaml
+    url: https://raw.githubusercontent.com/malikshi/open_clash/main/rule_provider/rule_iqiyi.yaml
     path: "./rule_provider/rule_iqiyi.yaml"
     interval: 86400
   rule_iqiyiinter:
     type: http
     behavior: classical
-    url: https://fastly.jsdelivr.net/gh/malikshi/open_clash@main/rule_provider/rule_iqiyiinter.yaml
+    url: https://raw.githubusercontent.com/malikshi/open_clash/main/rule_provider/rule_iqiyiinter.yaml
     path: "./rule_provider/rule_iqiyiinter.yaml"
     interval: 86400
   rule_line:
     type: http
     behavior: domain
-    url: https://fastly.jsdelivr.net/gh/malikshi/open_clash@main/rule_provider/rule_line.yaml
+    url: https://raw.githubusercontent.com/malikshi/open_clash/main/rule_provider/rule_line.yaml
     path: "./rule_provider/rule_line.yaml"
     interval: 86400
   rule_metaverse:
     type: http
     behavior: domain
-    url: https://fastly.jsdelivr.net/gh/malikshi/open_clash@main/rule_provider/rule_metaverse.yaml
+    url: https://raw.githubusercontent.com/malikshi/open_clash/main/rule_provider/rule_metaverse.yaml
     path: "./rule_provider/rule_metaverse.yaml"
     interval: 86400
   rule_netflix:
     type: http
     behavior: domain
-    url: https://fastly.jsdelivr.net/gh/malikshi/open_clash@main/rule_provider/rule_netflix.yaml
+    url: https://raw.githubusercontent.com/malikshi/open_clash/main/rule_provider/rule_netflix.yaml
     path: "./rule_provider/rule_netflix.yaml"
     interval: 86400
   rule_primevideo:
     type: http
     behavior: domain
-    url: https://fastly.jsdelivr.net/gh/malikshi/open_clash@main/rule_provider/rule_primevideo.yaml
+    url: https://raw.githubusercontent.com/malikshi/open_clash/main/rule_provider/rule_primevideo.yaml
     path: "./rule_provider/rule_primevideo.yaml"
     interval: 86400
   rule_playstore:
     type: http
     behavior: domain
-    url: https://fastly.jsdelivr.net/gh/malikshi/open_clash@main/rule_provider/rule_playstore.yaml
+    url: https://raw.githubusercontent.com/malikshi/open_clash/main/rule_provider/rule_playstore.yaml
     path: "./rule_provider/rule_playstore.yaml"
     interval: 86400
   rule_tiktok:
     type: http
     behavior: domain
-    url: https://fastly.jsdelivr.net/gh/malikshi/open_clash@main/rule_provider/rule_tiktok.yaml
+    url: https://raw.githubusercontent.com/malikshi/open_clash/main/rule_provider/rule_tiktok.yaml
     path: "./rule_provider/rule_tiktok.yaml"
     interval: 86400
   rule_twitch:
     type: http
     behavior: domain
-    url: https://fastly.jsdelivr.net/gh/malikshi/open_clash@main/rule_provider/rule_twitch.yaml
+    url: https://raw.githubusercontent.com/malikshi/open_clash/main/rule_provider/rule_twitch.yaml
     path: "./rule_provider/rule_twitch.yaml"
     interval: 86400
   rule_twitter:
     type: http
     behavior: domain
-    url: https://fastly.jsdelivr.net/gh/malikshi/open_clash@main/rule_provider/rule_twitter.yaml
+    url: https://raw.githubusercontent.com/malikshi/open_clash/main/rule_provider/rule_twitter.yaml
     path: "./rule_provider/rule_twitter.yaml"
     interval: 86400
   rule_Youtube:
     type: http
     behavior: domain
-    url: https://fastly.jsdelivr.net/gh/malikshi/open_clash@main/rule_provider/rule_youtube.yaml
+    url: https://raw.githubusercontent.com/malikshi/open_clash/main/rule_provider/rule_youtube.yaml
     path: "./rule_provider/rule_Youtube.yaml"
     interval: 86400
 ipv6: true
