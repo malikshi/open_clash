@@ -323,8 +323,6 @@ profile:
   store-fakeip: true
   store-fake-ip: true
 rules:
-- DST-PORT,7895,REJECT
-- DST-PORT,7892,REJECT
 - IP-CIDR,198.18.0.1/16,REJECT,no-resolve
 - DST-PORT,22,TrafficDirect
 - RULE-SET,rule_lancidr,DIRECT,no-resolve
@@ -454,7 +452,7 @@ rule-providers:
     url: https://raw.githubusercontent.com/malikshi/open_clash/main/rule_provider/rule_basicads.yaml
     path: "./rule_provider/rule_basicads.yaml"
     interval: 86400
-  rule_malicious.yaml:
+  rule_malicious:
     type: http
     behavior: classical
     url: https://raw.githubusercontent.com/malikshi/open_clash/main/rule_provider/rule_malicious.yaml
