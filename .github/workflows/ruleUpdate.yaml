@@ -29,6 +29,14 @@ jobs:
           sed -i 's|# Title: oisd nsfw|payload:|' rule_nsfw.yaml
           rm -fr rule_nsfw.yamle
 
+          echo "Downloading Malicious Sites source list..."
+          curl -s https://raw.githubusercontent.com/elliotwutingfeng/Inversion-DNSBL-Blocklists/main/Google_hostnames.txt -o rule_malicious.yaml
+          (echo "#payload:" && cat rule_malicious.yaml) > rule_malicious.tmp
+          mv rule_malicious.tmp rule_malicious.yaml
+          sed -ie '/^#/! s/^/  - DOMAIN,/' rule_malicious.yaml
+          sed -i 's|#payload:|payload:|' rule_malicious.yaml
+          rm -fr rule_malicious.yamle
+
           echo "Downloading Discord source list..."
           curl -s https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Discord/Discord.yaml -o rule_discord.yaml
           rm -fr rule_discord.yamle
