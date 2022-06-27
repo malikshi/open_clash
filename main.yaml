@@ -99,6 +99,12 @@ proxy-groups:
   - TrafficDirect
   use:
   - VVIP-IPTUNNELS-GAME
+- name: TrafficPortGames
+  type: select
+  disable-udp: false
+  proxies:
+  - TrafficDirect
+  - Route VVIP GAME
 - name: TrafficSosmed
   type: fallback
   lazy: true
@@ -149,9 +155,9 @@ allow-lan: true
 external-controller: 0.0.0.0:9090
 secret: '123456'
 bind-address: "*"
-external-ui: "/usr/share/openclash/dashboard"
+external-ui: "/usr/share/openclash/ui"
 experimental:
-  ignore-resolve-fail: false
+  ignore-resolve-fail: true
 dns:
   enable: true
   ipv6: true
@@ -257,6 +263,8 @@ dns:
   - ff.dorado.sdo.com
   - "*.mcdn.bilivideo.cn"
   - "+.media.dssott.com"
+  - time-ios.apple.com
+  - shark007.net
   fallback-filter:
     geoip: true
     geoip-code: ID
@@ -305,25 +313,20 @@ dns:
   - 94.140.14.141
   - 172.105.216.54
   nameserver:
-  - https://cloudflare-dns.com/dns-query
-  - tls://1dot1dot1dot1.cloudflare-dns.com:853
+  - https://dns.quad9.net/dns-query
+  - tls://tls://dns.quad9.net:853
   fallback:
-  - https://cloudflare-dns.com/dns-query
-  - tls://1dot1dot1dot1.cloudflare-dns.com:853
+  - https://dns.quad9.net/dns-query
+  - tls://tls://dns.quad9.net:853
 profile:
   store-selected: true
   store-fakeip: true
   store-fake-ip: true
 rules:
+- DST-PORT,7895,REJECT
+- DST-PORT,7892,REJECT
 - IP-CIDR,198.18.0.1/16,REJECT,no-resolve
-- PROCESS-NAME,v2ray,DIRECT,no-resolve
-- PROCESS-NAME,xray,DIRECT,no-resolve
-- PROCESS-NAME,naive,DIRECT,no-resolve
-- PROCESS-NAME,trojan,DIRECT,no-resolve
-- PROCESS-NAME,trojan-go,DIRECT,no-resolve
-- PROCESS-NAME,ss-local,DIRECT,no-resolve
-- PROCESS-NAME,privoxy,DIRECT,no-resolve
-- PROCESS-NAME,leaf,DIRECT,no-resolve
+
 - DST-PORT,22,TrafficDirect
 - RULE-SET,rule_lancidr,DIRECT,no-resolve
 - RULE-SET,rule_falsepositive,TrafficUmum
@@ -354,11 +357,11 @@ rules:
 - RULE-SET,rule_telegramcidr,TrafficSosmed
 - RULE-SET,rule_videoconferences,TrafficStreaming
 - RULE-SET,rule_playstore,TrafficUmum
+- RULE-SET,rule_portgames,TrafficPortGames
+- SCRIPT,allgames,TrafficPortGames
 - RULE-SET,rule_Gaming,TrafficGaming
 - RULE-SET,rule_discord,TrafficGaming
 - RULE-SET,rule_games,TrafficGaming
-- RULE-SET,rule_portgames,TrafficGaming
-- SCRIPT,allgames,TrafficGaming
 - RULE-SET,rule_Speedtest,TrafficUmum
 - RULE-SET,rule_Indo,TrafficIndo
 - RULE-SET,rule_umum,TrafficUmum
@@ -366,13 +369,16 @@ rules:
 tun:
   enable: true
   stack: system
+  auto-route: false
+  auto-detect-interface: false
   dns-hijack:
-  - tcp://8.8.8.8:53
-  - tcp://8.8.4.4:53
+  - tcp://any:53
 tproxy-port: 7895
 script:
   shortcuts:
-    allgames: network == 'udp' and dst_port not in [21, 22, 23, 53, 80, 123, 143, 194, 443, 465, 587, 853, 993, 995, 998, 2052, 2053, 2082, 2083, 2086, 2095, 2096, 5222, 5228, 5229, 5230, 8080, 8443, 8880, 8888, 8889]
+    allgames: network == 'udp' and dst_port not in [21, 22, 23, 53, 80, 123, 143,
+      194, 443, 465, 587, 853, 993, 995, 998, 2052, 2053, 2082, 2083, 2086, 2095,
+      2096, 5222, 5228, 5229, 5230, 8080, 8443, 8880, 8888, 8889]
 rule-providers:
   rule_Direct:
     type: file
