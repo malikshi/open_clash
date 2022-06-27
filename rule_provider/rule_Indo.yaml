@@ -96,6 +96,8 @@ payload:
   - DOMAIN-SUFFIX,etslive-2-vidio-com.akamaized.net
   - DOMAIN-SUFFIX,live-production.secureswiftcontent.com
   - DOMAIN-SUFFIX,secureswiftcontent.com
+  - DOMAIN-SUFFIX,vidiocdn.com
+  - DOMAIN-KEYWORD,vidio
 # > UseeTV
   - DOMAIN-SUFFIX,useetv.com
   - DOMAIN-KEYWORD,useetv.com
