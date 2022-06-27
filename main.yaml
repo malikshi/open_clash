@@ -326,25 +326,28 @@ rules:
 - DST-PORT,7895,REJECT
 - DST-PORT,7892,REJECT
 - IP-CIDR,198.18.0.1/16,REJECT,no-resolve
-
 - DST-PORT,22,TrafficDirect
 - RULE-SET,rule_lancidr,DIRECT,no-resolve
 - RULE-SET,rule_falsepositive,TrafficUmum
 - RULE-SET,rule_basicads,TrafficAds
+- RULE-SET,rule_malicious,TrafficAds
 - RULE-SET,rule_hijacking,TrafficAds
 - RULE-SET,rule_privacy,TrafficAds
 - RULE-SET,rule_porn,TrafficPorn
 - RULE-SET,rule_nsfw,TrafficPorn
 - RULE-SET,rule_Direct,TrafficDirect
-- RULE-SET,rule_Streaming,TrafficStreaming
+- RULE-SET,rule_Speedtest,TrafficUmum
+- RULE-SET,rule_playstore,TrafficUmum
 - RULE-SET,rule_disneyplus,TrafficIndo
-- RULE-SET,rule_hbo,TrafficStreaming
-- RULE-SET,rule_hboasia,TrafficStreaming
-- RULE-SET,rule_hbohk,TrafficStreaming
-- RULE-SET,rule_hbousa,TrafficStreaming
+- RULE-SET,rule_netflix,TrafficIndo
+- RULE-SET,rule_Indo,TrafficIndo
+- RULE-SET,rule_hbo,TrafficIndo
+- RULE-SET,rule_hboasia,TrafficIndo
+- RULE-SET,rule_hbohk,TrafficIndo
+- RULE-SET,rule_hbousa,TrafficIndo
+- RULE-SET,rule_Streaming,TrafficStreaming
 - RULE-SET,rule_iqiyi,TrafficStreaming
 - RULE-SET,rule_iqiyiinter,TrafficStreaming
-- RULE-SET,rule_netflix,TrafficIndo
 - RULE-SET,rule_primevideo,TrafficStreaming
 - RULE-SET,rule_twitch,TrafficStreaming
 - RULE-SET,rule_Youtube,TrafficStreaming
@@ -356,14 +359,11 @@ rules:
 - RULE-SET,rule_telegram,TrafficSosmed
 - RULE-SET,rule_telegramcidr,TrafficSosmed
 - RULE-SET,rule_videoconferences,TrafficStreaming
-- RULE-SET,rule_playstore,TrafficUmum
 - RULE-SET,rule_portgames,TrafficPortGames
 - SCRIPT,allgames,TrafficPortGames
 - RULE-SET,rule_Gaming,TrafficGaming
 - RULE-SET,rule_discord,TrafficGaming
 - RULE-SET,rule_games,TrafficGaming
-- RULE-SET,rule_Speedtest,TrafficUmum
-- RULE-SET,rule_Indo,TrafficIndo
 - RULE-SET,rule_umum,TrafficUmum
 - MATCH,GLOBAL
 tun:
@@ -455,6 +455,12 @@ rule-providers:
     behavior: classical
     url: https://raw.githubusercontent.com/malikshi/open_clash/main/rule_provider/rule_basicads.yaml
     path: "./rule_provider/rule_basicads.yaml"
+    interval: 86400
+  rule_malicious.yaml:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/malikshi/open_clash/main/rule_provider/rule_malicious.yaml
+    path: "./rule_provider/rule_malicious.yaml"
     interval: 86400
   rule_falsepositive:
     type: http
