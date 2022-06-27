@@ -2,7 +2,7 @@ name: Rule Provider
 
 on:
   schedule:
-    - cron: "0 3 * * *"
+    - cron: '0 3,15 * * *'
   workflow_dispatch:
 
 jobs:
