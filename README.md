@@ -32,6 +32,7 @@
     - [Toggle TrafficDirect](#toggle-trafficdirect)
     - [Toggle Traffic Multi-WAN](#toggle-traffic-multi-wan)
     - [Toggle TrafficPortGames](#toggle-trafficportgames)
+    - [Toggle TrafficGaming](#toggle-trafficgaming)
     - [Toggle TrafficAds](#toggle-trafficads)
     - [Toggle TrafficP0rn](#toggle-trafficp0rn)
     - [Toggle Traffic GLOBAL](#toggle-traffic-global)
@@ -554,6 +555,10 @@ Kita akan mengatur toggle/pilihan proxies yang kan digunakan tiap proxy-groups.
 ### Toggle TrafficPortGames
 
 <img src="https://raw.githubusercontent.com/malikshi/open_clash/main/assets/portgames.jpg" border="0">
+
+### Toggle TrafficGaming
+
+<img src="https://raw.githubusercontent.com/malikshi/open_clash/main/assets/gaming.jpg" border="0">
 
 ### Toggle TrafficAds
 
