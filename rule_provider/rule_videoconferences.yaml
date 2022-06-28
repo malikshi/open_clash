@@ -89,11 +89,28 @@ payload:
   - DOMAIN-SUFFIX,zoom.com.cn
   - DOMAIN-SUFFIX,zoom.us
   - DOMAIN-SUFFIX,zoomgov.com
-#ZOOM PORT
-#  - DST-PORT,3478 bentrok port WA
+# Zoom, Microsoft Teams, Skype and FaceTime (they use these same ports)
+  - DST-PORT,3478
   - DST-PORT,3479
-  - DST-PORT,5090
-  - DST-PORT,5091
+  - DST-PORT,3480
+  - DST-PORT,3481
+  - DST-PORT,3482
+  - DST-PORT,3483
+  - DST-PORT,3484
+  - DST-PORT,3485
+  - DST-PORT,3486
+  - DST-PORT,3487
+  - DST-PORT,3488
+  - DST-PORT,3489
+  - DST-PORT,3490
+  - DST-PORT,3491
+  - DST-PORT,3492
+  - DST-PORT,3493
+  - DST-PORT,3494
+  - DST-PORT,3495
+  - DST-PORT,3496
+  - DST-PORT,3497
+# zoom
   - DST-PORT,8801
   - DST-PORT,8802
   - DST-PORT,8803
@@ -104,7 +121,25 @@ payload:
   - DST-PORT,8808
   - DST-PORT,8809
   - DST-PORT,8810
-#google meet/classroom
+# Skype
+  - DOMAIN-KEYWORD,skype
+# FaceTime
+  - DST-PORT,16384
+  - DST-PORT,16385
+  - DST-PORT,16386
+  - DST-PORT,16387
+# GoToMeeting
+  - DST-PORT,1853
+  - DST-PORT,8200
+# Webex Meeting
+  - DST-PORT,5004
+  - DST-PORT,9000
+  - DST-PORT,5090
+  - DST-PORT,5091
+# Jitsi Meet
+  - DST-PORT,5349
+  - DST-PORT,10000
+# google meet
   - DST-PORT,19302
   - DST-PORT,19303
   - DST-PORT,19304
@@ -113,5 +148,11 @@ payload:
   - DST-PORT,19307
   - DST-PORT,19308
   - DST-PORT,19309
-  #> webex
-  - DST-PORT,9000
+# Team Viewer
+  - DST-PORT,5938
+# Voice over Internet Protocol (VoIP)
+  - DST-PORT,5060
+  - DST-PORT,5061
+# Voice over WiFi or WiFi Calling (VoWiFi)
+  - DST-PORT,500
+  - DST-PORT,4500
