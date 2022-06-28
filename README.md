@@ -2,18 +2,19 @@
 
 - [Openclash Config](#openclash-config)
 - [Features](#features)
-- [Full Settings](#full-settings)
-  - [Https dns proxy](#https-dns-proxy)
-    - [Install https dns proxy](#install-https-dns-proxy)
-    - [Setting https dns proxy](#setting-https-dns-proxy)
-  - [Openclash](#openclash)
-    - [Download Config](#download-config)
+- [Persiapan](#persiapan)
+  - [Modem/WAN](#modemwan)
+  - [Interface Modem/WAN](#interface-modemwan)
+- [Openclash](#openclash)
+  - [Download Config](#download-config)
+  - [Setting Multi-WAN OC](#setting-multi-wan-oc)
+  - [2 Modem/WAN](#2-modemwan)
+      - [1 Modem/WAN](#1-modemwan)
     - [Edit Files Proxy Provider](#edit-files-proxy-provider)
       - [Shadowsocks](#shadowsocks)
       - [Vmess](#vmess)
       - [Snell](#snell)
       - [Trojan](#trojan)
-    - [Multi-WAN ISP](#multi-wan-isp)
     - [Edit Files Rule Provider](#edit-files-rule-provider)
       - [Rule Direct/Bypassed Connection](#rule-directbypassed-connection)
     - [Setting Openclash App](#setting-openclash-app)
@@ -40,48 +41,149 @@ OpenClash Config untuk VVIP IPTUNNELS
 
 # Features
 
-* Support Multi-WAN *(default 3 ISP)*
+* Support Multi-WAN/Modem
 * Pisah traffik umum, sosmed, streaming, gaming.
-* Adblock, Privacy rules & P0rn.
-* Support Gaming filtering port.
-* Support web streaming locked region ID.
+* Support rule Adblock, Privacy & P0rn.
+* Support Gaming sites
+* Support Game port filtering
+* Support web streaming/VOD/TV region ID.
 * Support 10 marketplace ID.
+* Support E-wallet,Payment,Bank ID
 * Support Direct/Bypass traffik.
+* Support Rules Online and Offline.
 
-# Full Settings
+# Persiapan
 
-Openclash config yang disediakan pada repositori ini dikhususkan untuk pengguna VVIP IPTUNNELS dan pengguna openclash di indonesia. Disini sangat disarankan untuk menggunakan https-dns-proxy (DoH) untuk mencegah adanya kebocoran dns dari isp yang digunakan. Silahkan untuk membaca baik - baik tutorial yang diberikan, dan jika ada pertanyaan silahkan open issues atau chat digroup telegram IPTUNNELS.
+Openclash config yang disediakan pada repositori ini dikhususkan untuk pengguna VVIP IPTUNNELS dan pengguna openclash di Indonesia.Silahkan untuk membaca baik - baik tutorial yang diberikan, dan jika ada pertanyaan silahkan open issues atau chat digroup telegram [IPTUNNELS](https://t.me/iptunnelscom).
 
-## Https dns proxy
+## Modem/WAN
 
-Fungsi dari http dns proxy:
-* Encrypt your DNS traffic improving security and privacy.
-* Prevent DNS leak and DNS hijacking.
-* Bypass regional restrictions using public DNS providers.
-* Escape DNS-based content filters and internet censorship.
+Disini Pertama kalian tentuin berapa modem/router 4G atau WAN sebagai sumber internet yang akan digunakan. Secara Default Config ini menggunakan 3 Modem sebagai berikut:
 
-### Install https dns proxy
-
-```sh
-opkg update &&\
-opkg install https-dns-proxy luci-app-https-dns-proxy
+```conf
+Modem OrbitMAX B818-263   : WAN A
+Modem E8372h              : WAN B
+Modem B315                : WAN C
 ```
 
-### Setting https dns proxy
+Modem tersebut mempunyai fungsi masing-masing agar memungkinkan mendapatkan performa internet dengan baik.
 
-- Setting dns https proxy, saran memakai DoH dari ControlD (Block Malware + Ads) atau dari AdGuard (Standard). Lihat screenshot cara settingnya
-<img src="https://raw.githubusercontent.com/malikshi/open_clash/main/assets/dns-https-proxy.jpg" border="0">
-<img src="https://raw.githubusercontent.com/malikshi/open_clash/main/assets/dns-https-proxy-2.jpg" border="0">
+MODEM | FUNGSI
+------------ | -------------
+WAN A | INJECT LOAD-BALANCE
+WAN B | INJECT LOAD-BALANCE
+WAN C | TRAFFIC DIRECT, TRAFFIC GAME DAN BACKUP DARI LOAD-BALANCE
 
-- Save & Apply
 
-## Openclash
+## Interface Modem/WAN
+
+Untuk menentukan interface-name modem/WAN bisa melalui `LuCi > Network >> Interfaces` lihat gambar berikut dengan seksama.
+
+<img src="https://raw.githubusercontent.com/malikshi/open_clash/main/assets/interfacemodem.jpg" border="0">
+
+Perhatikan tanda kotak biru yang merupakan **interface-name** dengan berikut detailsnya,
+
+MODEM | INTERFACE-NAME
+------------ | -------------
+WAN A | eth1
+WAN B | wlan0
+WAN C | eth2
+
+# Openclash
 
 Plugin ini adalah klien Clash yang bisa dijalankan di OpenWrt. Kompatibel dengan Shadowsocks ShadowsocksR, Vmess, Trojan, Snell dan protokol lainnya, dan mengimplementasikan proxy kebijakan sesuai dengan konfigurasi aturan yang fleksibel.
 
-### Download Config
+## Download Config
 
 Download zip master dan ekstrak file [**open_clash-main.zip**](https://codeload.github.com/malikshi/open_clash/zip/refs/heads/main)
+
+
+## Setting Multi-WAN OC
+
+Setelah menentukan jumlah modem/WAN yang akan digunakan maka kita setting Multi-WAN di Openclash. Kita akan jelaskan jika menggunakan 2 modem/wan dan jika satu modem/wan.
+
+## 2 Modem/WAN
+
+Jika menggunakan 2 modem/WAN kita anggap modem tersebut dengan details berikut:
+
+MODEM | INTERFACE-NAME
+------------ | -------------
+WAN A | eth1
+WAN B | wlan0
+
+kita perlu edit configuration utama `main.yaml` dengan cara menghapus segala yang berkaitan dengan **WAN C** yakni,
+
+```yaml
+- name: Direct WAN C
+  type: select
+  disable-udp: false
+  interface-name: eth2
+  proxies:
+  - DIRECT
+```
+
+dan hapus baris yang memiliki kata `Direct WAN C` pada settingan berikut
+
+```yaml
+- name: Direct Multi-WAN
+  type: select
+  disable-udp: false
+  proxies:
+  - Direct WAN A
+  - Direct WAN B
+  - Direct WAN C
+```
+
+setelah dihapus maka jadi seperti ini,
+
+```yaml
+- name: Direct Multi-WAN
+  type: select
+  disable-udp: false
+  proxies:
+  - Direct WAN A
+  - Direct WAN B
+```
+
+#### 1 Modem/WAN
+
+Jika kalian hanya menggunakan satu modem hapus hal-hal yang berkaitan dengan `Direct WAN B` dan `Direct WAN C` seperti contoh pengaturan 2 modem.
+
+
+* Edit Setiap file pada folder Proxy_Provider
+
+    Sebagai Contoh punya 1 atau lebih akun trojan server Singapore yakni proxy X, proxy Y, dan 1 akun trojan server Indo sebut proxy Z.
+    Disini karena akan digunakan untuk Loadbalance MULTI-WAN disarankan setiap interface disetting 1 akun dengan perbandingan 1:1. Sebagaimana pada pembukaan Multi-WAN ISP, dengan 2 WAN untuk LB dan 1 WAN untuk direct/bypass traffic atau gaming. Cara Setting Proxies menggunakan sumber koneksi WAN yang mana, misal proxy X menggunakan WAN A/`eth1` dengan routing-mark `1333` dan proxy Y menggunakan WAN B/`wwan` dengan routing-mark `2333`bisa diliat sebagai berikut:
+    ```yaml
+    - name: "proxy X"
+      type: trojan
+      server: aaa.bbb.ccc.ddd
+      port: 443
+      password: PASSWORD
+      udp: true
+      sni: BUGSNI.COM
+      alpn:
+        - h2
+        - http/1.1
+      skip-cert-verify: true
+      interface-name: eth1
+      routing-mark: 1333
+    
+    - name: "proxy Y"
+      type: trojan
+      server: aaa.bbb.ccc.ddd
+      port: 443
+      password: PASSWORD
+      udp: true
+      sni: BUGSNI.COM
+      alpn:
+        - h2
+         - http/1.1
+      skip-cert-verify: true
+      interface-name: wwan
+      routing-mark: 2333
+    ```
+
 
 ### Edit Files Proxy Provider
 
@@ -296,57 +398,6 @@ proxies:
     grpc-service-name: iptunnelstrojangrpc
 ```
 
-### Multi-WAN ISP
-
-Nah disini secara default menggunakan 3 ISP yakni WAN A, WAN B, WAN C, dimana WAN A bersumber dari interface `eth1` dan WAN B bersumber dari `wwan` serta WAN C bersumber dari `eth2`. Mengecek nama interface WAN mu bisa dari LuCI > Network > Interface atau bisa jalankan commandline `ifconfig`. Setelah memperoleh nama interface dari tiap WAN maka kita tentukan routing-mark untuk setiap proxy/interface diatas. Misalkan interface `eth1` routing-mark `1333`, `wwan` routing-mark `2333`, `wwan` routing-mark `3333`. Disini kita akan menentukan WAN mana yang akan dijadikan koneksi Load-Balancing (LB) dan WAN untuk khusus traffic direct/bypass koneksi. Sebagai contoh WAN A/`eth1` dan WAN B/`wwan` dijadikan koneksi (LB) dan WAN C/`eth2` sebagai koneksi direct/bypass traffic ataupun Gaming. Setelah semuanya sudah ditentukan maka tinggal cara settingnya sebagai berikut:
-* Edit file main.yaml.
-
-    Edit `interface-name: ` pada list proxy-groups dengan mengisikan nama interface WAN dari modem kalian. Dan perlu diperhatikan jika hanya menggunakan 1 WAN saja maka hapus proxy-groups `Direct WAN B` , `Direct WAN C` dan `Direct Multi-WAN`.
-    
-    Dan Jika Menggunakan 2 WAN maka hapus proxy-groups `Direct WAN C` dan jangan lupa hapus `Direct WAN C` pada proxy-groups `Direct Multi-WAN`.
-    contoh proxy-groups dari WAN A.
-    ```yaml
-    - name: Direct WAN A
-        type: select
-        disable-udp: false
-        interface-name: eth1
-        proxies:
-          - DIRECT
-    ```
-
-* Edit Setiap file pada folder Proxy_Provider
-
-    Sebagai Contoh punya 1 atau lebih akun trojan server Singapore yakni proxy X, proxy Y, dan 1 akun trojan server Indo sebut proxy Z.
-    Disini karena akan digunakan untuk Loadbalance MULTI-WAN disarankan setiap interface disetting 1 akun dengan perbandingan 1:1. Sebagaimana pada pembukaan Multi-WAN ISP, dengan 2 WAN untuk LB dan 1 WAN untuk direct/bypass traffic atau gaming. Cara Setting Proxies menggunakan sumber koneksi WAN yang mana, misal proxy X menggunakan WAN A/`eth1` dengan routing-mark `1333` dan proxy Y menggunakan WAN B/`wwan` dengan routing-mark `2333`bisa diliat sebagai berikut:
-    ```yaml
-    - name: "proxy X"
-      type: trojan
-      server: aaa.bbb.ccc.ddd
-      port: 443
-      password: PASSWORD
-      udp: true
-      sni: BUGSNI.COM
-      alpn:
-        - h2
-        - http/1.1
-      skip-cert-verify: true
-      interface-name: eth1
-      routing-mark: 1333
-    
-    - name: "proxy Y"
-      type: trojan
-      server: aaa.bbb.ccc.ddd
-      port: 443
-      password: PASSWORD
-      udp: true
-      sni: BUGSNI.COM
-      alpn:
-        - h2
-         - http/1.1
-      skip-cert-verify: true
-      interface-name: wwan
-      routing-mark: 2333
-    ```
 
 ### Edit Files Rule Provider
 
