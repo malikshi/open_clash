@@ -29,6 +29,12 @@
   - [Overviews](#overviews)
 - [Setting Yacd](#setting-yacd)
   - [Proxies](#proxies)
+    - [Toggle TrafficDirect](#toggle-trafficdirect)
+    - [Toggle Traffic Multi-WAN](#toggle-traffic-multi-wan)
+    - [Toggle TrafficPortGames](#toggle-trafficportgames)
+    - [Toggle TrafficAds](#toggle-trafficads)
+    - [Toggle TrafficP0rn](#toggle-trafficp0rn)
+    - [Toggle Traffic GLOBAL](#toggle-traffic-global)
   - [Config](#config)
 - [Test Adblock 100%](#test-adblock-100)
 
@@ -535,8 +541,32 @@ Yacd adalah yet another clash dashboard, yakni dashboard clash yang dapat diguna
 
 ## Proxies
 
+Kita akan mengatur toggle/pilihan proxies yang kan digunakan tiap proxy-groups.
+
+### Toggle TrafficDirect
+
+<img src="https://raw.githubusercontent.com/malikshi/open_clash/main/assets/direct.jpg" border="0">
+
+### Toggle Traffic Multi-WAN
+
+<img src="https://raw.githubusercontent.com/malikshi/open_clash/main/assets/multiwan.jpg" border="0">
+
+### Toggle TrafficPortGames
+
+<img src="https://raw.githubusercontent.com/malikshi/open_clash/main/assets/portgames.jpg" border="0">
+
+### Toggle TrafficAds
+
+<img src="https://raw.githubusercontent.com/malikshi/open_clash/main/assets/ads.jpg" border="0">
+
+### Toggle TrafficP0rn
+
+<img src="https://raw.githubusercontent.com/malikshi/open_clash/main/assets/adlt.jpg" border="0">
+
+### Toggle Traffic GLOBAL
 Untuk pertama kali start openclash maka harus setting proxies `GLOBAL` ke traffic proxy-groups `Umum`.
-<img src="https://raw.githubusercontent.com/malikshi/open_clash/main/assets/yacd-config-2.jpg" border="0">
+<img src="https://raw.githubusercontent.com/malikshi/open_clash/main/assets/yacd-proxies-global.jpg" border="0">
+
 
 ## Config
 
