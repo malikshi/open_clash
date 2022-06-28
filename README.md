@@ -430,7 +430,7 @@ rule_direct.yaml bersifat offline dimana pengguna dapat mengedit traffic apa saj
 
 # Setting Openclash App
 
-Setelah Selesai Setting https dns proxy(DoH). mengedit config main.yaml dan setiap file pada folder proxy_provider serta rule_direct.yaml pada folder rule_provider maka kita akan setting openclash via luCI. Silahkan Login LuCI dan masuk ke Services > Openclash
+Setelah mengedit config main.yaml dan setiap file pada folder proxy_provider serta rule_direct.yaml pada folder rule_provider maka kita akan setting openclash via luCI. Silahkan Login LuCI dan masuk ke Services > Openclash
 
 ## Global Setting
 
