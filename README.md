@@ -492,6 +492,13 @@ fallback-filter:
 
 <img src="https://raw.githubusercontent.com/malikshi/open_clash/main/assets/dns-fallback.jpg" border="0">
 
+DNS Server Group | DNS Server Address | DNS Server Port | DNS Server Type
+------------ | ------------- | ------------- | -------------
+NameServer | dns.quad9.net/dns-query |   | HTTPS
+NameServer | 9.9.9.9 | 853 | TLS
+FallBack | dns.quad9.net/dns-query |   | HTTPS
+FallBack | 149.112.112.112 | 853 | TLS
+
 ### GEOIP Update
 
 Pada rule_indo.yaml menggunakan geoip:ID dimana jika IP tersebut bercode/berasal negara Indonesia maka akan menggunakan trafficIndo.yaml dan itu membutuhkan mmdb yang selalu updated sebagai data geoip seluruh negara.
