@@ -9,13 +9,13 @@
   - [Download Config](#download-config)
   - [Setting Multi-WAN OC](#setting-multi-wan-oc)
   - [2 Modem/WAN](#2-modemwan)
-      - [1 Modem/WAN](#1-modemwan)
+  - [1 Modem/WAN](#1-modemwan)
+  - [Cara Mengisi Akun](#cara-mengisi-akun)
     - [Edit Files Proxy Provider](#edit-files-proxy-provider)
       - [Shadowsocks](#shadowsocks)
       - [Vmess](#vmess)
       - [Snell](#snell)
       - [Trojan](#trojan)
-    - [Edit Files Rule Provider](#edit-files-rule-provider)
       - [Rule Direct/Bypassed Connection](#rule-directbypassed-connection)
     - [Setting Openclash App](#setting-openclash-app)
       - [Global Setting](#global-setting)
@@ -145,54 +145,79 @@ setelah dihapus maka jadi seperti ini,
   - Direct WAN B
 ```
 
-#### 1 Modem/WAN
+## 1 Modem/WAN
 
 Jika kalian hanya menggunakan satu modem hapus hal-hal yang berkaitan dengan `Direct WAN B` dan `Direct WAN C` seperti contoh pengaturan 2 modem.
 
+## Cara Mengisi Akun
 
-* Edit Setiap file pada folder Proxy_Provider
+Cara mengisi akun supaya load-balance pada tiap proxy-provider berjalan dengan baik. Sangat direkomendasikan tiap proxy-provider diisi dengan 2 akun dengan contoh sebagai berikut:
 
-    Sebagai Contoh punya 1 atau lebih akun trojan server Singapore yakni proxy X, proxy Y, dan 1 akun trojan server Indo sebut proxy Z.
-    Disini karena akan digunakan untuk Loadbalance MULTI-WAN disarankan setiap interface disetting 1 akun dengan perbandingan 1:1. Sebagaimana pada pembukaan Multi-WAN ISP, dengan 2 WAN untuk LB dan 1 WAN untuk direct/bypass traffic atau gaming. Cara Setting Proxies menggunakan sumber koneksi WAN yang mana, misal proxy X menggunakan WAN A/`eth1` dengan routing-mark `1333` dan proxy Y menggunakan WAN B/`wwan` dengan routing-mark `2333`bisa diliat sebagai berikut:
-    ```yaml
-    - name: "proxy X"
-      type: trojan
-      server: aaa.bbb.ccc.ddd
-      port: 443
-      password: PASSWORD
-      udp: true
-      sni: BUGSNI.COM
-      alpn:
-        - h2
-        - http/1.1
-      skip-cert-verify: true
-      interface-name: eth1
-      routing-mark: 1333
-    
-    - name: "proxy Y"
-      type: trojan
-      server: aaa.bbb.ccc.ddd
-      port: 443
-      password: PASSWORD
-      udp: true
-      sni: BUGSNI.COM
-      alpn:
-        - h2
-         - http/1.1
-      skip-cert-verify: true
-      interface-name: wwan
-      routing-mark: 2333
-    ```
+* untuk file proxy-provider [vvip-id.yaml](https://github.com/malikshi/open_clash/blob/main/proxy_provider/vvip-id.yaml)
 
+NAMA | ISP | INTERFACE-NAME
+------------ | ------------- | -------------
+VVIP-ID1 | BIZNET | eth1
+VVIP-ID2 | UNINET | wlan0
+
+* untuk file proxy-provider [vvip-sg.yaml](https://github.com/malikshi/open_clash/blob/main/proxy_provider/vvip-sg.yaml)
+
+NAMA | ISP | INTERFACE-NAME
+------------ | ------------- | -------------
+VVIP-SG1 | DO | eth1
+VVIP-SG2 | HE | wlan0
+
+* untuk file proxy-provider [vvip-game.yaml](https://github.com/malikshi/open_clash/blob/main/proxy_provider/vvip-game.yaml)
+
+NAMA | ISP | INTERFACE-NAME
+------------ | ------------- | -------------
+VVIP-GM1 | DO | eth1
+VVIP-GM2 | HE | wlan0
+
+contoh isi akun untuk **`vvip-id.yaml`** perhatikan juga interface-name!
+
+```yaml
+- name: "VVIP-ID1"
+  type: trojan
+  server: aaa.bbb.ccc.ddd
+  port: 443
+  password: PASSWORD
+  udp: true
+  sni: BUGSNI.COM
+  alpn:
+    - h2
+    - http/1.1
+  skip-cert-verify: true
+  interface-name: eth1
+
+- name: "VVIP-ID2"
+  type: vmess
+  server: aaa.bbb.ccc.ddd
+  port: 443
+  uuid: UUID
+  alterId: 0
+  cipher: auto
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  servername: aaa.bbb.ccc.ddd
+  network: ws
+  ws-opts:
+    path: /iptunnelscom
+    headers:
+      Host: aaa.bbb.ccc.ddd
+    max-early-data: 2048
+    early-data-header-name: Sec-WebSocket-Protocol
+  interface-name: wlan0
+```
 
 ### Edit Files Proxy Provider
-
 
 Mengisi akun tunnel pada 3 files pada folder proxy_provider yang terdiri dari vvip-sg, vvip-id, dan vvip-game.
 Fungsi dari proxy_provider diatas:
 * vvip-sg.yaml, Gunakan akun VVIP IPTUNNELS berlokasi SINGAPORE untuk memperoleh speed/traffic yang lebih bagus.
 * vvip-id.yaml, Gunakan akun VVIP IPTUNNELS berlokasi INDONESIA untuk keperluan akses websites/marketplace/live stream apps/Video on Demand yang mengharuskan memakai IP Address Publik Indonesia.
-* vvip-game.yaml, Gunakan akun VVIP IPTUNNELS yang memiliki ping atau latency rendah seperti trojan,shadowsocks,grPC,Snell.
+* vvip-game.yaml, Gunakan akun VVIP IPTUNNELS yang memiliki ping atau latency rendah seperti trojan, shadowsocks, gRPC, Snell.
 
 Keterangan lebih lanjut:
 Karena config akan disetting dengan sistem fallback dimana jika proxy list pertama gagal maka akan menggunakan proxy list kedua, jika proxy list pertama dan kedua gagal maka akan menggunakan DIRECT, namun jika 30 detik kemudian proxy list pertama kembali aktif maka proxy list urutan pertama akan digunakan, sehingga sangat menguntungkan karena tidak perlu memikirkan jika salah satu proxy gagal.
@@ -244,7 +269,7 @@ Traffic dengan Select:
 ```yaml
 - name: "Vmess ws bug SNI"
   type: vmess
-  server: aaa.bbb.ccc.ddd
+  server: domainserver.com
   port: 443
   uuid: UUIDMU
   alterId: 0
@@ -265,7 +290,7 @@ Traffic dengan Select:
 ```yaml
 - name: "vmess ws bug CDN"
   type: vmess
-  server: IPCDN/BUGCDN.COM
+  server: IP/HOST_CDN_CLOUDFLARE
   port: 443
   uuid: UUIDMU
   alterId: 0
@@ -273,12 +298,12 @@ Traffic dengan Select:
   udp: true
   tls: true
   skip-cert-verify: false
-  servername: namadomainservermu.com
+  servername: domainservermu.com
   network: ws
   ws-opts:
     path: /iptunnelscom
     headers:
-      Host: namadomainservermu.com
+      Host: domainservermu.com
     max-early-data: 2048
     early-data-header-name: Sec-WebSocket-Protocol
 ```
@@ -286,7 +311,7 @@ Traffic dengan Select:
 ```yaml
 proxies:
   - name: vmess grpc SNI
-    server: aaa.bbb.ccc.ddd
+    server: domainservermu.com
     port: 443
     type: vmess
     uuid: UUIDMU
@@ -297,13 +322,13 @@ proxies:
     servername: BUGSNI.COM
     skip-cert-verify: true
     grpc-opts:
-      grpc-service-name: grpcpath
+      grpc-service-name: iptunnelsvgrpc
 ```
 * Vmess gRPC bug CDN
 ```yaml
 proxies:
   - name: vmess grpc CDN
-    server: IPCDN/BUGCDN.COM
+    server: IP/HOST_CDN_CLOUDFLARE
     port: 443
     type: vmess
     uuid: UUIDMU
@@ -311,10 +336,10 @@ proxies:
     cipher: auto
     network: grpc
     tls: true
-    servername: namadomainservermu.com
+    servername: domainservermu.com
     skip-cert-verify: false
     grpc-opts:
-      grpc-service-name: grpcpath
+      grpc-service-name: iptunnelsvgrpc
 ```
 
 #### Snell
@@ -339,7 +364,7 @@ proxies:
 ```yaml
 - name: "trojan-gfw SNI"
   type: trojan
-  server: aaa.bbb.ccc.ddd
+  server: domainservermu.com
   port: 443
   password: PASSWORD
   udp: true
@@ -352,24 +377,24 @@ proxies:
 * Trojan-go websocket bug CDN
 ```yaml
 - name: trojan ws cdn
-  server: IPCDN/BUGCDN.COM
+  server: IP/HOST_CDN_CLOUDFLARE
   port: 443
   type: trojan
   password: PASSWORD
   network: ws
-  sni: namadomainservermu.com
+  sni: domainservermu.com
   skip-cert-verify: false
   udp: true
   ws-opts:
     path: /iptunnelstrgo
     headers:
-        Host: namadomainservermu.com
+        Host: domainservermu.com
 ```
 * Trojan gRPC bug SNI
 ```yaml
 - name: "trojan gRPC SNI"
   type: trojan
-  server: aaa.bbb.ccc.ddd
+  server: domainservermu.com
   port: 443
   password: PASSWORD
   udp: true
@@ -385,11 +410,11 @@ proxies:
 ```yaml
 - name: "trojan gRPC CDN"
   type: trojan
-  server: IPCDN/BUGCDN.COM
+  server: IP/HOST_CDN_CLOUDFLARE
   port: 443
   password: PASSWORD
   udp: true
-  sni: namadomainservermu.com
+  sni: domainservermu.com
   alpn:
   - h2
   skip-cert-verify: false
@@ -397,11 +422,6 @@ proxies:
   grpc-opts:
     grpc-service-name: iptunnelstrojangrpc
 ```
-
-
-### Edit Files Rule Provider
-
-Config Openclash VVIP IPTUNNELS kalian tidak perlu melakukan update manual dari banyaknya rules pada folder rule_provider. Cukup edit rule_direct.yaml dikarenakan itu customize tiap orang untuk bypass trafficnya. Untuk rule yang lain jika ada tambahan silahkan chat ke grup telegram IPTUNNELS atau open issues pada repository ini.
 
 #### Rule Direct/Bypassed Connection
 
