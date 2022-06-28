@@ -229,21 +229,6 @@ Fungsi dari proxy_provider diatas:
 Keterangan lebih lanjut:
 Karena config akan disetting dengan sistem fallback dimana jika proxy list pertama gagal maka akan menggunakan proxy list kedua, jika proxy list pertama dan kedua gagal maka akan menggunakan DIRECT, namun jika 30 detik kemudian proxy list pertama kembali aktif maka proxy list urutan pertama akan digunakan, sehingga sangat menguntungkan karena tidak perlu memikirkan jika salah satu proxy gagal.
 
-Traffic dengan Fallback:
-
-* TrafficUmum : VVIP SG -> VVIP ID -> Direct Multi-WAN
-* TrafficStreaming : VVIP SG -> VVIP ID -> Direct Multi-WAN
-* TrafficSosmed : VVIP ID -> VVIP SG -> Direct Multi-WAN
-* TrafficIndo : VVIP ID -> VVIP SG -> Direct Multi-WAN
-
-Traffic dengan Select:
-
-* TrafficDirect : Direct Multi-WAN / VVIP ID / VVIP SG
-* TrafficGaming : TrafficDirect / VVIP GAME
-* TrafficAds : REJECT / VVIP SG / VVIP ID
-* TrafficP0rn : REJECT / VVIP SG / VVIP ID
-
-
 #### Shadowsocks
 
 * Shadowsocks Original / tanpa plugin
