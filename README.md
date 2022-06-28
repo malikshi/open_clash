@@ -107,7 +107,7 @@ Download zip master dan ekstrak file [**open_clash-main.zip**](https://codeload.
 
 ## Setting Multi-WAN OC
 
-Setelah menentukan jumlah modem/WAN yang akan digunakan maka kita setting Multi-WAN di Openclash. Kita akan jelaskan jika menggunakan 2 modem/wan dan jika satu modem/wan.
+Setelah menentukan jumlah modem/WAN yang akan digunakan ketika setting Multi-WAN di Openclash. Kita akan jelaskan jika menggunakan 2 modem/wan dan jika satu modem/wan.
 
 ## 2 Modem/WAN
 
