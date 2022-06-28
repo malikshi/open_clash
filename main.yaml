@@ -327,6 +327,7 @@ rules:
 - DST-PORT,22,TrafficDirect
 - RULE-SET,rule_lancidr,DIRECT,no-resolve
 - RULE-SET,rule_falsepositive,TrafficUmum
+- RULE-SET,rule_personalads,TrafficAds
 - RULE-SET,rule_basicads,TrafficAds
 - RULE-SET,rule_malicious,TrafficAds
 - RULE-SET,rule_hijacking,TrafficAds
@@ -453,6 +454,12 @@ rule-providers:
     behavior: classical
     url: https://raw.githubusercontent.com/malikshi/open_clash/main/rule_provider/rule_basicads.yaml
     path: "./rule_provider/rule_basicads.yaml"
+    interval: 86400
+  rule_personalads:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/malikshi/open_clash/main/rule_provider/rule_personalads.yaml
+    path: "./rule_provider/rule_personalads.yaml"
     interval: 86400
   rule_malicious:
     type: http
