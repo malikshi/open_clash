@@ -245,8 +245,8 @@ payload:
   - DOMAIN-SUFFIX,stocks-analytics-events.news.apple-dns.net
   - DOMAIN-KEYWORD,pagead2
   - DOMAIN-KEYWORD,adservice
-  - DOMAIN-KEYWORD,ads.
-  - DOMAIN-KEYWORD,ad.
+  - DOMAIN-KEYWORD,.ads.
+  - DOMAIN-KEYWORD,.ad.
   - DOMAIN-KEYWORD,adservetx
   - DOMAIN-KEYWORD,mediavisor
   - DOMAIN-KEYWORD,adtago
