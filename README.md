@@ -171,8 +171,8 @@ VVIP-SG2 | HE | wlan0
 
 NAMA | ISP | INTERFACE-NAME
 ------------ | ------------- | -------------
-VVIP-GM1 | DO | eth1
-VVIP-GM2 | HE | wlan0
+VVIP-GM1 | BIZNET | eth1
+VVIP-GM2 | UNINET | wlan0
 
 contoh isi akun untuk **`vvip-id.yaml`** perhatikan juga interface-name!
 
@@ -248,19 +248,21 @@ Traffic dengan Select:
   cipher: chacha20-ietf-poly1305
   password: passwordss
   udp: true
+  interface-name: eth1
 ```
 * Shadowsocks dengan plugin obfs
 ```yaml
 - name: "shadowsocks obfs"
-    type: ss
-    server: aaa.bbb.ccc.ddd
-    port: 32033
-    cipher: chacha20-ietf-poly1305
-    password: passwordss
-    plugin: obfs
-    plugin-opts:
-      mode: tls
-      host: BUG.COM
+  type: ss
+  server: aaa.bbb.ccc.ddd
+  port: 32033
+  cipher: chacha20-ietf-poly1305
+  password: passwordss
+  plugin: obfs
+  plugin-opts:
+    mode: tls
+    host: BUG.COM
+  interface-name: eth1
 ```
 
 #### Vmess
@@ -285,6 +287,7 @@ Traffic dengan Select:
       Host: BUGSNI.COM
     max-early-data: 2048
     early-data-header-name: Sec-WebSocket-Protocol
+  interface-name: eth1
 ```
 * Vmess websocket dengan BUG CDN (bolak-balik)
 ```yaml
@@ -306,40 +309,41 @@ Traffic dengan Select:
       Host: domainservermu.com
     max-early-data: 2048
     early-data-header-name: Sec-WebSocket-Protocol
+  interface-name: eth1
 ```
 * Vmess gRPC bug SNI
 ```yaml
-proxies:
-  - name: vmess grpc SNI
-    server: domainservermu.com
-    port: 443
-    type: vmess
-    uuid: UUIDMU
-    alterId: 0
-    cipher: auto
-    network: grpc
-    tls: true
-    servername: BUGSNI.COM
-    skip-cert-verify: true
-    grpc-opts:
-      grpc-service-name: iptunnelsvgrpc
+- name: vmess grpc SNI
+  server: domainservermu.com
+  port: 443
+  type: vmess
+  uuid: UUIDMU
+  alterId: 0
+  cipher: auto
+  network: grpc
+  tls: true
+  servername: BUGSNI.COM
+  skip-cert-verify: true
+  grpc-opts:
+    grpc-service-name: iptunnelsvgrpc
+  interface-name: eth1
 ```
 * Vmess gRPC bug CDN
 ```yaml
-proxies:
-  - name: vmess grpc CDN
-    server: IP/HOST_CDN_CLOUDFLARE
-    port: 443
-    type: vmess
-    uuid: UUIDMU
-    alterId: 0
-    cipher: auto
-    network: grpc
-    tls: true
-    servername: domainservermu.com
-    skip-cert-verify: false
-    grpc-opts:
-      grpc-service-name: iptunnelsvgrpc
+- name: vmess grpc CDN
+  server: IP/HOST_CDN_CLOUDFLARE
+  port: 443
+  type: vmess
+  uuid: UUIDMU
+  alterId: 0
+  cipher: auto
+  network: grpc
+  tls: true
+  servername: domainservermu.com
+  skip-cert-verify: false
+  grpc-opts:
+    grpc-service-name: iptunnelsvgrpc
+  interface-name: eth1
 ```
 
 #### Snell
@@ -356,6 +360,7 @@ proxies:
   obfs-opts:
     mode: tls
     host: BUGSNI.COM
+  interface-name: eth1
 ```
 
 #### Trojan
@@ -373,6 +378,7 @@ proxies:
     - h2
     - http/1.1
   skip-cert-verify: true
+  interface-name: eth1
 ```
 * Trojan-go websocket bug CDN
 ```yaml
@@ -389,6 +395,7 @@ proxies:
     path: /iptunnelstrgo
     headers:
         Host: domainservermu.com
+  interface-name: eth1
 ```
 * Trojan gRPC bug SNI
 ```yaml
@@ -405,6 +412,7 @@ proxies:
   network: grpc
   grpc-opts:
     grpc-service-name: iptunnelstrojangrpc
+  interface-name: eth1
 ```
 * Trojan gRPC bug CDN
 ```yaml
@@ -421,6 +429,7 @@ proxies:
   network: grpc
   grpc-opts:
     grpc-service-name: iptunnelstrojangrpc
+  interface-name: eth1
 ```
 
 # Rule Direct/Bypassed Connection
