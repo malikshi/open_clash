@@ -22,7 +22,6 @@
     - [Operation Mode](#operation-mode)
     - [DNS Setting](#dns-setting)
     - [GEOIP Update](#geoip-update)
-    - [Update Version](#update-version)
   - [Manage Config](#manage-config)
     - [Import Main.yaml](#import-mainyaml)
     - [Import Proxy Provider](#import-proxy-provider)
@@ -31,6 +30,7 @@
 - [Setting Yacd](#setting-yacd)
   - [Proxies](#proxies)
   - [Config](#config)
+- [Test Adblock 100%](#test-adblock-100)
 
 # Openclash Config
 
@@ -79,7 +79,7 @@ WAN C | TRAFFIC DIRECT, TRAFFIC GAME DAN BACKUP DARI LOAD-BALANCE
 
 Untuk menentukan interface-name modem/WAN bisa melalui `LuCi > Network >> Interfaces` lihat gambar berikut dengan seksama.
 
-<img src="https://raw.githubusercontent.com/malikshi/open_clash/main/assets/interfacemodem.jpg" border="0">
+<img src="https://raw.githubusercontent.com/malikshi/open_clash/main/assets/interfacename.jpg" border="0">
 
 Perhatikan tanda kotak biru yang merupakan **interface-name** dengan berikut detailsnya,
 
@@ -456,25 +456,54 @@ Hasil settingan pada global setting akan meng-overide settingal awal pada file m
 
 * Ceklist/Centang sesuai gambar:
 
-<img src="https://raw.githubusercontent.com/malikshi/open_clash/main/assets/dns-setting.jpg" border="0">
+<img src="https://raw.githubusercontent.com/malikshi/open_clash/main/assets/dnssetting.jpg" border="0">
 
-* Tambahkan Server Group name server dan fallback masing masing 2. Kemudian isi daril hasil setting https-dns-proxy pada nameserver dan fallback pertama. Setelah itu isi nameserver dan fallback yang kedua dengan dns legacy/udp google dan cloudflare seperti pada gambar berikut.
+* Isi Fallback-filter
 
-<img src="https://raw.githubusercontent.com/malikshi/open_clash/main/assets/dns-setting-2.jpg" border="0">
+Perlu diedit isi fallback-filternya supaya mendapatkan hostname di Yacd Connection log. isi fallback-filter dengan ini.
+
+```yaml
+fallback-filter:
+  geoip: true
+  geoip-code: ID
+  ipcidr:
+    - 0.0.0.0/8
+    - 10.0.0.0/8
+    - 100.64.0.0/10
+    - 127.0.0.0/8
+    - 169.254.0.0/16
+    - 172.16.0.0/12
+    - 192.0.0.0/24
+    - 192.0.2.0/24
+    - 192.88.99.0/24
+    - 192.168.0.0/16
+    - 198.18.0.0/15
+    - 198.51.100.0/24
+    - 203.0.113.0/24
+    - 224.0.0.0/4
+    - 240.0.0.0/4
+    - 255.255.255.255/32
+  domain:
+    - "+.google.com"
+    - "+.facebook.com"
+    - "+.youtube.com"
+    - "+.githubusercontent.com"
+    - "+.googlevideo.com"
+    - "+.msftconnecttest.com"
+    - "+.msftncsi.com"
+    - msftconnecttest.com
+    - msftncsi.com
+    - "+.*"
+```
+
+* Tambahkan Server Group name server dan fallback masing masing 2 seperti pada gambar berikut.
+
+<img src="https://raw.githubusercontent.com/malikshi/open_clash/main/assets/dns-fallback.jpg" border="0">
 
 ### GEOIP Update
 
 Pada rule_indo.yaml menggunakan geoip:ID dimana jika IP tersebut bercode/berasal negara Indonesia maka akan menggunakan trafficIndo.yaml dan itu membutuhkan mmdb yang selalu updated sebagai data geoip seluruh negara.
 <img src="https://raw.githubusercontent.com/malikshi/open_clash/main/assets/geoip-update.jpg" border="0">
-
-### Update Version
-
-Pada Update Version Openclash ada dua branch/cabang yakni versi master dan developer. Secara umum banyak yang menggunakan versi master karena bisa dibilang versi beta yang stable. Dan satu lagi versi developer dimana branch/cabang ini digunakan untuk fix issues/problem jadi bisa dibilang cabang yang selalu update dan jika sudah cukup stable maka akan diriliskan keversi master. Berikut cara settingnya:
-<img src="https://raw.githubusercontent.com/malikshi/open_clash/main/assets/version-update.jpg" border="0">
-
-1. Pilih Branch master atau developer.
-2. Jika sudah memilih branch maka update dengan klik `Check & Update`.
-3. Jika ada Versi Terbaru sesuai Branch yang dipilih akan terdapat status \<New>.
 
 ## Manage Config
 
@@ -483,17 +512,17 @@ Mulai dari versi v0.44.22-beta pada branch dev, menu Manage Config support denga
 ### Import Main.yaml
 
 Setelah melakukan pengeditan main.yaml maka kita import main.yaml via Manage Config. Dan khusus main.yaml jangan import/edit melalui winscp/sftp.
-<img src="https://raw.githubusercontent.com/malikshi/open_clash/main/assets/main-yaml.jpg" border="0">
+<img src="https://raw.githubusercontent.com/malikshi/open_clash/main/assets/main-upload.jpg" border="0">
 
 ### Import Proxy Provider
 
-Jika Semua file pada folder proxy_provider yang terdiri dari umum.yaml, trafficIndo.yaml, streaming.yaml, sosmed.yaml dan gaming.yaml sudah diisi dengan akun maka selanjutnya import file-file tersebut pada **Upload File Type : Proxy Provider File**.
-<img src="https://raw.githubusercontent.com/malikshi/open_clash/main/assets/proxy-provider.jpg" border="0">
+Jika Semua file pada folder proxy_provider yang terdiri dari vvip-id.yaml, vvip-sg.yaml, vvip-game.yaml yang sudah diisi dengan akun maka selanjutnya import file-file tersebut pada **Upload File Type : Proxy Provider File**.
+<img src="https://raw.githubusercontent.com/malikshi/open_clash/main/assets/proxy-upload.jpg" border="0">
 
 ### Import Rule Provider
 
 traffic direct/bypass sudah disikan ke rule_direct.yaml maka bisa langsung import semua files pada folder rule_provider pada **Upload File Type : Rule Provider File**.
-<img src="https://raw.githubusercontent.com/malikshi/open_clash/main/assets/rule-provider.jpg" border="0">
+<img src="https://raw.githubusercontent.com/malikshi/open_clash/main/assets/rule-upload.jpg" border="0">
 
 ## Overviews
 
@@ -513,3 +542,10 @@ Untuk pertama kali start openclash maka harus setting proxies `GLOBAL` ke traffi
 
 Pada menu yacd > config untuk pertama kali menjalankan openclash maka perlu setting Mode ke `Rule` dan `Enable Allow LAN` serta bisa mengaktifkan log level untuk melakukan debugging/tracing traffic jika ada rule yang salah.
 <img src="https://raw.githubusercontent.com/malikshi/open_clash/main/assets/yacd-config.jpg" border="0">
+
+# Test Adblock 100%
+
+Silahkan test rules adblock melalui [https://d3ward.github.io/toolz/adblock.html](https://d3ward.github.io/toolz/adblock.html)
+
+Hasil test:
+<img src="https://raw.githubusercontent.com/malikshi/open_clash/main/assets/d3ward.jpg" border="0">

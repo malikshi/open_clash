@@ -68,13 +68,13 @@ proxy-groups:
 - name: Direct WAN B
   type: select
   disable-udp: false
-  interface-name: eth2
+  interface-name: wlan0
   proxies:
   - DIRECT
 - name: Direct WAN C
   type: select
   disable-udp: false
-  interface-name: eth3
+  interface-name: eth2
   proxies:
   - DIRECT
 - name: TrafficPortGames
