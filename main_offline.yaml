@@ -1,0 +1,534 @@
+---
+proxy-providers:
+  VVIP-IPTUNNELS-ID:
+    type: file
+    path: "./proxy_provider/vvip-id.yaml"
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 180
+  VVIP-IPTUNNELS-SG:
+    type: file
+    path: "./proxy_provider/vvip-sg.yaml"
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 180
+  VVIP-IPTUNNELS-GAME:
+    type: file
+    path: "./proxy_provider/vvip-game.yaml"
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 180
+proxy-groups:
+- name: Route VVIP ID
+  type: load-balance
+  strategy: round-robin
+  disable-udp: false
+  use:
+  - VVIP-IPTUNNELS-ID
+  url: http://www.gstatic.com/generate_204
+  interval: 360
+- name: Route VVIP SG
+  type: load-balance
+  strategy: round-robin
+  disable-udp: false
+  use:
+  - VVIP-IPTUNNELS-SG
+  url: http://www.gstatic.com/generate_204
+  interval: 360
+- name: Route VVIP GAME
+  type: url-test
+  disable-udp: false
+  use:
+  - VVIP-IPTUNNELS-GAME
+  url: http://www.gstatic.com/generate_204
+  interval: 600
+- name: TrafficDirect
+  type: select
+  disable-udp: false
+  proxies:
+  - Direct Multi-WAN
+  - Route VVIP ID
+  - Route VVIP SG
+- name: Direct Multi-WAN
+  type: select
+  disable-udp: false
+  proxies:
+  - Direct WAN A
+  - Direct WAN B
+  - Direct WAN C
+- name: Direct WAN A
+  type: select
+  disable-udp: false
+  interface-name: eth1
+  proxies:
+  - DIRECT
+- name: Direct WAN B
+  type: select
+  disable-udp: false
+  interface-name: wlan0
+  proxies:
+  - DIRECT
+- name: Direct WAN C
+  type: select
+  disable-udp: false
+  interface-name: eth2
+  proxies:
+  - DIRECT
+- name: TrafficPortGames
+  type: select
+  disable-udp: false
+  proxies:
+  - TrafficDirect
+  - Route VVIP GAME
+- name: TrafficGaming
+  type: select
+  disable-udp: false
+  proxies:
+  - Route VVIP GAME
+  - TrafficDirect
+  use:
+  - VVIP-IPTUNNELS-GAME
+- name: TrafficAds
+  type: select
+  disable-udp: false
+  proxies:
+  - REJECT
+  - Route VVIP SG
+  - Route VVIP ID
+- name: TrafficPorn
+  type: select
+  disable-udp: false
+  proxies:
+  - REJECT
+  - Route VVIP SG
+  - Route VVIP ID
+- name: TrafficUmum
+  type: fallback
+  lazy: true
+  disable-udp: false
+  proxies:
+  - Route VVIP SG
+  - Route VVIP ID
+  - Direct Multi-WAN
+  url: http://www.gstatic.com/generate_204
+  interval: '30'
+- name: TrafficIndo
+  type: fallback
+  lazy: true
+  disable-udp: false
+  proxies:
+  - Route VVIP ID
+  - Route VVIP SG
+  - TrafficDirect
+  url: http://www.gstatic.com/generate_204
+  interval: '30'
+- name: TrafficStreaming
+  type: fallback
+  lazy: true
+  disable-udp: false
+  proxies:
+  - Route VVIP SG
+  - Route VVIP ID
+  - Direct Multi-WAN
+  url: http://www.gstatic.com/generate_204
+  interval: '30'
+- name: TrafficSosmed
+  type: fallback
+  lazy: true
+  disable-udp: false
+  proxies:
+  - Route VVIP ID
+  - Route VVIP SG
+  - Direct Multi-WAN
+  url: http://www.gstatic.com/generate_204
+  interval: '30'
+redir-port: 7892
+port: 7890
+socks-port: 7891
+mixed-port: 7893
+mode: rule
+log-level: silent
+allow-lan: true
+external-controller: 0.0.0.0:9090
+secret: '123456'
+bind-address: "*"
+external-ui: "/usr/share/openclash/ui"
+experimental:
+  ignore-resolve-fail: true
+dns:
+  enable: true
+  ipv6: true
+  enhanced-mode: fake-ip
+  listen: 0.0.0.0:7874
+  fake-ip-range: 198.18.0.1/16
+  fake-ip-filter:
+  - "*.lan"
+  - "*.localdomain"
+  - "*.example"
+  - "*.invalid"
+  - "*.localhost"
+  - "*.test"
+  - "*.local"
+  - "*.home.arpa"
+  - time.*.com
+  - time.*.gov
+  - time.*.edu.cn
+  - time.*.apple.com
+  - time1.*.com
+  - time2.*.com
+  - time3.*.com
+  - time4.*.com
+  - time5.*.com
+  - time6.*.com
+  - time7.*.com
+  - ntp.*.com
+  - ntp1.*.com
+  - ntp2.*.com
+  - ntp3.*.com
+  - ntp4.*.com
+  - ntp5.*.com
+  - ntp6.*.com
+  - ntp7.*.com
+  - "*.time.edu.cn"
+  - "*.ntp.org.cn"
+  - "+.pool.ntp.org"
+  - time1.cloud.tencent.com
+  - music.163.com
+  - "*.music.163.com"
+  - "*.126.net"
+  - musicapi.taihe.com
+  - music.taihe.com
+  - songsearch.kugou.com
+  - trackercdn.kugou.com
+  - "*.kuwo.cn"
+  - api-jooxtt.sanook.com
+  - api.joox.com
+  - joox.com
+  - y.qq.com
+  - "*.y.qq.com"
+  - streamoc.music.tc.qq.com
+  - mobileoc.music.tc.qq.com
+  - isure.stream.qqmusic.qq.com
+  - dl.stream.qqmusic.qq.com
+  - aqqmusic.tc.qq.com
+  - amobile.music.tc.qq.com
+  - "*.xiami.com"
+  - "*.music.migu.cn"
+  - music.migu.cn
+  - "+.msftconnecttest.com"
+  - "+.msftncsi.com"
+  - msftconnecttest.com
+  - msftncsi.com
+  - localhost.ptlogin2.qq.com
+  - localhost.sec.qq.com
+  - "+.srv.nintendo.net"
+  - "*.n.n.srv.nintendo.net"
+  - "+.stun.playstation.net"
+  - xbox.*.*.microsoft.com
+  - "*.*.xboxlive.com"
+  - xbox.*.microsoft.com
+  - xnotify.xboxlive.com
+  - "+.battlenet.com.cn"
+  - "+.wotgame.cn"
+  - "+.wggames.cn"
+  - "+.wowsgame.cn"
+  - "+.wargaming.net"
+  - proxy.golang.org
+  - stun.*.*
+  - stun.*.*.*
+  - "+.stun.*.*"
+  - "+.stun.*.*.*"
+  - "+.stun.*.*.*.*"
+  - "+.stun.*.*.*.*.*"
+  - heartbeat.belkin.com
+  - "*.linksys.com"
+  - "*.linksyssmartwifi.com"
+  - "*.router.asus.com"
+  - mesu.apple.com
+  - swscan.apple.com
+  - swquery.apple.com
+  - swdownload.apple.com
+  - swcdn.apple.com
+  - swdist.apple.com
+  - lens.l.google.com
+  - stun.l.google.com
+  - "+.nflxvideo.net"
+  - "*.square-enix.com"
+  - "*.finalfantasyxiv.com"
+  - "*.ffxiv.com"
+  - "*.ff14.sdo.com"
+  - ff.dorado.sdo.com
+  - "*.mcdn.bilivideo.cn"
+  - "+.media.dssott.com"
+  - time-ios.apple.com
+  - shark007.net
+  fallback-filter:
+    geoip: true
+    geoip-code: ID
+    ipcidr:
+    - 0.0.0.0/8
+    - 10.0.0.0/8
+    - 100.64.0.0/10
+    - 127.0.0.0/8
+    - 169.254.0.0/16
+    - 172.16.0.0/12
+    - 192.0.0.0/24
+    - 192.0.2.0/24
+    - 192.88.99.0/24
+    - 192.168.0.0/16
+    - 198.18.0.0/15
+    - 198.51.100.0/24
+    - 203.0.113.0/24
+    - 224.0.0.0/4
+    - 240.0.0.0/4
+    - 255.255.255.255/32
+    domain:
+    - "+.google.com"
+    - "+.facebook.com"
+    - "+.youtube.com"
+    - "+.githubusercontent.com"
+    - "+.googlevideo.com"
+    - "+.msftconnecttest.com"
+    - "+.msftncsi.com"
+    - msftconnecttest.com
+    - msftncsi.com
+    - "+.*"
+  default-nameserver:
+  - 8.8.8.8
+  - 8.8.4.4
+  - 1.1.1.1
+  - 1.0.0.1
+  - 9.9.9.9
+  - 149.112.112.112
+  - 208.67.222.222
+  - 208.67.220.220
+  - 185.228.168.9
+  - 185.228.169.168
+  - 76.76.2.0
+  - 76.76.10.0
+  - 94.140.14.140
+  - 94.140.14.141
+  - 172.105.216.54
+  nameserver:
+  - https://dns.quad9.net/dns-query
+  - tls://tls://dns.quad9.net:853
+  fallback:
+  - https://dns.quad9.net/dns-query
+  - tls://tls://dns.quad9.net:853
+profile:
+  store-selected: true
+  store-fakeip: true
+  store-fake-ip: true
+rules:
+- IP-CIDR,198.18.0.1/16,REJECT,no-resolve
+- DST-PORT,22,TrafficDirect
+- RULE-SET,rule_lancidr,DIRECT,no-resolve
+- RULE-SET,rule_falsepositive,TrafficUmum
+- RULE-SET,rule_personalads,TrafficAds
+- RULE-SET,rule_basicads,TrafficAds
+- RULE-SET,rule_malicious,TrafficAds
+- RULE-SET,rule_hijacking,TrafficAds
+- RULE-SET,rule_privacy,TrafficAds
+- RULE-SET,rule_porn,TrafficPorn
+- RULE-SET,rule_nsfw,TrafficPorn
+- RULE-SET,rule_Direct,TrafficDirect
+- RULE-SET,rule_Speedtest,TrafficUmum
+- RULE-SET,rule_playstore,TrafficUmum
+- RULE-SET,rule_disneyplus,TrafficIndo
+- RULE-SET,rule_netflix,TrafficIndo
+- RULE-SET,rule_Indo,TrafficIndo
+- RULE-SET,rule_hbo,TrafficIndo
+- RULE-SET,rule_hboasia,TrafficIndo
+- RULE-SET,rule_hbohk,TrafficIndo
+- RULE-SET,rule_hbousa,TrafficIndo
+- RULE-SET,rule_Streaming,TrafficStreaming
+- RULE-SET,rule_iqiyi,TrafficStreaming
+- RULE-SET,rule_iqiyiinter,TrafficStreaming
+- RULE-SET,rule_primevideo,TrafficStreaming
+- RULE-SET,rule_twitch,TrafficStreaming
+- RULE-SET,rule_Youtube,TrafficStreaming
+- RULE-SET,rule_Sosmed,TrafficSosmed
+- RULE-SET,rule_line,TrafficSosmed
+- RULE-SET,rule_metaverse,TrafficSosmed
+- RULE-SET,rule_tiktok,TrafficSosmed
+- RULE-SET,rule_twitter,TrafficSosmed
+- RULE-SET,rule_telegram,TrafficSosmed
+- RULE-SET,rule_telegramcidr,TrafficSosmed
+- RULE-SET,rule_videoconferences,TrafficStreaming
+- RULE-SET,rule_portgames,TrafficPortGames
+- SCRIPT,TCPgames,TrafficPortGames
+- SCRIPT,UDPgames,TrafficPortGames
+- RULE-SET,rule_Gaming,TrafficGaming
+- RULE-SET,rule_discord,TrafficGaming
+- RULE-SET,rule_games,TrafficGaming
+- RULE-SET,rule_umum,TrafficUmum
+- MATCH,GLOBAL
+tun:
+  enable: true
+  stack: system
+  auto-route: false
+  auto-detect-interface: false
+  dns-hijack:
+  - tcp://any:53
+tproxy-port: 7895
+script:
+  shortcuts:
+    TCPgames: network == 'tcp' and dst_port not in [21, 22, 23, 53, 80, 123, 143, 194, 443, 465, 587, 853, 993, 995, 998, 2052, 2053, 2082, 2083, 2086, 2095, 2096, 5222, 5228, 5229, 5230, 8080, 8443, 8880, 8883, 8888, 8889]
+    UDPgames: network == 'udp' and dst_port not in [21, 22, 23, 53, 80, 123, 143, 194, 443, 465, 587, 853, 993, 995, 998, 2052, 2053, 2082, 2083, 2086, 2095, 2096, 5222, 5228, 5229, 5230, 8080, 8443, 8880, 8883, 8888, 8889]
+rule-providers:
+  rule_Direct:
+    type: file
+    behavior: classical
+    path: "./rule_provider/rule_direct.yaml"
+  rule_umum:
+    type: file
+    behavior: classical
+    path: "./rule_provider/rule_umum.yaml"
+  rule_portgames:
+    type: file
+    behavior: classical
+    path: "./rule_provider/rule_portgames.yaml"
+  rule_videoconferences:
+    type: file
+    behavior: classical
+    path: "./rule_provider/rule_videoconferences.yaml"
+  rule_Indo:
+    type: file
+    behavior: classical
+    path: "./rule_provider/rule_Indo.yaml"
+  rule_Sosmed:
+    type: file
+    behavior: classical
+    path: "./rule_provider/rule_sosmed.yaml"
+  rule_Streaming:
+    type: file
+    behavior: classical
+    path: "./rule_provider/rule_streaming.yaml"
+  rule_Gaming:
+    type: file
+    behavior: classical
+    path: "./rule_provider/rule_gaming.yaml"
+  rule_Speedtest:
+    type: file
+    behavior: classical
+    path: "./rule_provider/rule_speedtest.yaml"
+  rule_discord:
+    type: file
+    behavior: classical
+    path: "./rule_provider/rule_discord.yaml"
+  rule_hijacking:
+    type: file
+    behavior: classical
+    path: "./rule_provider/rule_hijacking.yaml"
+  rule_privacy:
+    type: file
+    behavior: classical
+    path: "./rule_provider/rule_privacy.yaml"
+  rule_basicads:
+    type: file
+    behavior: classical
+    path: "./rule_provider/rule_basicads.yaml"
+  rule_personalads:
+    type: file
+    behavior: classical
+    path: "./rule_provider/rule_personalads.yaml"
+  rule_malicious:
+    type: file
+    behavior: classical
+    path: "./rule_provider/rule_malicious.yaml"
+  rule_falsepositive:
+    type: file
+    behavior: classical
+    path: "./rule_provider/rule_falsepositive.yaml"
+  rule_porn:
+    type: file
+    behavior: domain
+    path: "./rule_provider/rule_porn.yaml"
+  rule_nsfw:
+    type: file
+    behavior: classical
+    path: "./rule_provider/rule_nsfw.yaml"
+  rule_lancidr:
+    type: file
+    behavior: ipcidr
+    path: "./rule_provider/rule_lancidr.yaml"
+  rule_telegramcidr:
+    type: file
+    behavior: ipcidr
+    path: "./rule_provider/rule_telegramcidr.yaml"
+  rule_telegram:
+    type: file
+    behavior: domain
+    path: "./rule_provider/rule_telegram.yaml"
+  rule_disneyplus:
+    type: file
+    behavior: classical
+    path: "./rule_provider/rule_disneyplus.yaml"
+  rule_games:
+    type: file
+    behavior: domain
+    path: "./rule_provider/rule_games.yaml"
+  rule_hbo:
+    type: file
+    behavior: classical
+    path: "./rule_provider/rule_hbo.yaml"
+  rule_hboasia:
+    type: file
+    behavior: classical
+    path: "./rule_provider/rule_hboasia.yaml"
+  rule_hbohk:
+    type: file
+    behavior: classical
+    path: "./rule_provider/rule_hbohk.yaml"
+  rule_hbousa:
+    type: file
+    behavior: classical
+    path: "./rule_provider/rule_hbousa.yaml"
+  rule_iqiyi:
+    type: file
+    behavior: classical
+    path: "./rule_provider/rule_iqiyi.yaml"
+  rule_iqiyiinter:
+    type: file
+    behavior: classical
+    path: "./rule_provider/rule_iqiyiinter.yaml"
+  rule_line:
+    type: file
+    behavior: domain
+    path: "./rule_provider/rule_line.yaml"
+  rule_metaverse:
+    type: file
+    behavior: domain
+    path: "./rule_provider/rule_metaverse.yaml"
+  rule_netflix:
+    type: file
+    behavior: domain
+    path: "./rule_provider/rule_netflix.yaml"
+  rule_primevideo:
+    type: file
+    behavior: domain
+    path: "./rule_provider/rule_primevideo.yaml"
+  rule_playstore:
+    type: file
+    behavior: domain
+    path: "./rule_provider/rule_playstore.yaml"
+  rule_tiktok:
+    type: file
+    behavior: domain
+    path: "./rule_provider/rule_tiktok.yaml"
+  rule_twitch:
+    type: file
+    behavior: domain
+    path: "./rule_provider/rule_twitch.yaml"
+  rule_twitter:
+    type: file
+    behavior: domain
+    path: "./rule_provider/rule_twitter.yaml"
+  rule_Youtube:
+    type: file
+    behavior: domain
+    path: "./rule_provider/rule_Youtube.yaml"
+ipv6: true
