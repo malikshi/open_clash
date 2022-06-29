@@ -1,6 +1,6 @@
 payload:
   # Mulai baris ini kebawah bisa di edit/hapus
-  #MBLBB
+  #MLBB
   - DOMAIN-SUFFIX,mobilelegends.com
   - DOMAIN-SUFFIX,mobilelegends.ca
   - DOMAIN-SUFFIX,mobilelegends.cn
@@ -16,7 +16,6 @@ payload:
   - DOMAIN,tnc16-alisg.isnssdk.com
   - DOMAIN,gplog-sg.byteoversea.com
   - DOMAIN,xlog.byteoversea.com
-
   # FreeFire
   - DOMAIN-KEYWORD,freefire
   # PUBG
