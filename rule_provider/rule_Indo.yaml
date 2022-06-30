@@ -106,11 +106,15 @@ payload:
 # > Mncnow
   - DOMAIN-SUFFIX,mncnow.id
   - DOMAIN-SUFFIX,mncplay.id
+  - DOMAIN-KEYWORD,mncnow
+  - DOMAIN-KEYWORD,mncplay
 # > VisionPlus
   - DOMAIN-SUFFIX,visionplus.id
   - DOMAIN-SUFFIX,dtaarjaj1diy9.cloudfront.net
   - DOMAIN-SUFFIX,mrpw.ptmnc01.verspective.net
   - DOMAIN-SUFFIX,rmp-data.com
+  - DOMAIN,stream-cdn.mncnow.id
+  - DOMAIN-KEYWORD,visionplus
 # > We TV
   - DOMAIN-SUFFIX,webrtcpunch.video.qq.com
   - DOMAIN-SUFFIX,api.weathercn.com
