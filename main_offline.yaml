@@ -530,5 +530,5 @@ rule-providers:
   rule_Youtube:
     type: file
     behavior: domain
-    path: "./rule_provider/rule_Youtube.yaml"
+    path: "./rule_provider/rule_youtube.yaml"
 ipv6: true

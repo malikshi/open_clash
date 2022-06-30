@@ -603,6 +603,6 @@ rule-providers:
     type: http
     behavior: domain
     url: https://raw.githubusercontent.com/malikshi/open_clash/main/rule_provider/rule_youtube.yaml
-    path: "./rule_provider/rule_Youtube.yaml"
+    path: "./rule_provider/rule_youtube.yaml"
     interval: 86400
 ipv6: true
