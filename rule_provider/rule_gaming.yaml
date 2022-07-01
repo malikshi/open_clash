@@ -432,3 +432,7 @@ payload:
   - DOMAIN-SUFFIX,konami.net
   - DOMAIN-KEYWORD,konami
   - DOMAIN-SUFFIX,applilink.jp
+# > Growtopia
+  - DOMAIN-SUFFIX,growtopia1.com
+  - DOMAIN-SUFFIX,growtopia2.com
+  - DOMAIN-KEYWORD,growtopia
