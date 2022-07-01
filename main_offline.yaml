@@ -398,7 +398,7 @@ rule-providers:
   rule_Indo:
     type: file
     behavior: classical
-    path: "./rule_provider/rule_Indo.yaml"
+    path: "./rule_provider/rule_indo.yaml"
   rule_Sosmed:
     type: file
     behavior: classical
@@ -530,5 +530,5 @@ rule-providers:
   rule_Youtube:
     type: file
     behavior: domain
-    path: "./rule_provider/rule_Youtube.yaml"
+    path: "./rule_provider/rule_youtube.yaml"
 ipv6: true

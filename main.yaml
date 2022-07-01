@@ -404,8 +404,8 @@ rule-providers:
   rule_Indo:
     type: http
     behavior: classical
-    path: "./rule_provider/rule_Indo.yaml"
-    url: https://raw.githubusercontent.com/malikshi/open_clash/main/rule_provider/rule_Indo.yaml
+    path: "./rule_provider/rule_indo.yaml"
+    url: https://raw.githubusercontent.com/malikshi/open_clash/main/rule_provider/rule_indo.yaml
     interval: 86400
   rule_Sosmed:
     type: http
@@ -602,7 +602,7 @@ rule-providers:
   rule_Youtube:
     type: http
     behavior: domain
-    url: https://raw.githubusercontent.com/malikshi/open_clash/main/rule_provider/rule_Youtube.yaml
-    path: "./rule_provider/rule_Youtube.yaml"
+    url: https://raw.githubusercontent.com/malikshi/open_clash/main/rule_provider/rule_youtube.yaml
+    path: "./rule_provider/rule_youtube.yaml"
     interval: 86400
 ipv6: true

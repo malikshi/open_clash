@@ -126,7 +126,7 @@ jobs:
           rm -fr rule_twitter.yamle
 
           echo "Downloading rule_youtube source list..."
-          curl -s https://rules.kr328.app/youtube.yaml -o rule_Youtube.yaml
+          curl -s https://rules.kr328.app/youtube.yaml -o rule_youtube.yaml
           rm -fr rule_Youtube.yamle
 
 
