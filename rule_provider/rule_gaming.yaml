@@ -435,4 +435,5 @@ payload:
 # > Growtopia
   - DOMAIN-SUFFIX,growtopia1.com
   - DOMAIN-SUFFIX,growtopia2.com
+  - DOMAIN-SUFFIX,growtopiagame.com
   - DOMAIN-KEYWORD,growtopia
