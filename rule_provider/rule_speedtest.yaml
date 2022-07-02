@@ -19,5 +19,6 @@ payload:
   - DOMAIN-SUFFIX,cachefly.net
   - DOMAIN-KEYWORD,speedtest
   - DOMAIN-KEYWORD,speedtestcustom
+  - DOMAIN-KEYWORD,openspeedtest
   - DST-PORT,8080
 
