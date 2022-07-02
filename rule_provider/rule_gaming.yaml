@@ -437,3 +437,15 @@ payload:
   - DOMAIN-SUFFIX,growtopia2.com
   - DOMAIN-SUFFIX,growtopiagame.com
   - DOMAIN-KEYWORD,growtopia
+# > Genshin Impact
+  - DOMAIN-SUFFIX,genshinimpact.com
+  - DOMAIN-SUFFIX,honkaiimpact3.com
+  - DOMAIN-SUFFIX,honkaistarrail.com
+  - DOMAIN-SUFFIX,hoyo.link
+  - DOMAIN-SUFFIX,hoyolab.com
+  - DOMAIN-SUFFIX,hoyoverse.com
+  - DOMAIN-SUFFIX,n0vadesktop.com
+  - DOMAIN-SUFFIX,mihoyo.com
+  - DOMAIN-KEYWORD,genshinimpact
+  - DOMAIN-KEYWORD,honkaiimpact3
+  - DOMAIN-KEYWORD,mihoyo
