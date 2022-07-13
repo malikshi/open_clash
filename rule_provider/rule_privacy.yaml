@@ -1,16 +1,17 @@
 # NAME: Privacy
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
-# UPDATED: 2022-07-04 16:18:52
-# DOMAIN: 13
-# DOMAIN-SUFFIX: 12569
+# UPDATED: 2022-07-12 16:00:23
+# DOMAIN: 14
+# DOMAIN-SUFFIX: 12571
 # IP-CIDR: 7
-# TOTAL: 12589
+# TOTAL: 12592
 payload:
   - DOMAIN,hm.baidu.com
   - DOMAIN,hmma.baidu.com
   - DOMAIN,js.users.51.la
   - DOMAIN,mc.51.la
+  - DOMAIN,opencloud.wostore.cn
   - DOMAIN,safebrowsing.googleapis.com
   - DOMAIN,safebrowsing.urlsec.qq.com
   - DOMAIN,track.58.com
@@ -2162,6 +2163,7 @@ payload:
   - DOMAIN-SUFFIX,cmp.tek.no
   - DOMAIN-SUFFIX,cmp.telerama.fr
   - DOMAIN-SUFFIX,cmp2.channelpartner.de
+  - DOMAIN-SUFFIX,cmpassport.com
   - DOMAIN-SUFFIX,cms.hardloopaanbiedingen.nl
   - DOMAIN-SUFFIX,cmstool.youku.com
   - DOMAIN-SUFFIX,cn1.stadiumgoods.com
@@ -4224,6 +4226,7 @@ payload:
   - DOMAIN-SUFFIX,icu.getstorybox.com
   - DOMAIN-SUFFIX,icxmlt.decathlon.ru
   - DOMAIN-SUFFIX,id5-sync.com
+  - DOMAIN-SUFFIX,id6.me
   - DOMAIN-SUFFIX,idbkfy.kango-roo.com
   - DOMAIN-SUFFIX,ideadevice.actonservice.com
   - DOMAIN-SUFFIX,idg1.idgarages.com
