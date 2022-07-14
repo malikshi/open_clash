@@ -335,6 +335,8 @@ rules:
 - RULE-SET,rule_porn,TrafficPorn
 - RULE-SET,rule_nsfw,TrafficPorn
 - RULE-SET,rule_Direct,TrafficDirect
+- RULE-SET,rule_Gaming,TrafficGaming
+- RULE-SET,rule_games,TrafficGaming
 - RULE-SET,rule_Speedtest,TrafficUmum
 - RULE-SET,rule_playstore,TrafficUmum
 - RULE-SET,rule_disneyplus,TrafficIndo
@@ -361,9 +363,7 @@ rules:
 - RULE-SET,rule_portgames,TrafficPortGames
 - SCRIPT,TCPgames,TrafficPortGames
 - SCRIPT,UDPgames,TrafficPortGames
-- RULE-SET,rule_Gaming,TrafficGaming
 - RULE-SET,rule_discord,TrafficGaming
-- RULE-SET,rule_games,TrafficGaming
 - RULE-SET,rule_umum,TrafficUmum
 - MATCH,GLOBAL
 tun:
