@@ -425,6 +425,7 @@ payload:
   - DOMAIN-SUFFIX,mgapex.com
   - DOMAIN-SUFFIX,devmgapex.com
   - DOMAIN-SUFFIX,listdl.com
+  - DOMAIN-SUFFIX,awsglobalaccelerator.com
   - DOMAIN-KEYWORD,mgapex
   - DOMAIN-KEYWORD,devmgapex
 
