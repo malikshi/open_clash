@@ -327,9 +327,10 @@ rules:
 - DST-PORT,22,TrafficDirect
 - RULE-SET,rule_lancidr,DIRECT,no-resolve
 - RULE-SET,rule_falsepositive,TrafficUmum
+- RULE-SET,rule_malicious,REJECT
+- RULE-SET,rule_maliciousip,REJECT
 - RULE-SET,rule_personalads,TrafficAds
 - RULE-SET,rule_basicads,TrafficAds
-- RULE-SET,rule_malicious,TrafficAds
 - RULE-SET,rule_hijacking,TrafficAds
 - RULE-SET,rule_privacy,TrafficAds
 - RULE-SET,rule_porn,TrafficPorn
@@ -430,7 +431,7 @@ rule-providers:
     path: "./rule_provider/rule_privacy.yaml"
   rule_basicads:
     type: file
-    behavior: classical
+    behavior: domain
     path: "./rule_provider/rule_basicads.yaml"
   rule_personalads:
     type: file
@@ -438,8 +439,12 @@ rule-providers:
     path: "./rule_provider/rule_personalads.yaml"
   rule_malicious:
     type: file
-    behavior: classical
+    behavior: domain
     path: "./rule_provider/rule_malicious.yaml"
+  rule_maliciousip:
+    type: file
+    behavior: ipcidr
+    path: "./rule_provider/rule_maliciousip.yaml"
   rule_falsepositive:
     type: file
     behavior: classical
@@ -450,7 +455,7 @@ rule-providers:
     path: "./rule_provider/rule_porn.yaml"
   rule_nsfw:
     type: file
-    behavior: classical
+    behavior: domain
     path: "./rule_provider/rule_nsfw.yaml"
   rule_lancidr:
     type: file

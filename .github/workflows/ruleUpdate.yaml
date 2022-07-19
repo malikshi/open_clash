@@ -17,7 +17,10 @@ jobs:
           curl -s https://dbl.oisd.nl/ -o rule_basicads.yaml
           sed -i '/^$/d' rule_basicads.yaml
           sed -i '3,6d' rule_basicads.yaml
-          sed -ie '/^#/! s/^/  - DOMAIN,/' rule_basicads.yaml
+          #start word
+          sed -ie '/^#/! s/^/- "/' rule_basicads.yaml
+          #end word
+          sed -ie '/^#/! s/$/"/' rule_basicads.yaml
           sed -i 's|# Title: oisd full|payload:|' rule_basicads.yaml
           rm -fr rule_basicads.yamle
           
@@ -25,7 +28,10 @@ jobs:
           curl -s https://dbl.oisd.nl/nsfw/ -o rule_nsfw.yaml
           sed -i '/^$/d' rule_nsfw.yaml
           sed -i '3,6d' rule_nsfw.yaml
-          sed -ie '/^#/! s/^/  - DOMAIN,/' rule_nsfw.yaml
+          #start word
+          sed -ie '/^#/! s/^/- "/' rule_nsfw.yaml
+          #end word
+          sed -ie '/^#/! s/$/"/' rule_nsfw.yaml
           sed -i 's|# Title: oisd nsfw|payload:|' rule_nsfw.yaml
           rm -fr rule_nsfw.yamle
 
@@ -33,9 +39,23 @@ jobs:
           curl -s https://raw.githubusercontent.com/elliotwutingfeng/Inversion-DNSBL-Blocklists/main/Google_hostnames.txt -o rule_malicious.yaml
           (echo "#payload:" && cat rule_malicious.yaml) > rule_malicious.tmp
           mv rule_malicious.tmp rule_malicious.yaml
-          sed -ie '/^#/! s/^/  - DOMAIN,/' rule_malicious.yaml
+          #start word
+          sed -ie '/^#/! s/^/- "/' rule_malicious.yaml
+          #end word
+          sed -ie '/^#/! s/$/"/' rule_malicious.yaml
           sed -i 's|#payload:|payload:|' rule_malicious.yaml
           rm -fr rule_malicious.yamle
+
+          echo "Downloading Malicious IP Addresses source list..."
+          curl -s https://raw.githubusercontent.com/elliotwutingfeng/Inversion-DNSBL-Blocklists/main/Google_ipv4.txt -o rule_maliciousip.yaml
+          (echo "#payload:" && cat rule_maliciousip.yaml) > rule_maliciousip.tmp
+          mv rule_maliciousip.tmp rule_maliciousip.yaml
+          #start word
+          sed -ie '/^#/! s/^/- "/' rule_maliciousip.yaml
+          #end word
+          sed -ie '/^#/! s/$/\/32"/' rule_maliciousip.yaml
+          sed -i 's|#payload:|payload:|' rule_maliciousip.yaml
+          rm -fr rule_maliciousip.yamle
 
           echo "Downloading Discord source list..."
           curl -s https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Discord/Discord.yaml -o rule_discord.yaml
