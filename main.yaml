@@ -314,10 +314,10 @@ dns:
   - 172.105.216.54
   nameserver:
   - https://dns.quad9.net/dns-query
-  - tls://tls://dns.quad9.net:853
+  - tls://dns.quad9.net:853
   fallback:
   - https://dns.quad9.net/dns-query
-  - tls://tls://dns.quad9.net:853
+  - tls://dns.quad9.net:853
 profile:
   store-selected: true
   store-fakeip: true
@@ -456,7 +456,7 @@ rule-providers:
     behavior: domain
     url: https://raw.githubusercontent.com/malikshi/open_clash/main/rule_provider/rule_basicads.yaml
     path: "./rule_provider/rule_basicads.yaml"
-    interval: 86400
+    interval: 43200
   rule_personalads:
     type: http
     behavior: classical
@@ -468,13 +468,13 @@ rule-providers:
     behavior: domain
     url: https://raw.githubusercontent.com/malikshi/open_clash/main/rule_provider/rule_malicious.yaml
     path: "./rule_provider/rule_malicious.yaml"
-    interval: 86400
+    interval: 43200
   rule_maliciousip:
     type: http
     behavior: ipcidr
     url: https://raw.githubusercontent.com/malikshi/open_clash/main/rule_provider/rule_maliciousip.yaml
     path: "./rule_provider/rule_maliciousip.yaml"
-    interval: 86400
+    interval: 43200
   rule_falsepositive:
     type: http
     behavior: classical
@@ -492,7 +492,7 @@ rule-providers:
     behavior: domain
     url: https://raw.githubusercontent.com/malikshi/open_clash/main/rule_provider/rule_nsfw.yaml
     path: "./rule_provider/rule_nsfw.yaml"
-    interval: 86400
+    interval: 43200
   rule_lancidr:
     type: http
     behavior: ipcidr
