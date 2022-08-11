@@ -79,6 +79,23 @@ payload:
   - DOMAIN-SUFFIX,secureswiftcontent.com
   - DOMAIN-SUFFIX,vidiocdn.com
   - DOMAIN-KEYWORD,vidio
+# > VIU
+  - DOMAIN-SUFFIX,bootstrapcdn.com
+  - DOMAIN-SUFFIX,cloudfront.net
+  - DOMAIN-SUFFIX,cognito-identity.us-east-1.amazonaws.com
+  - DOMAIN-SUFFIX,firebaseio.com
+  - DOMAIN-SUFFIX,jwpcdn.com
+  - DOMAIN-SUFFIX,jwplayer.com
+  - DOMAIN-SUFFIX,mobileanalytics.us-east-1.amazonaws.com
+  - DOMAIN-SUFFIX,nowe.com
+  - DOMAIN-SUFFIX,viu.com
+  - DOMAIN-SUFFIX,viu.now.com
+  - DOMAIN-SUFFIX,viu.tv
+  - DOMAIN-KEYWORD,viu
+# > Beinsport
+  - DOMAIN-SUFFIX,connect-id.beinsports.com
+  - DOMAIN-SUFFIX,beinsports.com
+  - DOMAIN-KEYWORD,beinsports
 # > UseeTV
   - DOMAIN-SUFFIX,useetv.com
   - DOMAIN-KEYWORD,useetv.com
