@@ -91,6 +91,8 @@ payload:
   - DOMAIN-SUFFIX,viu.com
   - DOMAIN-SUFFIX,viu.now.com
   - DOMAIN-SUFFIX,viu.tv
+  - DOMAIN-SUFFIX,viuapi.io
+  - DOMAIN-SUFFIX,viu-static.akamaized.net
   - DOMAIN-KEYWORD,viu
 # > Beinsport
   - DOMAIN-SUFFIX,connect-id.beinsports.com
