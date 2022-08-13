@@ -97,7 +97,9 @@ payload:
 # > Beinsport
   - DOMAIN-SUFFIX,connect-id.beinsports.com
   - DOMAIN-SUFFIX,beinsports.com
+  - DOMAIN-SUFFIX,beiniz.biz
   - DOMAIN-KEYWORD,beinsports
+  - DOMAIN-KEYWORD,bein
 # > UseeTV
   - DOMAIN-SUFFIX,useetv.com
   - DOMAIN-KEYWORD,useetv.com
