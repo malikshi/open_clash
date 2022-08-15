@@ -44,7 +44,7 @@
 
 OpenClash Config untuk VVIP IPTUNNELS
 - [Buy VVIP IPTUNNELS](https://linktr.ee/iptunnelscom)
-- [Join Telegram](https://t.me/joinchat/RihiceTtK1QhBMm7)
+- [Join Telegram](https://t.me/+O08-QK6VNXU5NzU1)
 - [Requests Rules](https://github.com/malikshi/open_clash/issues/new/choose)
 
 # Features
