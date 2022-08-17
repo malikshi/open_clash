@@ -1,10 +1,10 @@
 # NAME: Disney
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
-# UPDATED: 2022-08-07 02:27:45
-# DOMAIN-SUFFIX: 159
+# UPDATED: 2022-08-17 02:32:25
+# DOMAIN-SUFFIX: 161
 # PROCESS-NAME: 2
-# TOTAL: 161
+# TOTAL: 163
 payload:
   - DOMAIN-SUFFIX,20thcenturystudios.com.au
   - DOMAIN-SUFFIX,20thcenturystudios.com.br
@@ -86,6 +86,7 @@ payload:
   - DOMAIN-SUFFIX,disneyinternationalhd.com
   - DOMAIN-SUFFIX,disneyjunior.com
   - DOMAIN-SUFFIX,disneyjuniortreataday.com
+  - DOMAIN-SUFFIX,disneylandparis.com
   - DOMAIN-SUFFIX,disneylatino.com
   - DOMAIN-SUFFIX,disneymagicmoments.co.il
   - DOMAIN-SUFFIX,disneymagicmoments.co.uk
@@ -117,6 +118,7 @@ payload:
   - DOMAIN-SUFFIX,disneyturkiye.com.tr
   - DOMAIN-SUFFIX,disneytvajobs.com
   - DOMAIN-SUFFIX,disneyworld-go.com
+  - DOMAIN-SUFFIX,dlp-media.com
   - DOMAIN-SUFFIX,dmed.technology
   - DOMAIN-SUFFIX,dssott.com
   - DOMAIN-SUFFIX,dtci.co
