@@ -1,10 +1,10 @@
 # NAME: Disney
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
-# UPDATED: 2022-08-17 02:32:25
-# DOMAIN-SUFFIX: 161
+# UPDATED: 2022-08-18 02:29:28
+# DOMAIN-SUFFIX: 164
 # PROCESS-NAME: 2
-# TOTAL: 163
+# TOTAL: 166
 payload:
   - DOMAIN-SUFFIX,20thcenturystudios.com.au
   - DOMAIN-SUFFIX,20thcenturystudios.com.br
@@ -109,11 +109,13 @@ payload:
   - DOMAIN-SUFFIX,disneyplus.bn5x.net
   - DOMAIN-SUFFIX,disneyplus.com
   - DOMAIN-SUFFIX,disneyplus.com.ssl.sc.omtrdc.net
+  - DOMAIN-SUFFIX,disneyprivacycenter.com
   - DOMAIN-SUFFIX,disneyredirects.com
   - DOMAIN-SUFFIX,disneysrivieraresort.com
   - DOMAIN-SUFFIX,disneystore.com
   - DOMAIN-SUFFIX,disneystreaming.com
   - DOMAIN-SUFFIX,disneysubscription.com
+  - DOMAIN-SUFFIX,disneytermsofuse.com
   - DOMAIN-SUFFIX,disneytickets.co.uk
   - DOMAIN-SUFFIX,disneyturkiye.com.tr
   - DOMAIN-SUFFIX,disneytvajobs.com
@@ -164,6 +166,7 @@ payload:
   - DOMAIN-SUFFIX,streamingdisney.net
   - DOMAIN-SUFFIX,themarvelexperiencetour.com
   - DOMAIN-SUFFIX,thestationbymaker.com
+  - DOMAIN-SUFFIX,thewaltdisneycompany.com
   - DOMAIN-SUFFIX,thisispolaris.com
   - DOMAIN-SUFFIX,watchdisneyfe.com
   - DOMAIN-SUFFIX,watchespn.com
