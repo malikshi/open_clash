@@ -136,6 +136,10 @@ payload:
   - DOMAIN-SUFFIX,bilibili.com
   - DOMAIN-SUFFIX,hdslb.com
   - DOMAIN-SUFFIX,bstarstatic.com
+# > Wiz smartgateway philips
+  - DOMAIN-SUFFIX,wiz.world
+  - DOMAIN,wizconnected.helpshift.com
+  - DOMAIN-KEYWORD,wiz
 # > MARKET PLACE
   - DOMAIN-SUFFIX,tokopedia.com
   - DOMAIN-SUFFIX,shopee.co.id
