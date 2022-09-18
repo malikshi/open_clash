@@ -4,6 +4,7 @@
 
 payload:
 - "+.ads-twitter.com"
+- "+.cms-twdigitalassets.com"
 - "+.periscope.tv"
 - "+.pscp.tv"
 - "+.t.co"
@@ -13,6 +14,8 @@ payload:
 - "+.twitpic.com"
 - "+.twitter.com"
 - "+.twitter.jp"
+- "+.twittercommunity.com"
+- "+.twitterflightschool.com"
 - "+.twitterinc.com"
 - "+.twitteroauth.com"
 - "+.twitterstat.us"
