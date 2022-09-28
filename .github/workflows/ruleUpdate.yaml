@@ -32,7 +32,7 @@ jobs:
           sed -ie '/^#/! s/*./- "+./' rule_nsfw.yaml
           #end word
           sed -ie '/^#/! s/$/"/' rule_nsfw.yaml
-          sed -i 's|# Title: oisd nsfw|payload:|' rule_nsfw.yaml
+          sed -i 's|# Title: oisd nsfwbig|payload:|' rule_nsfw.yaml
           rm -fr rule_nsfw.yamle
 
           echo "Downloading Malicious Sites source list..."
