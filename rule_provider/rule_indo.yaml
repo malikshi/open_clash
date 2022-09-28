@@ -125,8 +125,12 @@ payload:
   - DOMAIN-SUFFIX,v.smtcdns.com
   - DOMAIN-SUFFIX,v.smtcdns.net
   - DOMAIN-SUFFIX,vv.video.qq.com
+  - DOMAIN-SUFFIX,wetvdefaultts.tc.qq.com
+  - DOMAIN-SUFFIX,apd-vlive.apdcdn.tc.qq.com
+  - DOMAIN-SUFFIX,tc.qq.com
   - DOMAIN-SUFFIX,wetv.vip
   - DOMAIN-SUFFIX,wetvinfo.com
+  - DOMAIN-KEYWORD,wetv
   - IP-CIDR,150.109.28.51/32,no-resolve
 # > LiveTVGO
   - DOMAIN-SUFFIX,livetvgo.my.id
