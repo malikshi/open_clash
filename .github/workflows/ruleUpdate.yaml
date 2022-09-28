@@ -25,7 +25,7 @@ jobs:
           rm -fr rule_basicads.yamle
           
           echo "Downloading oisd nsfw source list..."
-          curl -s https://dblw.oisd.nl/nsfw/ -o rule_nsfw.yaml
+          curl -s https://dblw.oisd.nl/nsfwbig/ -o rule_nsfw.yaml
           sed -i '/^$/d' rule_nsfw.yaml
           sed -i '3,8d' rule_nsfw.yaml
           #start word
