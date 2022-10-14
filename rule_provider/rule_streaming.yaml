@@ -202,9 +202,6 @@ payload:
 
 # > Anime
   - DOMAIN-SUFFIX,anoboy.watch
-  - DOMAIN-SUFFIX,biliintl.com
-  - DOMAIN-SUFFIX,bstarstatic.com
-  - DOMAIN-SUFFIX,upos-bstar1-mirrorakam.akamaized.net
   - DOMAIN-SUFFIX,neonime.co
   - DOMAIN-SUFFIX,gomunime.is
   - DOMAIN-SUFFIX,9anime.cz
