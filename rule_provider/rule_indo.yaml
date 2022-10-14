@@ -1,205 +1,213 @@
 payload:
-  # Mulai baris ini kebawah bisa di edit/hapus
-# > LIST Streaming IP/Lokasi Wajib Indo
-# > MOLA TV
-  - DOMAIN-SUFFIX,mola.tv
-  - DOMAIN-SUFFIX,ws.mola.tv
-  - DOMAIN-SUFFIX,res.mola01.koicdn.com
-  - DOMAIN-SUFFIX,vod.cdn.mola.tv
-  - DOMAIN-SUFFIX,api.sent.tv
-  - DOMAIN-SUFFIX,cdn01.mola.tv
-  - DOMAIN-SUFFIX,cdn02.mola.tv
-# > Netflix
-  - DOMAIN-SUFFIX,flxvpn.net
-  - DOMAIN-SUFFIX,netflix.ca
-  - DOMAIN-SUFFIX,netflix.com
-  - DOMAIN-SUFFIX,netflix.net
-  - DOMAIN-SUFFIX,netflixdnstest1.com
-  - DOMAIN-SUFFIX,netflixdnstest10.com
-  - DOMAIN-SUFFIX,netflixdnstest2.com
-  - DOMAIN-SUFFIX,netflixdnstest3.com
-  - DOMAIN-SUFFIX,netflixdnstest4.com
-  - DOMAIN-SUFFIX,netflixdnstest5.com
-  - DOMAIN-SUFFIX,netflixdnstest6.com
-  - DOMAIN-SUFFIX,netflixdnstest7.com
-  - DOMAIN-SUFFIX,netflixdnstest8.com
-  - DOMAIN-SUFFIX,netflixdnstest9.com
-  - DOMAIN-SUFFIX,netflixinvestor.com
-  - DOMAIN-SUFFIX,netflixstudios.com
-  - DOMAIN-SUFFIX,netflixtechblog.com
-  - DOMAIN-SUFFIX,nflxext.com
-  - DOMAIN-SUFFIX,nflximg.com
-  - DOMAIN-SUFFIX,nflximg.net
-  - DOMAIN-SUFFIX,nflxso.net
-  - DOMAIN-SUFFIX,nflxvideo.net
-# > Disney Plus
-  - DOMAIN-SUFFIX,disney-plus.net
-  - DOMAIN-SUFFIX,disneyplus.com
-  - DOMAIN-SUFFIX,disneyplus.disney.co.jp
-  - DOMAIN-SUFFIX,dssott.com
-  - DOMAIN-SUFFIX,search-api-disney.bamgrid.com
-  - DOMAIN-SUFFIX,starott.com
-  - DOMAIN-SUFFIX,bifrost-api.hotstar.com
-  - DOMAIN-SUFFIX,img1.hotstarext.com
-  - DOMAIN-SUFFIX,persona.hotstar.com
-  - DOMAIN-SUFFIX,api.hotstar.com
-  - DOMAIN-KEYWORD,hotstar.com
-  - DOMAIN-KEYWORD,hotstarext.com
-  # > Spotify
-  - DOMAIN-SUFFIX,pscdn.co
-  - DOMAIN-SUFFIX,scdn.co
-  - DOMAIN-SUFFIX,spoti.fi
-  - DOMAIN-SUFFIX,spotify.com
-  - DOMAIN-SUFFIX,spotifycdn.com
-  - DOMAIN-SUFFIX,spotifycdn.net
-  - DOMAIN-SUFFIX,spotifycharts.com
-  - DOMAIN-SUFFIX,spotifycodes.com
-  - DOMAIN-SUFFIX,spotifyjobs.com
-  - DOMAIN-SUFFIX,spotifynewsroom.jp
-  - DOMAIN-SUFFIX,spotilocal.com
-  - DOMAIN-SUFFIX,tospotify.com
-  - DOMAIN-KEYWORD,spotify
-# > Vidio
-  - DOMAIN-SUFFIX,thumbor.prod.vid.id
-  - DOMAIN-SUFFIX,static-playback.prod.vid.id
-  - DOMAIN-SUFFIX,vid.id
-  - DOMAIN-SUFFIX,static-playback-vidio-com.akamaized.net
-  - DOMAIN-SUFFIX,plenty.vidio.com
-  - DOMAIN-SUFFIX,vidio.com
-  - DOMAIN-SUFFIX,www.vidio.com
-  - DOMAIN-SUFFIX,api.vidio.com
-  - DOMAIN-SUFFIX,api-ns.vidio.com
-  - DOMAIN-SUFFIX,media-vidio-com.akamaized.net
-  - DOMAIN-SUFFIX,static-web-prod-vidio.akamaized.net
-  - DOMAIN-SUFFIX,geo-id-media-vidio-com.akamaized.net
-  - DOMAIN-SUFFIX,hermes.vidio.com
-  - DOMAIN-SUFFIX,token-media-vidio-com.akamaized.net
-  - DOMAIN-SUFFIX,etslive-2-vidio-com.akamaized.net
-  - DOMAIN-SUFFIX,live-production.secureswiftcontent.com
-  - DOMAIN-SUFFIX,secureswiftcontent.com
-  - DOMAIN-SUFFIX,vidiocdn.com
-  - DOMAIN-KEYWORD,vidio
-# > VIU
-  - DOMAIN-SUFFIX,cognito-identity.us-east-1.amazonaws.com
-  - DOMAIN-SUFFIX,mobileanalytics.us-east-1.amazonaws.com
-  - DOMAIN-SUFFIX,nowe.com
-  - DOMAIN-SUFFIX,viu.com
-  - DOMAIN-SUFFIX,viu.now.com
-  - DOMAIN-SUFFIX,viu.tv
-  - DOMAIN-SUFFIX,viuapi.io
-  - DOMAIN-SUFFIX,viu-static.akamaized.net
-  - DOMAIN-SUFFIX,viu-android-artifacts.s3-ap-southeast-1.amazonaws.com
-  - DOMAIN-SUFFIX,gcpvuclip-a.akamaihd.net
-  - DOMAIN-SUFFIX,vuclip-eip2.akamaized.net
-  - DOMAIN-SUFFIX,vuclipi-a.akamaihd.net
-  - DOMAIN-KEYWORD,vuclip
-  - DOMAIN-KEYWORD,viu
-# > Beinsport
-  - DOMAIN-SUFFIX,connect-id.beinsports.com
-  - DOMAIN-SUFFIX,beinsports.com
-  - DOMAIN-SUFFIX,beiniz.biz
-  - DOMAIN-KEYWORD,beinsports
-  - DOMAIN-KEYWORD,bein
-# > UseeTV
-  - DOMAIN-SUFFIX,useetv.com
-  - DOMAIN-KEYWORD,useetv.com
-# > DensTV
-  - DOMAIN-SUFFIX,dens.tv
-# > Mncnow
-  - DOMAIN-SUFFIX,mncnow.id
-  - DOMAIN-SUFFIX,mncplay.id
-  - DOMAIN-KEYWORD,mncnow
-  - DOMAIN-KEYWORD,mncplay
-# > VisionPlus
-  - DOMAIN-SUFFIX,visionplus.id
-  - DOMAIN-SUFFIX,dtaarjaj1diy9.cloudfront.net
-  - DOMAIN-SUFFIX,mrpw.ptmnc01.verspective.net
-  - DOMAIN-SUFFIX,rmp-data.com
-  - DOMAIN,stream-cdn.mncnow.id
-  - DOMAIN-KEYWORD,visionplus
-# > We TV
-  - DOMAIN-SUFFIX,webrtcpunch.video.qq.com
-  - DOMAIN-SUFFIX,api.weathercn.com
-  - DOMAIN-SUFFIX,iflix-images.akamaized.net
-  - DOMAIN-SUFFIX,iflix.com
-  - DOMAIN-SUFFIX,v.smtcdns.com
-  - DOMAIN-SUFFIX,v.smtcdns.net
-  - DOMAIN-SUFFIX,vv.video.qq.com
-  - DOMAIN-SUFFIX,wetvdefaultts.tc.qq.com
-  - DOMAIN-SUFFIX,apd-vlive.apdcdn.tc.qq.com
-  - DOMAIN-SUFFIX,tc.qq.com
-  - DOMAIN-SUFFIX,wetv.vip
-  - DOMAIN-SUFFIX,wetvinfo.com
-  - DOMAIN-KEYWORD,wetv
-  - IP-CIDR,150.109.28.51/32,no-resolve
-# > LiveTVGO
-  - DOMAIN-SUFFIX,livetvgo.my.id
-  - DOMAIN-KEYWORD,livetvgo
-# > BILIBILI COMMICS
-  - DOMAIN-SUFFIX,bilibilicomics.com
-  - DOMAIN-SUFFIX,bilibili.com
-  - DOMAIN-SUFFIX,hdslb.com
-  - DOMAIN-SUFFIX,bstarstatic.com
-# > Wiz smartgateway philips
-  - DOMAIN-SUFFIX,wiz.world
-  - DOMAIN,wizconnected.helpshift.com
-  - DOMAIN-KEYWORD,wiz
-# > MARKET PLACE
-  - DOMAIN-SUFFIX,tokopedia.com
-  - DOMAIN-SUFFIX,shopee.co.id
-  - DOMAIN-SUFFIX,shopeemobile.com
-  - DOMAIN-SUFFIX,bukalapak.com
-  - DOMAIN-SUFFIX,lazada.co.id
-  - DOMAIN-SUFFIX,blibli.com
-  - DOMAIN-SUFFIX,orami.co.id
-  - DOMAIN-SUFFIX,ralali.com
-  - DOMAIN-SUFFIX,bhinneka.com
-  - DOMAIN-SUFFIX,jd.id
-  - DOMAIN-SUFFIX,zalora.co.id
-  - DOMAIN-KEYWORD,tokopedia
-  - DOMAIN-KEYWORD,shopee
-  - DOMAIN-KEYWORD,bukalapak
-  - DOMAIN-KEYWORD,lazada
-  - DOMAIN-KEYWORD,blibli
-  - DOMAIN-KEYWORD,orami
-  - DOMAIN-KEYWORD,ralali
-  - DOMAIN-KEYWORD,bhinneka
-  - DOMAIN-KEYWORD,zalora
+# Mulai baris ini kebawah bisa di edit/hapus
+# &gt; LIST Streaming IP/Lokasi Wajib Indo
+# &gt; MOLA TV
+- DOMAIN-SUFFIX,mola.tv
+- DOMAIN-SUFFIX,ws.mola.tv
+- DOMAIN-SUFFIX,res.mola01.koicdn.com
+- DOMAIN-SUFFIX,vod.cdn.mola.tv
+- DOMAIN-SUFFIX,api.sent.tv
+- DOMAIN-SUFFIX,cdn01.mola.tv
+- DOMAIN-SUFFIX,cdn02.mola.tv
+# &gt; Netflix
+- DOMAIN-SUFFIX,flxvpn.net
+- DOMAIN-SUFFIX,netflix.ca
+- DOMAIN-SUFFIX,netflix.com
+- DOMAIN-SUFFIX,netflix.net
+- DOMAIN-SUFFIX,netflixdnstest1.com
+- DOMAIN-SUFFIX,netflixdnstest10.com
+- DOMAIN-SUFFIX,netflixdnstest2.com
+- DOMAIN-SUFFIX,netflixdnstest3.com
+- DOMAIN-SUFFIX,netflixdnstest4.com
+- DOMAIN-SUFFIX,netflixdnstest5.com
+- DOMAIN-SUFFIX,netflixdnstest6.com
+- DOMAIN-SUFFIX,netflixdnstest7.com
+- DOMAIN-SUFFIX,netflixdnstest8.com
+- DOMAIN-SUFFIX,netflixdnstest9.com
+- DOMAIN-SUFFIX,netflixinvestor.com
+- DOMAIN-SUFFIX,netflixstudios.com
+- DOMAIN-SUFFIX,netflixtechblog.com
+- DOMAIN-SUFFIX,nflxext.com
+- DOMAIN-SUFFIX,nflximg.com
+- DOMAIN-SUFFIX,nflximg.net
+- DOMAIN-SUFFIX,nflxso.net
+- DOMAIN-SUFFIX,nflxvideo.net
+# &gt; Disney Plus
+- DOMAIN-SUFFIX,disney-plus.net
+- DOMAIN-SUFFIX,disneyplus.com
+- DOMAIN-SUFFIX,disneyplus.disney.co.jp
+- DOMAIN-SUFFIX,dssott.com
+- DOMAIN-SUFFIX,search-api-disney.bamgrid.com
+- DOMAIN-SUFFIX,starott.com
+- DOMAIN-SUFFIX,bifrost-api.hotstar.com
+- DOMAIN-SUFFIX,img1.hotstarext.com
+- DOMAIN-SUFFIX,persona.hotstar.com
+- DOMAIN-SUFFIX,api.hotstar.com
+- DOMAIN-KEYWORD,hotstar.com
+- DOMAIN-KEYWORD,hotstarext.com
+# &gt; Spotify
+- DOMAIN-SUFFIX,pscdn.co
+- DOMAIN-SUFFIX,scdn.co
+- DOMAIN-SUFFIX,spoti.fi
+- DOMAIN-SUFFIX,spotify.com
+- DOMAIN-SUFFIX,spotifycdn.com
+- DOMAIN-SUFFIX,spotifycdn.net
+- DOMAIN-SUFFIX,spotifycharts.com
+- DOMAIN-SUFFIX,spotifycodes.com
+- DOMAIN-SUFFIX,spotifyjobs.com
+- DOMAIN-SUFFIX,spotifynewsroom.jp
+- DOMAIN-SUFFIX,spotilocal.com
+- DOMAIN-SUFFIX,tospotify.com
+- DOMAIN-KEYWORD,spotify
+# &gt; Vidio
+- DOMAIN-SUFFIX,thumbor.prod.vid.id
+- DOMAIN-SUFFIX,static-playback.prod.vid.id
+- DOMAIN-SUFFIX,vid.id
+- DOMAIN-SUFFIX,static-playback-vidio-com.akamaized.net
+- DOMAIN-SUFFIX,plenty.vidio.com
+- DOMAIN-SUFFIX,vidio.com
+- DOMAIN-SUFFIX,www.vidio.com
+- DOMAIN-SUFFIX,api.vidio.com
+- DOMAIN-SUFFIX,api-ns.vidio.com
+- DOMAIN-SUFFIX,media-vidio-com.akamaized.net
+- DOMAIN-SUFFIX,static-web-prod-vidio.akamaized.net
+- DOMAIN-SUFFIX,geo-id-media-vidio-com.akamaized.net
+- DOMAIN-SUFFIX,hermes.vidio.com
+- DOMAIN-SUFFIX,token-media-vidio-com.akamaized.net
+- DOMAIN-SUFFIX,etslive-2-vidio-com.akamaized.net
+- DOMAIN-SUFFIX,live-production.secureswiftcontent.com
+- DOMAIN-SUFFIX,secureswiftcontent.com
+- DOMAIN-SUFFIX,vidiocdn.com
+- DOMAIN-KEYWORD,vidio
+# &gt; VIU
+- DOMAIN-SUFFIX,cognito-identity.us-east-1.amazonaws.com
+- DOMAIN-SUFFIX,mobileanalytics.us-east-1.amazonaws.com
+- DOMAIN-SUFFIX,nowe.com
+- DOMAIN-SUFFIX,viu.com
+- DOMAIN-SUFFIX,viu.now.com
+- DOMAIN-SUFFIX,viu.tv
+- DOMAIN-SUFFIX,viuapi.io
+- DOMAIN-SUFFIX,viu-static.akamaized.net
+- DOMAIN-SUFFIX,viu-android-artifacts.s3-ap-southeast-1.amazonaws.com
+- DOMAIN-SUFFIX,gcpvuclip-a.akamaihd.net
+- DOMAIN-SUFFIX,vuclip-eip2.akamaized.net
+- DOMAIN-SUFFIX,vuclipi-a.akamaihd.net
+- DOMAIN-KEYWORD,vuclip
+- DOMAIN-KEYWORD,viu
+# &gt; Beinsport
+- DOMAIN-SUFFIX,connect-id.beinsports.com
+- DOMAIN-SUFFIX,beinsports.com
+- DOMAIN-SUFFIX,beiniz.biz
+- DOMAIN-KEYWORD,beinsports
+- DOMAIN-KEYWORD,bein
+# &gt; UseeTV
+- DOMAIN-SUFFIX,useetv.com
+- DOMAIN-KEYWORD,useetv.com
+# &gt; DensTV
+- DOMAIN-SUFFIX,dens.tv
+# &gt; Mncnow
+- DOMAIN-SUFFIX,mncnow.id
+- DOMAIN-SUFFIX,mncplay.id
+- DOMAIN-KEYWORD,mncnow
+- DOMAIN-KEYWORD,mncplay
+# &gt; VisionPlus
+- DOMAIN-SUFFIX,visionplus.id
+- DOMAIN-SUFFIX,dtaarjaj1diy9.cloudfront.net
+- DOMAIN-SUFFIX,mrpw.ptmnc01.verspective.net
+- DOMAIN-SUFFIX,rmp-data.com
+- DOMAIN,stream-cdn.mncnow.id
+- DOMAIN-KEYWORD,visionplus
+# &gt; We TV
+- DOMAIN-SUFFIX,webrtcpunch.video.qq.com
+- DOMAIN-SUFFIX,api.weathercn.com
+- DOMAIN-SUFFIX,iflix-images.akamaized.net
+- DOMAIN-SUFFIX,iflix.com
+- DOMAIN-SUFFIX,v.smtcdns.com
+- DOMAIN-SUFFIX,v.smtcdns.net
+- DOMAIN-SUFFIX,vv.video.qq.com
+- DOMAIN-SUFFIX,wetvdefaultts.tc.qq.com
+- DOMAIN-SUFFIX,apd-vlive.apdcdn.tc.qq.com
+- DOMAIN-SUFFIX,tc.qq.com
+- DOMAIN-SUFFIX,wetv.vip
+- DOMAIN-SUFFIX,wetvinfo.com
+- DOMAIN-KEYWORD,wetv
+- IP-CIDR,150.109.28.51/32,no-resolve
+# &gt; LiveTVGO
+- DOMAIN-SUFFIX,livetvgo.my.id
+- DOMAIN-KEYWORD,livetvgo
+# &gt; BILIBILI COMMICS
+- DOMAIN-SUFFIX,bilibilicomics.com
+- DOMAIN-SUFFIX,bilibili.com
+- DOMAIN-SUFFIX,hdslb.com
+- DOMAIN-SUFFIX,bstarstatic.com
+- DOMAIN-SUFFIX,biliintl.com
+- DOMAIN-SUFFIX,upos-bstar1-mirrorakam.akamaized.net
+- DOMAIN-SUFFIX,bilivideo.com
+- DOMAIN-SUFFIX,bilibili.tv
+- DOMAIN-SUFFIX,pic-bstarstatic.akamaized.net
+- DOMAIN-SUFFIX,s-bstarstatic.akamaized.net
+- DOMAIN-SUFFIX,upos-hz-mirrorakam.akamaized.net
+- DOMAIN-KEYWORD,bstar
+- DOMAIN-KEYWORD,bilibili
+# &gt; Wiz smartgateway philips
+- DOMAIN-SUFFIX,wiz.world
+- DOMAIN,wizconnected.helpshift.com
+- DOMAIN-KEYWORD,wiz
+# &gt; MARKET PLACE
+- DOMAIN-SUFFIX,tokopedia.com
+- DOMAIN-SUFFIX,shopee.co.id
+- DOMAIN-SUFFIX,shopeemobile.com
+- DOMAIN-SUFFIX,bukalapak.com
+- DOMAIN-SUFFIX,lazada.co.id
+- DOMAIN-SUFFIX,blibli.com
+- DOMAIN-SUFFIX,orami.co.id
+- DOMAIN-SUFFIX,ralali.com
+- DOMAIN-SUFFIX,bhinneka.com
+- DOMAIN-SUFFIX,jd.id
+- DOMAIN-SUFFIX,zalora.co.id
+- DOMAIN-KEYWORD,tokopedia
+- DOMAIN-KEYWORD,shopee
+- DOMAIN-KEYWORD,bukalapak
+- DOMAIN-KEYWORD,lazada
+- DOMAIN-KEYWORD,blibli
+- DOMAIN-KEYWORD,orami
+- DOMAIN-KEYWORD,ralali
+- DOMAIN-KEYWORD,bhinneka
+- DOMAIN-KEYWORD,zalora
 # E-Wallet / Dompet Digital
-  - DOMAIN-SUFFIX,gojek.com
-  - DOMAIN-SUFFIX,gobiz.co.id
-  - DOMAIN-SUFFIX,ovo.id
-  - DOMAIN-SUFFIX,dana.id
-  - DOMAIN-SUFFIX,linkaja.id
-  - DOMAIN-SUFFIX,octoclicks.co.id
-  - DOMAIN-SUFFIX,i-saku.com
-  - DOMAIN-SUFFIX,doku.com
-  - DOMAIN-SUFFIX,shopeepay.co.id
-  - DOMAIN-SUFFIX,grab.com
-  - DOMAIN-SUFFIX,grabtaxi.com
-  - DOMAIN-KEYWORD,gojek
-  - DOMAIN-KEYWORD,gobiz
-  - DOMAIN-KEYWORD,ovo
-  - DOMAIN-KEYWORD,dana
-  - DOMAIN-KEYWORD,linkaja
-  - DOMAIN-KEYWORD,octoclicks
-  - DOMAIN-KEYWORD,i-saku
-  - DOMAIN-KEYWORD,doku
-  - DOMAIN-KEYWORD,shopeepay
-  - DOMAIN-KEYWORD,grab
-  - DOMAIN-KEYWORD,grabtaxi
-  
-# > LIST Domain tLD Indo & GEOIP INDO
-  - DOMAIN-KEYWORD,.id
-  - DOMAIN-KEYWORD,co.id
-  - DOMAIN-KEYWORD,ac.id
-  - DOMAIN-KEYWORD,or.id
-  - DOMAIN-KEYWORD,go.id
-  - DOMAIN-KEYWORD,my.id
-  - DOMAIN-KEYWORD,web.id
-  - DOMAIN-KEYWORD,biz.id
-  - DOMAIN-KEYWORD,net.id
-  - DOMAIN-KEYWORD,mil.id
-  - DOMAIN-KEYWORD,sch.id
-  - DOMAIN-KEYWORD,desa.id
-  - DOMAIN-KEYWORD,ponpes.id
+- DOMAIN-SUFFIX,gojek.com
+- DOMAIN-SUFFIX,gobiz.co.id
+- DOMAIN-SUFFIX,ovo.id
+- DOMAIN-SUFFIX,dana.id
+- DOMAIN-SUFFIX,linkaja.id
+- DOMAIN-SUFFIX,octoclicks.co.id
+- DOMAIN-SUFFIX,i-saku.com
+- DOMAIN-SUFFIX,doku.com
+- DOMAIN-SUFFIX,shopeepay.co.id
+- DOMAIN-SUFFIX,grab.com
+- DOMAIN-SUFFIX,grabtaxi.com
+- DOMAIN-KEYWORD,gojek
+- DOMAIN-KEYWORD,gobiz
+- DOMAIN-KEYWORD,ovo
+- DOMAIN-KEYWORD,dana
+- DOMAIN-KEYWORD,linkaja
+- DOMAIN-KEYWORD,octoclicks
+- DOMAIN-KEYWORD,i-saku
+- DOMAIN-KEYWORD,doku
+- DOMAIN-KEYWORD,shopeepay
+- DOMAIN-KEYWORD,grab
+- DOMAIN-KEYWORD,grabtaxi
+# &gt; LIST Domain tLD Indo & GEOIP INDO
+- DOMAIN-KEYWORD,.id
+- DOMAIN-KEYWORD,co.id
+- DOMAIN-KEYWORD,ac.id
+- DOMAIN-KEYWORD,or.id
+- DOMAIN-KEYWORD,go.id
+- DOMAIN-KEYWORD,my.id
+- DOMAIN-KEYWORD,web.id
+- DOMAIN-KEYWORD,biz.id
+- DOMAIN-KEYWORD,net.id
+- DOMAIN-KEYWORD,mil.id
+- DOMAIN-KEYWORD,sch.id
+- DOMAIN-KEYWORD,desa.id
+- DOMAIN-KEYWORD,ponpes.id
