@@ -313,11 +313,13 @@ dns:
   - 94.140.14.141
   - 172.105.216.54
   nameserver:
-  - https://dns.quad9.net/dns-query
-  - tls://dns.quad9.net:853
+  - 1.1.1.1
+  - 8.8.8.8
+  - 9.9.9.9
   fallback:
-  - https://dns.quad9.net/dns-query
-  - tls://dns.quad9.net:853
+  - 1.1.1.1
+  - 8.8.8.8
+  - 9.9.9.9
 profile:
   store-selected: true
   store-fakeip: true
