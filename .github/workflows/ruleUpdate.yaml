@@ -27,12 +27,12 @@ jobs:
           echo "Downloading oisd nsfw source list..."
           curl -s https://dblw.oisd.nl/nsfwbig/ -o rule_nsfw.yaml
           sed -i '/^$/d' rule_nsfw.yaml
-          sed -i '3,8d' rule_nsfw.yaml
+          sed -i '4,9d' rule_nsfw.yaml
           #start word
           sed -ie '/^#/! s/*./- "+./' rule_nsfw.yaml
           #end word
           sed -ie '/^#/! s/$/"/' rule_nsfw.yaml
-          sed -i 's|# Title: oisd nsfwbig|payload:|' rule_nsfw.yaml
+          sed -i 's|# Title: oisd nsfw|payload:|' rule_nsfw.yaml
           rm -fr rule_nsfw.yamle
 
           echo "Downloading Malicious Sites source list..."
