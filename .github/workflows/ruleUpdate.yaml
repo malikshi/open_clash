@@ -14,7 +14,7 @@ jobs:
         working-directory: ./rule_provider
         run: |
           echo "Downloading oisd full source list..."
-          curl -s https://big.oisd.nl -o rule_basicads.yaml
+          curl -s https://dblw.oisd.nl/ -o rule_basicads.yaml
           sed -i '/^$/d' rule_basicads.yaml
           sed -i '4,9d' rule_basicads.yaml
           #start word
@@ -25,7 +25,7 @@ jobs:
           rm -fr rule_basicads.yamle
           
           echo "Downloading oisd nsfw source list..."
-          curl -s https://nsfw.oisd.nl -o rule_nsfw.yaml
+          curl -s https://dblw.oisd.nl/nsfwbig/ -o rule_nsfw.yaml
           sed -i '/^$/d' rule_nsfw.yaml
           sed -i '4,9d' rule_nsfw.yaml
           #start word
