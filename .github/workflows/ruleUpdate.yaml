@@ -14,25 +14,22 @@ jobs:
         working-directory: ./rule_provider
         run: |
           echo "Downloading oisd full source list..."
-          curl -s https://dblw.oisd.nl/ -o rule_basicads.yaml
-          sed -i '/^$/d' rule_basicads.yaml
-          sed -i '4,9d' rule_basicads.yaml
+          curl -s https://big.oisd.nl -o rule_basicads.yaml
           #start word
-          sed -ie '/^#/! s/*./- "+./' rule_basicads.yaml
+          sed -i 's/||\(.*\)\^/  - "+.\1"/' rule_basicads.yaml
+          sed -i '1,8 s/\[\|\]\|!\{1,\}//g' rule_basicads.yaml
           #end word
-          sed -ie '/^#/! s/$/"/' rule_basicads.yaml
-          sed -i 's|# Title: oisd big|payload:|' rule_basicads.yaml
+          sed -i '1,8 s/^/#/' rule_basicads.yaml
+          sed -i '9s/^/payload: /' rule_basicads.yaml
           rm -fr rule_basicads.yamle
           
           echo "Downloading oisd nsfw source list..."
-          curl -s https://dblw.oisd.nl/nsfwbig/ -o rule_nsfw.yaml
-          sed -i '/^$/d' rule_nsfw.yaml
-          sed -i '4,9d' rule_nsfw.yaml
-          #start word
-          sed -ie '/^#/! s/*./- "+./' rule_nsfw.yaml
+          curl -s https://nsfw.oisd.nl -o rule_nsfw.yaml
+          sed -i 's/||\(.*\)\^/  - "+.\1"/' rule_nsfw.yaml
+          sed -i '1,8 s/\[\|\]\|!\{1,\}//g' rule_nsfw.yaml
           #end word
-          sed -ie '/^#/! s/$/"/' rule_nsfw.yaml
-          sed -i 's|# Title: oisd nsfw|payload:|' rule_nsfw.yaml
+          sed -i '1,8 s/^/#/' rule_nsfw.yaml
+          sed -i '9s/^/payload: /' rule_nsfw.yaml
           rm -fr rule_nsfw.yamle
 
           echo "Downloading Malicious Sites source list..."
