@@ -14,14 +14,31 @@ jobs:
         working-directory: ./rule_provider
         run: |
           echo "Downloading oisd full source list..."
-          curl -s https://big.oisd.nl -o rule_basicads.yaml
-          #start word
-          sed -i 's/||\(.*\)\^/  - "+.\1"/' rule_basicads.yaml
-          sed -i '1,8 s/\[\|\]\|!\{1,\}//g' rule_basicads.yaml
-          #end word
-          sed -i '1,8 s/^/#/' rule_basicads.yaml
-          sed -i '9s/^/payload: /' rule_basicads.yaml
-          rm -fr rule_basicads.yamle
+          curl -sSf -o oisd-full.txt https://big.oisd.nl/
+          python3 - <<EOF
+          import re
+          import yaml
+
+          with open("oisd-full.txt", "r") as file:
+              input_text = file.read()
+
+          title = re.search(r"Title: (.+)", input_text).group(1)
+          last_modified = re.search(r"Last modified: (.+)", input_text).group(1)
+
+          payload_lines = re.findall(r"\|\|(.+)\^", input_text)
+          payload = [f"+.{line}" for line in payload_lines]
+
+          data = {
+              "# Title": title,
+              "# Last modified": last_modified,
+              "payload": payload
+          }
+
+          yaml_output = yaml.dump(data, sort_keys=False)
+
+          with open("rule_basicads.yaml", "w") as file:
+              file.write(yaml_output)
+          EOF
           
           echo "Downloading oisd nsfw source list..."
           curl -s https://nsfw.oisd.nl -o rule_nsfw.yaml
