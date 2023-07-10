@@ -22,8 +22,8 @@ jobs:
           with open("oisd-full.txt", "r") as file:
               input_text = file.read()
 
-          title = re.search(r"Title: (.+)", input_text).group(1)
-          last_modified = re.search(r"Last modified: (.+)", input_text).group(1)
+          title = re.search(r"! Title: (.+)", input_text).group(1)
+          last_modified = re.search(r"! Last modified: (.+)", input_text).group(1)
 
           payload_lines = re.findall(r"\|\|(.+)\^", input_text)
           payload = [f"+.{line}" for line in payload_lines]
@@ -41,6 +41,7 @@ jobs:
           with open("rule_basicads.yaml", "w") as file:
               file.write(formatted_yaml)
           EOF
+          rm oisd-full.txt
           
           echo "Downloading oisd nsfw source list..."
           curl -s https://nsfw.oisd.nl -o rule_nsfw.yaml
