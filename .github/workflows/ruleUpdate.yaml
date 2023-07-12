@@ -41,6 +41,7 @@ jobs:
           with open("rule_basicads.yaml", "w") as file:
               file.write(formatted_yaml)
           EOF
+          sed -i 's|# payload:|payload:|' rule_basicads.yaml
           rm oisd-full.txt
           
           echo "Downloading oisd nsfw source list..."
