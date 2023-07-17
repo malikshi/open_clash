@@ -95,7 +95,7 @@ jobs:
           formatted_yaml = re.sub(r"(\s+-) '(.+)'", r"\1 \2", yaml_output)
           
           # Save the formatted YAML to a file
-          output_file = "bank-id.yaml"
+          output_file = "rule_bank-id.yaml"
           with open(output_file, "w") as file:
               file.write(formatted_yaml)
           EOF
