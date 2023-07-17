@@ -63,6 +63,38 @@ jobs:
           EOF
           rm oisd-nsfw.txt
 
+          echo "Downloading Bank-ID source list"
+          python3 - <<EOF
+          import pandas as pd
+          import tldextract
+          import yaml
+          import re
+          
+          excel_url = "https://ojk.go.id/id/kanal/perbankan/data-dan-statistik/Documents/Pages/Daftar-Alamat-Kantor-Pusat-Bank-Umum-Dan-Syariah/Daftar%20Alamat%20Kantor%20Pusat%20Bank%20Umum%20Dan%20Syariah%20-%20Februari%202023.xlsx"
+          
+          # Read the Excel file
+          df = pd.read_excel(excel_url)
+          
+          # Extract valid domain TLDs
+          valid_tlds = []
+          for website in df["Website"].dropna():
+              domain = tldextract.extract(website).registered_domain
+              if domain:
+                  valid_tlds.append(f'"+.{domain}"')
+          
+          # Create the data dictionary
+          data = {"payload": valid_tlds}
+          
+          # Convert the data to YAML format
+          yaml_output = yaml.dump(data, sort_keys=False)
+          formatted_yaml = re.sub(r"(\s+-) '(.+)'", r"\1 \2", yaml_output)
+          
+          # Save the formatted YAML to a file
+          output_file = "bank-id.yaml"
+          with open(output_file, "w") as file:
+              file.write(formatted_yaml)
+          EOF
+
           echo "Downloading Malicious Sites source list..."
           curl -sSf -o rule-malicious.txt https://raw.githubusercontent.com/elliotwutingfeng/Inversion-DNSBL-Blocklists/main/Google_hostnames_ABP.txt
           python3 - <<EOF
