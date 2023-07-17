@@ -90,12 +90,13 @@ jobs:
 
           echo "Downloading Malicious IP Addresses source list..."
           curl -s https://raw.githubusercontent.com/elliotwutingfeng/Inversion-DNSBL-Blocklists/main/Google_ipv4.txt -o rule_maliciousip.yaml
-          (echo "payload:" && cat rule_maliciousip.yaml) > rule_maliciousip.tmp
+          (echo "#payload:" && cat rule_maliciousip.yaml) > rule_maliciousip.tmp
           mv rule_maliciousip.tmp rule_maliciousip.yaml
           #start word
           sed -ie "/^#/! s/^/- '/" rule_maliciousip.yaml
           #end word
           sed -ie "/^#/! s/$/\/32'/" rule_maliciousip.yaml
+          sed -i 's|#payload:|payload:|' rule_maliciousip.yaml
           rm -fr rule_maliciousip.yamle
 
           echo "Downloading Discord source list..."
