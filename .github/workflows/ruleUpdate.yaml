@@ -18,61 +18,84 @@ jobs:
           python3 - <<EOF
           import re
           import yaml
-
+          
           with open("oisd-full.txt", "r") as file:
               input_text = file.read()
-
-          title = re.search(r"! Title: (.+)", input_text).group(1)
-          last_modified = re.search(r"! Last modified: (.+)", input_text).group(1)
-
+          
           payload_lines = re.findall(r"\|\|(.+)\^", input_text)
-          payload = [f"+.{line}" for line in payload_lines]
-
+          payload = [f'"+.{line}"' for line in payload_lines]
+          
           data = {
-              "# Title": title,
-              "# Last modified": last_modified,
               "payload": payload
           }
-
-          yaml_output = yaml.dump(data, sort_keys=False)
-
-          formatted_yaml = re.sub(r"(?<!# )(\w+):", r"# \1:", yaml_output)
-
+          
+          yaml_output = yaml.dump(data, sort_keys=False, default_flow_style=False)
+          
+          formatted_yaml = re.sub(r"(\s+-) '(.+)'", r"\1 \2", yaml_output)
+          
           with open("rule_basicads.yaml", "w") as file:
               file.write(formatted_yaml)
           EOF
-          sed -i 's|# payload:|payload:|' rule_basicads.yaml
           rm oisd-full.txt
           
           echo "Downloading oisd nsfw source list..."
-          curl -s https://nsfw.oisd.nl -o rule_nsfw.yaml
-          sed -i 's/||\(.*\)\^/  - "+.\1"/' rule_nsfw.yaml
-          sed -i '1,8 s/\[\|\]\|!\{1,\}//g' rule_nsfw.yaml
-          #end word
-          sed -i '1,8 s/^/#/' rule_nsfw.yaml
-          sed -i '9s/^/payload: /' rule_nsfw.yaml
-          rm -fr rule_nsfw.yamle
+          curl -sSf -o oisd-nsfw.txt https://nsfw.oisd.nl
+          python3 - <<EOF
+          import re
+          import yaml
+          
+          with open("oisd-nsfw.txt", "r") as file:
+              input_text = file.read()
+          
+          payload_lines = re.findall(r"\|\|(.+)\^", input_text)
+          payload = [f'"+.{line}"' for line in payload_lines]
+          
+          data = {
+              "payload": payload
+          }
+          
+          yaml_output = yaml.dump(data, sort_keys=False, default_flow_style=False)
+          
+          formatted_yaml = re.sub(r"(\s+-) '(.+)'", r"\1 \2", yaml_output)
+          
+          with open("rule_nsfw.yaml", "w") as file:
+              file.write(formatted_yaml)
+          EOF
+          rm oisd-nsfw.txt
 
           echo "Downloading Malicious Sites source list..."
-          curl -s https://raw.githubusercontent.com/elliotwutingfeng/Inversion-DNSBL-Blocklists/main/Google_hostnames.txt -o rule_malicious.yaml
-          (echo "#payload:" && cat rule_malicious.yaml) > rule_malicious.tmp
-          mv rule_malicious.tmp rule_malicious.yaml
-          #start word
-          sed -ie '/^#/! s/^/- "/' rule_malicious.yaml
-          #end word
-          sed -ie '/^#/! s/$/"/' rule_malicious.yaml
-          sed -i 's|#payload:|payload:|' rule_malicious.yaml
-          rm -fr rule_malicious.yamle
+          curl -sSf -o rule-malicious.txt https://raw.githubusercontent.com/elliotwutingfeng/Inversion-DNSBL-Blocklists/main/Google_hostnames_ABP.txt
+          python3 - <<EOF
+          import re
+          import yaml
+          
+          with open("rule-malicious.txt", "r") as file:
+              input_text = file.read()
+          
+          payload_lines = re.findall(r"\|\|(.+)\^", input_text)
+          payload = [f'"+.{line}"' for line in payload_lines]
+          
+          data = {
+              "payload": payload
+          }
+          
+          yaml_output = yaml.dump(data, sort_keys=False, default_flow_style=False)
+          
+          formatted_yaml = re.sub(r"(\s+-) '(.+)'", r"\1 \2", yaml_output)
+          
+          with open("rule_malicious.yaml", "w") as file:
+              file.write(formatted_yaml)
+          EOF
+          rm rule-malicious.txt
 
           echo "Downloading Malicious IP Addresses source list..."
           curl -s https://raw.githubusercontent.com/elliotwutingfeng/Inversion-DNSBL-Blocklists/main/Google_ipv4.txt -o rule_maliciousip.yaml
-          (echo "#payload:" && cat rule_maliciousip.yaml) > rule_maliciousip.tmp
+          (echo "payload:" && cat rule_maliciousip.yaml) > rule_maliciousip.tmp
           mv rule_maliciousip.tmp rule_maliciousip.yaml
           #start word
-          sed -ie '/^#/! s/^/- "/' rule_maliciousip.yaml
+          sed -ie "/^#/! s/^/- '/" rule_maliciousip.yaml
           #end word
-          sed -ie '/^#/! s/$/\/32"/' rule_maliciousip.yaml
-          sed -i 's|#payload:|payload:|' rule_maliciousip.yaml
+          sed -ie "/^#/! s/$/\/32'/" rule_maliciousip.yaml
           rm -fr rule_maliciousip.yamle
 
           echo "Downloading Discord source list..."
