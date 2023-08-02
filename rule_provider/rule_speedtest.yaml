@@ -17,8 +17,10 @@ payload:
   - DOMAIN-SUFFIX,speed.dler.io
   - DOMAIN-SUFFIX,openspeedtest.com
   - DOMAIN-SUFFIX,cachefly.net
+  - DOMAIN-SUFFIX,uwn.com
   - DOMAIN-KEYWORD,speedtest
   - DOMAIN-KEYWORD,speedtestcustom
   - DOMAIN-KEYWORD,openspeedtest
+  - DOMAIN-KEYWORD,wifiman
   - DST-PORT,8080
 
