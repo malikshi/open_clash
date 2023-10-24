@@ -1,11 +1,11 @@
 # NAME: Privacy
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
-# UPDATED: 2023-10-23 02:08:50
+# UPDATED: 2023-10-24 02:10:24
 # DOMAIN: 19
-# DOMAIN-SUFFIX: 21368
+# DOMAIN-SUFFIX: 21369
 # IP-CIDR: 8
-# TOTAL: 21395
+# TOTAL: 21396
 payload:
   - DOMAIN,hm.baidu.com
   - DOMAIN,hmma.baidu.com
@@ -4128,7 +4128,6 @@ payload:
   - DOMAIN-SUFFIX,cdn-rum.ngenix.net
   - DOMAIN-SUFFIX,cdn.arcstudiopro.com
   - DOMAIN-SUFFIX,cdn.net.elogia.net
-  - DOMAIN-SUFFIX,cdn.usefathom.com
   - DOMAIN-SUFFIX,cdn1.skrill.com
   - DOMAIN-SUFFIX,cdn7.baunetz.de
   - DOMAIN-SUFFIX,cdnhst.xyz
@@ -15912,6 +15911,7 @@ payload:
   - DOMAIN-SUFFIX,spread.epoolers.com
   - DOMAIN-SUFFIX,springaftermath.com
   - DOMAIN-SUFFIX,springsister.com
+  - DOMAIN-SUFFIX,spt.ahram.org.eg
   - DOMAIN-SUFFIX,spuriousbase.com
   - DOMAIN-SUFFIX,spurioussquirrel.com
   - DOMAIN-SUFFIX,spurioussteam.com
@@ -20312,6 +20312,7 @@ payload:
   - DOMAIN-SUFFIX,vhmewg.edreams.fr
   - DOMAIN-SUFFIX,vhrbxb.vidaxl.nl
   - DOMAIN-SUFFIX,vi.adviso.ca
+  - DOMAIN-SUFFIX,vibranthaven.com
   - DOMAIN-SUFFIX,victoriousrequest.com
   - DOMAIN-SUFFIX,video-ad-stats.googlesyndication.com
   - DOMAIN-SUFFIX,video-metrics.ellentube.com
